@@ -1,10 +1,10 @@
 ---
 title: "assignment"
-output: html_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 library(dplyr)
 library(ggplot2)
 ```
@@ -42,8 +42,13 @@ summary(stocks)
 - The P/B ratio measures the market's valuation of a company relative to its book value.*The market value of equity is typically higher than the book value of a company.* P/B ratio is used by value investors to identify potential investments. P/B ratios under 1 are typically considered solid investments.
 - The enterprise value-to-revenue (EV/R) multiple helps compares a company’s revenues to its enterprise value. *The lower the better, in that, a lower EV/R multiple signals a company is undervalued.*
 - The enterprise value to earnings before interest, taxes, depreciation, and amortization ratio (EV/EBITDA) compares the value of a company—debt included—to the company’s cash earnings less non-cash expenses. The EV/EBITDA metric is a popular valuation tool that helps investors compare companies in order to make an investment decision. EV calculates a company's total value or assessed worth, while EBITDA measures a company's overall financial performance and profitability. Typically, when evaluating a company, *an EV/EBITDA value below 10 is seen as healthy*. It's best to use the EV/EBITDA metric when comparing companies within the same industry or sector.
+
 ```{r}
-stocks %>% filter(Enterprise.value.EBITDA<10) %>% ggplot(aes(Enterprise.value.EBITDA, Enterprise.value.EBITDA)) + geom_boxplot() + facet_wrap(~Industry)
+stocks %>% 
+  dplyr::filter(ebitda<10) %>% 
+  ggplot(aes(ebitda, ebitda)) + 
+  geom_boxplot() + 
+  facet_wrap(~Industry)
 ```
 
 ## Value Analysis
@@ -55,7 +60,7 @@ pca_value<-issuer%>%
   select(intra_day,ent_value,trail_pe,for_pe,peg,ttm,mrq,rev,ebitda)%>%
   prcomp(scale.=TRUE)
 rownames(pca_value$x)<-pull(issuer,Symbol)
-biplot(pca_value, expand=10,xlim=c(-0.2,0.6),ylim=c(-0.02,0.1))
+biplot(pca_value, expand=10,xlim=c(-0.5,0.6),ylim=c(-0.05,0.1))
 ```
 
 ```{r}
