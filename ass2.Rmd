@@ -13,6 +13,16 @@ library(ggplot2)
 stocks <- read.csv("stocks.csv")
 nrow(stocks)
 head(stocks)
+stocks <- na.omit(stocks)%>%
+  rename(intra_day=Market.cap..intra.day.)%>%
+  rename(ent_value=Enterprise.value)%>%
+  rename(trail_pe=Trailing.P.E)%>%
+  rename(for_pe=Forward.P.E)%>%
+  rename(peg=PEG.ratio..5.yr.expected.)%>%
+  rename(ttm=Price.sales..ttm.)%>%
+  rename(mrq=Price.book..mrq.)%>%
+  rename(rev=Enterprise.value.revenue)%>%
+  rename(ebitda=Enterprise.value.EBITDA)
 #stocks <- na.omit(stocks)
 #nrow(stocks)
 ```
@@ -34,6 +44,18 @@ summary(stocks)
 - The enterprise value to earnings before interest, taxes, depreciation, and amortization ratio (EV/EBITDA) compares the value of a company—debt included—to the company’s cash earnings less non-cash expenses. The EV/EBITDA metric is a popular valuation tool that helps investors compare companies in order to make an investment decision. EV calculates a company's total value or assessed worth, while EBITDA measures a company's overall financial performance and profitability. Typically, when evaluating a company, *an EV/EBITDA value below 10 is seen as healthy*. It's best to use the EV/EBITDA metric when comparing companies within the same industry or sector.
 ```{r}
 stocks %>% filter(Enterprise.value.EBITDA<10) %>% ggplot(aes(Enterprise.value.EBITDA, Enterprise.value.EBITDA)) + geom_boxplot() + facet_wrap(~Industry)
+```
+
+## Value Analysis
+```{r value}
+issuer<-stocks%>%
+  select(Symbol,intra_day,ent_value,trail_pe,for_pe,peg,ttm,mrq,rev,ebitda)
+
+pca_value<-issuer%>%
+  select(intra_day,ent_value,trail_pe,for_pe,peg,ttm,mrq,rev,ebitda)%>%
+  prcomp(scale.=TRUE)
+rownames(pca_value$x)<-pull(issuer,Symbol)
+biplot(pca_value, expand=10,xlim=c(-0.2,0.6),ylim=c(-0.02,0.1))
 ```
 
 ```{r}
