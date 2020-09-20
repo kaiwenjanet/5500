@@ -6,6 +6,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
+library(ggplot2)
 ```
 
 ```{r}
@@ -22,18 +23,50 @@ head(stocks)
 summary(stocks)
 ```
 
+- Market capitalization refers to how much a company is worth as determined by the stock market. It is defined as the total market value of all outstanding shares. To calculate a company's market cap, multiply the number of outstanding shares by the current market value of one share. Companies are typically divided according to market capitalization: large-cap (\$10 billion or more), mid-cap (\$2 billion to \$10 billion), and small-cap (\$300 million to \$2 billion). Enterprise value includes in its calculation the market capitalization of a company but also short-term and long-term debt as well as any cash on the company's balance sheet. Enterprise value is used as the basis for many financial ratios that measure the performance of a company.
+- Enterprise value (EV) is a measure of a company's total value, often used as a more comprehensive alternative to equity market capitalization.
 - Trailing P/E is calculated by dividing the current market value, or share price, by the earnings per share over the previous 12 months.
 - The forward P/E ratio estimates a company's likely earnings per share for the next 12 months.
 - The PEG ratio enhances the P/E ratio by adding in expected earnings growth into the calculation. The PEG ratio is considered to be an indicator of a stock's true value, and similar to the P/E ratio, a *lower PEG may indicate that a stock is undervalued*.
-- The P/S ratio is a key analysis and valuation tool that shows how much investors are willing to pay per dollar of sales for a stock. The P/S ratio is typically calculated by dividing the stock price by the underlying company's sales per share.A low ratio could imply the stock is undervalued while a ratio that is higher-than-average could indicate that the stock is overvalued.
-- The P/B ratio measures the market's valuation of a company relative to its book value.The market value of equity is typically higher than the book value of a company.P/B ratio is used by value investors to identify potential investments. P/B ratios under 1 are typically considered solid investments.
-- The enterprise value-to-revenue (EV/R) multiple helps compares a company’s revenues to its enterprise value. The lower the better, in that, a lower EV/R multiple signals a company is undervalued.
+- The P/S ratio is a key analysis and valuation tool that shows *how much investors are willing to pay per dollar of sales for a stock.* The P/S ratio is typically calculated by dividing the stock price by the underlying company's sales per share.A low ratio could imply the stock is undervalued while a ratio that is higher-than-average could indicate that the stock is overvalued.
+- The P/B ratio measures the market's valuation of a company relative to its book value.*The market value of equity is typically higher than the book value of a company.* P/B ratio is used by value investors to identify potential investments. P/B ratios under 1 are typically considered solid investments.
+- The enterprise value-to-revenue (EV/R) multiple helps compares a company’s revenues to its enterprise value. *The lower the better, in that, a lower EV/R multiple signals a company is undervalued.*
 - The enterprise value to earnings before interest, taxes, depreciation, and amortization ratio (EV/EBITDA) compares the value of a company—debt included—to the company’s cash earnings less non-cash expenses. The EV/EBITDA metric is a popular valuation tool that helps investors compare companies in order to make an investment decision. EV calculates a company's total value or assessed worth, while EBITDA measures a company's overall financial performance and profitability. Typically, when evaluating a company, *an EV/EBITDA value below 10 is seen as healthy*. It's best to use the EV/EBITDA metric when comparing companies within the same industry or sector.
 ```{r}
-stocks %>% filter(Enterprise.value.EBITDA<10)
+stocks %>% filter(Enterprise.value.EBITDA<10) %>% ggplot(aes(Enterprise.value.EBITDA, Enterprise.value.EBITDA)) + geom_boxplot() + facet_wrap(~Industry)
 ```
 
 ```{r}
 stocks %>% filter(Industry == "Technology")
 ```
+
+## Risk 
+```{r}
+stocks %>% select(Total.ESG.risk.score, Environmental.Risk.Score, Social.Risk.Score, Governance.Risk.Score)
+```
+
+```{r}
+d <- apply(cbind(stocks$Environmental.Risk.Score, stocks$Social.Risk.Score, stocks$Governance.Risk.Score), 1, sum)
+```
+
+```{r}
+all(stocks$Total.ESG.risk.score == d)
+```
+
+```{r risk data}
+# checking if total esg risk score = environmrnt + social + government 
+stocks_tesg <- stocks[stocks[,15] == d,]
+d <- apply(cbind(stocks_tesg$Environmental.Risk.Score, stocks_tesg$Social.Risk.Score, stocks_tesg$Governance.Risk.Score), 1, sum)
+all(stocks_tesg$Total.ESG.risk.score == d, na.rm = TRUE)
+stocks_risk <- stocks_tesg %>% select(Symbol, Environmental.Risk.Score, Social.Risk.Score, Governance.Risk.Score)
+stocks_risk <- na.omit(stocks_risk)
+```
+
+```{r pca_risk}
+pca_risk <- stocks_risk %>% select_if(is.numeric) %>% prcomp(scale. = TRUE)
+rownames(pca_risk$x) <- pull(stocks_risk, Symbol)
+biplot(pca_risk, xlim=c(-0.35,0.25), cex=0.7)
+```
+
+
 
