@@ -1,0 +1,148 @@
+Name,Symbol,Market,Sector,Industry,Market cap (intra-day),Enterprise value,Trailing P/E,Forward P/E,PEG ratio (5-yr expected),Price/sales (ttm),Price/book (mrq),Enterprise value/revenue,Enterprise value/EBITDA,Total ESG risk score,Environmental Risk Score,Social Risk Score,Governance Risk Score
+CDW Corporation,CDW,NDX,Information Technology Services,Technology,16.46,20.19,22.53,18.54,2.26,0.89,18.5,1.09,13.98,11,4,3,4
+"VeriSign, Inc.",VRSN,NDX,Software—Infrastructure,Technology,23.94,24.57,30.95,35.82,3.86,19.22,NA,19.72,28.46,24,3,12,8
+"Verisk Analytics, Inc.",VRSK,NDX,Consulting Services,Industrials,30.37,33.57,63.92,35.86,4.41,11.37,14.62,12.57,30.73,21,0,15,6
+Microchip Technology Incorporated,MCHP,NDX,Semiconductors,Technology,25.81,34.41,45.85,15.01,1.98,4.89,4.49,6.53,18.04,34,16,9,9
+"JD.com, Inc.",JD,NDX,Internet Retail,Consumer Cyclical,95.77,91.58,423.74,31.3,61.95,NA,9.27,NA,NA,25,7,9,9
+Intuit Inc.,INTU,NDX,Software—Application,Technology,79.26,75.49,59.95,37.29,4.19,11.56,16.72,11.01,43.26,18,1,11,6
+"Activision Blizzard, Inc.",ATVI,NDX,Electronic Gaming & Multimedia,Communication Services,62.95,59.26,40.43,26.88,1.34,9.76,4.83,9.19,28.84,17,0,10,6
+"Illumina, Inc.",ILMN,NDX,Diagnostics & Research,Healthcare,56.27,55.2,60.35,49.84,6.04,15.82,12.14,15.52,46.07,11,1,4,6
+Sirius XM Holdings Inc.,SIRI,NDX,Broadcasting,Communication Services,25.71,34.18,25.52,23.48,1.89,3.21,NA,4.27,14.97,17,0,8,8
+"Tesla, Inc.",TSLA,NDX,Auto Manufacturers,Consumer Cyclical,277.21,287.72,769.92,98.25,0.42,10.78,28.07,11.19,83.52,31,3,17,11
+Western Digital Corporation,WDC,NDX,Computer Hardware,Technology,12.82,19.65,NA,7.33,-1.02,0.8,1.39,1.22,14.64,14,3,5,6
+"Fiserv, Inc.",FISV,NDX,Information Technology Services,Technology,67.25,90.64,56.21,18.81,1.32,5.4,2.13,7.28,22.63,19,0,12,7
+"Zoom Video Communications, Inc.",ZM,NDX,Telecom Services,Communication Services,70.53,70.17,1479.29,161.29,5.05,85.09,78.2,84.66,1117.51,NA,NA,NA,NA
+Starbucks Corporation,SBUX,NDX,Restaurants,Consumer Cyclical,89.59,112.02,68.06,28.49,28.86,3.72,NA,4.66,33.24,21,3,13,5
+Amgen Inc.,AMGN,NDX,Drug Manufacturers—General,Healthcare,144.24,168.63,20.11,14.62,2.3,5.94,13.53,6.94,13.96,20,0,14,7
+"Dollar Tree, Inc.",DLTR,NDX,Discount Stores,Consumer Defensive,22.29,31.21,27.73,16.66,2.72,0.93,3.42,1.3,13.62,20,4,10,6
+"Maxim Integrated Products, Inc.",MXIM,NDX,Semiconductors,Technology,18.4,18.02,28.63,25.28,4.74,8.4,11.1,8.22,22.39,24,9,7,8
+"Align Technology, Inc.",ALGN,NDX,Medical Devices,Healthcare,23.32,22.97,13.79,43.36,9.24,10.8,8.2,10.63,65.08,NA,NA,NA,NA
+Texas Instruments Incorporated,TXN,NDX,Semiconductors,Technology,118.06,122.41,24.2,23.65,2.55,8.62,15.44,8.94,19.45,17,6,5,6
+"Baidu, Inc.",BIDU,NDX,Internet Content & Information,Communication Services,40.67,41.3,9.19,13.79,100.83,NA,1.69,NA,NA,26,3,14,10
+PACCAR Inc,PCAR,NDX,Farm & Heavy Construction Machinery,Industrials,29.25,37.23,17.85,17.89,-5.87,1.41,2.99,1.8,14.8,35,8,17,9
+"Citrix Systems, Inc.",CTXS,NDX,Software—Application,Technology,17.49,18.58,23.87,22.89,2.52,5.46,NA,5.8,23.07,18,1,11,6
+"Mondelez International, Inc.",MDLZ,NDX,Confectioners,Consumer Defensive,79.61,99.93,23.9,19.92,3.75,3.08,3.07,3.86,20.07,26,10,11,6
+"Applied Materials, Inc.",AMAT,NDX,Semiconductor Equipment & Materials,Technology,59.04,59.32,20.54,14.95,0.8,3.83,6.54,3.84,14.68,15,5,4,5
+"Marriott International, Inc.",MAR,NDX,Lodging,Consumer Cyclical,27.73,39.71,30.47,24.5,-21.61,5.54,NA,7.94,17.27,26,10,11,5
+"MercadoLibre, Inc.",MELI,NDX,Internet Retail,Consumer Cyclical,55.05,52.98,NA,1044.81,-62.38,22.25,29.49,21.41,-465.46,NA,NA,NA,NA
+"DocuSign, Inc.",DOCU,NDX,Software—Application,Technology,39.26,38.3,NA,257.76,13.14,37.14,75.07,36.23,-264.52,NA,NA,NA,NA
+"Moderna, Inc.",MRNA,NDX,Biotechnology,Healthcare,28.82,28.45,NA,51.75,-3.31,548.15,17.51,541.16,-56.47,NA,NA,NA,NA
+Cerner Corporation,CERN,NDX,Health Information Services,Healthcare,21.69,23.27,43.03,21.66,1.96,3.86,5.41,4.14,20.22,20,0,13,7
+The Walt Disney Company,DIS,DJI,Entertainment,Communication Services,208.91,267.6,38.96,38.94,713.67,2.67,2.29,3.42,18.4,16,0,8,8
+Microsoft Corporation,MSFT,DJI,Software—Infrastructure,Technology,1540000,1490000,35.4,27.78,2.11,10.79,13.05,10.42,22.66,15,0,9,5
+"NIKE, Inc.",NKE,DJI,Footwear & Accessories,Consumer Cyclical,151.03,155.49,60.51,29.61,1.78,4.04,18.85,4.16,36.72,17,2,7,8
+Intel Corporation,INTC,DJI,Semiconductors,Technology,204.1,216.97,8.82,10.17,1.15,2.59,2.49,2.75,5.69,15,4,5,6
+Johnson & Johnson,JNJ,DJI,Drug Manufacturers—General,Healthcare,386.6,397.07,25.83,16.24,3.67,4.8,6.14,4.93,14.59,33,1,20,11
+Verizon Communications Inc.,VZ,DJI,Telecom Services,Communication Services,237.11,367,12.4,11.6,9.79,1.83,3.78,2.83,7.72,20,2,12,6
+Pfizer Inc.,PFE,DJI,Drug Manufacturers—General,Healthcare,215.19,260.33,15.34,12.03,2.52,4.37,3.31,5.29,13.01,30,2,16,12
+McDonald's Corporation,MCD,DJI,Restaurants,Consumer Cyclical,145.3,192.82,30.89,24.15,8.72,7.6,NA,10.09,21.8,25,4,15,6
+Walmart Inc.,WMT,DJI,Discount Stores,Consumer Defensive,368.49,437.63,24.74,23.92,4.69,0.69,5.4,0.82,12.8,28,4,18,7
+"Merck & Co., Inc.",MRK,DJI,Drug Manufacturers—General,Healthcare,199.38,220.94,20.02,12.99,2.39,4.15,7.61,4.59,11.59,27,2,14,11
+UnitedHealth Group Incorporated,UNH,DJI,Healthcare Plans,Healthcare,289.47,316.72,17.16,16.47,1.42,1.17,4.41,1.28,11.95,21,0,15,6
+"Cisco Systems, Inc.",CSCO,DJI,Communication Equipment,Technology,196.08,185.72,18.41,14.74,2.42,3.88,5.49,3.67,11.48,12,1,6,6
+"The Home Depot, Inc.",HD,DJI,Home Improvement Retail,Consumer Cyclical,286.42,319.48,26.45,23.71,5.57,2.55,NA,2.85,17.87,13,3,7,4
+The Coca-Cola Company,KO,DJI,Beverages—Non-Alcoholic,Consumer Defensive,204.85,240.5,22.5,23.15,8.97,5.97,11.71,7.01,21.38,26,9,12,5
+"The Travelers Companies, Inc.",TRV,DJI,Insurance—Property & Casualty,Financial Services,29.35,30.38,16.43,11.16,3.21,0.94,1.09,0.97,9.4,22,2,9,11
+Apple Inc.,AAPL,DJI,Consumer Electronics,Technology,1670000,1670000,30.23,25.7,2.78,6.22,21.21,6.24,21.63,24,0,13,10
+"Walgreens Boots Alliance, Inc.",WBA,DJI,Pharmaceutical Retailers,Healthcare,35.22,77.26,47.87,7.64,4.41,0.25,1.71,0.56,15.4,18,3,11,4
+"The Goldman Sachs Group, Inc.",GS,DJI,Capital Markets,Financial Services,68.62,-48.74,10.59,8.9,1.87,1.85,0.88,-1.31,NA,31,1,14,16
+International Business Machines Corporation,IBM,DJI,Information Technology Services,Technology,109.12,167.26,13.94,10.07,4.4,1.45,5.32,2.21,10.94,18,0,10,7
+American Express Company,AXP,DJI,Credit Services,Financial Services,76.21,86.7,19.47,13.9,3.33,2.22,3.62,2.53,NA,22,0,13,9
+Visa Inc.,V,DJI,Credit Services,Financial Services,426.11,401.96,34.93,33.17,3.6,18.62,14.22,17.57,25.97,17,0,10,7
+The Boeing Company,BA,DJI,Aerospace & Defense,Industrials,91.39,122.93,NA,31.39,-2.38,1.37,NA,1.85,-43.72,39,8,21,10
+3M Company,MMM,DJI,Specialty Industrial Machinery,Industrials,87.62,106.55,17.26,16.83,8.69,2.79,8.03,3.4,11.72,35,13,14,8
+JPMorgan Chase & Co.,JPM,DJI,Banks—Diversified,Financial Services,295.68,-263.93,12.99,11.06,-12.61,3.04,1.26,-2.71,NA,22,1,12,9
+Caterpillar Inc.,CAT,DJI,Farm & Heavy Construction Machinery,Industrials,74,107.09,14.45,18.94,-4.03,1.45,5.22,2.1,10.71,37,7,20,10
+Dow Inc.,DOW,DJI,Chemicals,Basic Materials,30.93,48.91,NA,19.5,-5.49,0.79,2.47,1.25,8.61,NA,NA,NA,NA
+Chevron Corporation,CVX,DJI,Oil & Gas Integrated,Energy,161.06,192.95,41.98,32.55,68.23,1.19,1.12,1.42,6.76,40,18,12,10
+Exxon Mobil Corporation,XOM,DJI,Oil & Gas Integrated,Energy,177.13,241.03,15.71,25.85,-27.96,0.71,0.97,0.97,8.53,32,16,9,8
+Schroders plc,SDR.L,FTSE,Asset Management,Financial Services,9.6,3.83,16.96,NA,NA,3.68,217.7,1.47,5.16,23,3,11,10
+Whitbread PLC,WTB.L,FTSE,Restaurants,Consumer Cyclical,4.61,5.98,15.77,NA,NA,2.23,81.41,2.89,9.48,19,8,7,3
+Compass Group PLC,CPG.L,FTSE,Restaurants,Consumer Cyclical,19.08,22.1,16.48,NA,NA,0.76,480.67,0.88,12.17,19,3,12,4
+Auto Trader Group plc,AUTO.L,FTSE,Internet Content & Information,Communication Services,5.11,5.44,23.94,NA,NA,13.85,3435.06,14.74,20.99,NA,NA,NA,NA
+SSE plc,SSE.L,FTSE,Utilities—Diversified,Utilities,13.64,24.28,NA,NA,NA,2.01,275.27,3.57,16.48,33,19,8,6
+Tesco PLC,TSCO.L,FTSE,Grocery Stores,Consumer Defensive,21.35,35.45,22.02,NA,NA,0.33,159.59,0.55,8.59,18,4,9,5
+Rentokil Initial plc,RTO.L,FTSE,Specialty Business Services,Industrials,10.34,11.15,36.68,NA,NA,3.81,1025,4.11,22.47,18,11,4,4
+British American Tobacco p.l.c.,BATS.L,FTSE,Tobacco,Consumer Defensive,60.95,104.86,10.67,NA,NA,2.36,95.15,4.05,9.23,28,5,14,9
+Persimmon Plc,PSN.L,FTSE,Residential Construction,Consumer Cyclical,7.75,7.07,9.13,NA,NA,2.12,237.77,1.94,6.77,16,5,5,5
+Coca-Cola HBC AG,CCH.L,FTSE,Beverages—Non-Alcoholic,Consumer Defensive,7.37,7.35,14.12,NA,NA,NA,211.48,NA,NA,15,5,6,5
+Spirax-Sarco Engineering plc,SPX.L,FTSE,Specialty Industrial Machinery,Industrials,7.63,8.11,45.88,NA,NA,6.14,923.25,6.52,26.85,NA,NA,NA,NA
+Experian plc,EXPN.L,FTSE,Consulting Services,Industrials,25.21,28.99,37.08,NA,NA,4.87,1087.35,5.6,18.37,22,0,14,8
+Just Eat Takeaway.com N.V.,JET.L,FTSE,Internet Content & Information,Communication Services,5.06,5.15,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Ashtead Group plc,AHT.L,FTSE,Rental & Leasing Services,Industrials,11.08,16.68,15.28,NA,NA,2.19,371.7,3.3,7.3,19,7,6,7
+Rightmove plc,RMV.L,FTSE,Internet Content & Information,Communication Services,4.83,4.93,28.36,NA,NA,16.69,11765.96,17.05,22.9,NA,NA,NA,NA
+M&G plc,MNG.L,FTSE,Asset Management,Financial Services,4.12,6.04,3.68,NA,NA,0.12,79.96,0.18,1.47,NA,NA,NA,NA
+Rolls-Royce Holdings plc,RR.L,FTSE,Aerospace & Defense,Industrials,4.74,6.09,NA,NA,NA,0.29,NA,0.37,-29.29,29,10,13,6
+Standard Life Aberdeen plc,SLA.L,FTSE,Asset Management,Financial Services,5.67,5.69,22.64,NA,NA,1.47,87.53,1.48,2.89,20,1,9,9
+Vodafone Group Plc,VOD.L,FTSE,Telecom Services,Communication Services,31.81,32.96,NA,NA,NA,NA,46.25,NA,NA,18,3,8,7
+St. James's Place plc,STJ.L,FTSE,Financial Conglomerates,Financial Services,5.02,-1.74,17.92,NA,NA,5.8,489.33,-2.01,-9.02,27,3,13,11
+Associated British Foods plc,ABF.L,FTSE,Packaged Foods,Consumer Defensive,14.23,17.62,20.11,NA,NA,0.89,157.18,1.11,8.46,31,10,16,5
+GVC Holdings PLC,GVC.L,FTSE,Resorts & Casinos,Consumer Cyclical,3.99,6.29,NA,NA,NA,1.11,141.41,1.75,11.45,NA,NA,NA,NA
+Smiths Group plc,SMIN.L,FTSE,Specialty Industrial Machinery,Industrials,5.4,6.96,21.7,NA,NA,2.08,243.26,2.68,14.5,39,15,15,9
+Prudential plc,PRU.L,FTSE,Insurance—Life,Financial Services,29.01,43.69,36.82,NA,NA,0.31,148.03,0.47,15.39,23,2,10,11
+Royal Dutch Shell plc,RDSA.L,FTSE,Oil & Gas Integrated,Energy,88.91,172.93,9.48,NA,NA,0.28,50.44,0.54,4.12,75,56,88,80
+BAE Systems plc,BA.L,FTSE,Aerospace & Defense,Industrials,16.24,17.6,10.95,NA,NA,0.89,299.17,0.96,8.88,34,10,18,7
+Vonovia SE,VNA.DE,GDAXI,Real Estate Services,Real Estate,29.75,54.63,25.7,NA,NA,7.98,1.46,14.65,35.98,17,5,5,6
+E.ON SE,EOAN.DE,GDAXI,Utilities—Diversified,Utilities,26.09,61.19,28.18,15.63,0.99,0.52,4.08,1.22,17.26,24,8,10,6
+Linde plc,LIN.DE,GDAXI,Specialty Chemicals,Basic Materials,107.53,124.78,47.26,NA,NA,3.84,2.4,4.45,15.16,69,62,73,75
+Deutsche Telekom AG,DTE.DE,GDAXI,Telecom Services,Communication Services,68.11,164.64,17.53,14.8,1.46,0.82,2.19,1.97,6.83,17,2,7,7
+Henkel AG & Co. KGaA,HEN3.DE,GDAXI,Household & Personal Products,Consumer Defensive,33.81,39.82,17.44,NA,NA,1.68,1.96,1.98,10.7,21,6,7,8
+Beiersdorf Aktiengesellschaft,BEI.DE,GDAXI,Household & Personal Products,Consumer Defensive,22.9,21.89,31.89,NA,NA,2.99,3.77,2.86,16.77,23,8,7,8
+Deutsche Post AG,DPW.DE,GDAXI,Integrated Freight & Logistics,Industrials,42.39,57.03,19.75,NA,NA,0.67,2.94,0.89,12.93,19,5,8,6
+Infineon Technologies AG,IFX.DE,GDAXI,Semiconductors,Technology,26.11,24.05,33.77,NA,NA,3.27,2.63,3.01,12.23,18,7,5,6
+Deutsche Bank Aktiengesellschaft,DBK.DE,GDAXI,Banks—Regional,Financial Services,15.63,-123.16,NA,NA,NA,0.73,0.26,-5.73,NA,33,2,15,16
+Deutsche Lufthansa AG,LHA.DE,GDAXI,Airlines,Industrials,4.42,10.1,NA,NA,NA,0.13,0.5,0.29,3.33,24,8,11,5
+RWE Aktiengesellschaft,RWE.DE,GDAXI,Utilities—Diversified,Utilities,19.62,22.19,2.37,NA,NA,1.47,1.17,1.67,-33.01,38,19,11,8
+Daimler AG,DAI.DE,GDAXI,Auto Manufacturers,Consumer Cyclical,41.29,177.53,NA,NA,NA,0.26,0.72,1.12,25.14,27,9,7,10
+Bayer Aktiengesellschaft,BAYN.DE,GDAXI,Drug Manufacturers—General,Healthcare,55.59,90.72,12.81,7.55,2.07,1.26,1.14,2.06,8.02,38,3,25,11
+adidas AG,ADS.DE,GDAXI,Footwear & Accessories,Consumer Cyclical,45.9,48.48,33.45,29.68,1.23,2.04,6.81,2.15,20.01,14,2,4,7
+thyssenkrupp AG,TKA.DE,GDAXI,Metal Fabrication,Industrials,4.04,12.07,NA,NA,NA,0.1,5.37,0.29,27.01,38,16,13,9
+Bayerische Motoren Werke AG,BMW.DE,GDAXI,Auto Manufacturers,Consumer Cyclical,36.26,141.52,7.54,5.07,1.16,0.35,0.62,1.35,11.72,27,7,8,12
+BASF SE,BAS.DE,GDAXI,Chemicals,Basic Materials,43.76,67.07,68.74,NA,NA,0.75,1.17,1.16,10.67,30,14,7,9
+Continental Aktiengesellschaft,CON.DE,GDAXI,Auto Parts,Consumer Cyclical,17.16,22.55,NA,4.93,1.35,0.4,1.14,0.52,7.28,13,2,4,7
+Munchener Ruckversicherungs-Gesellschaft Aktiengesellschaft,MUV2.DE,GDAXI,Insurance—Reinsurance,Financial Services,31.65,31.16,13.93,13.78,NA,0.56,1.1,0.55,7.71,17,1,8,9
+Siemens Aktiengesellschaft,SIE.DE,GDAXI,Specialty Industrial Machinery,Industrials,89.27,127.99,22.08,NA,NA,1.02,2.01,1.47,12.95,29,10,7,13
+SAP SE,SAP.DE,GDAXI,Software—Application,Technology,157.32,176.59,34.87,NA,NA,5.6,5.47,6.28,23.64,13,1,5,6
+Allianz SE,ALV.DE,GDAXI,Insurance—Diversified,Financial Services,73.58,78.25,10.06,9.59,1.63,0.68,1.06,0.72,6.43,17,1,6,10
+Deutsche Borse AG,DB1.DE,GDAXI,Financial Data & Stock Exchanges,Financial Services,28.83,-97.47,26.31,NA,NA,8.2,4.73,-27.72,-54.08,16,1,7,7
+Fresenius SE & Co. KGaA,FRE.DE,GDAXI,Medical Care Facilities,Healthcare,27.66,61.46,12.57,NA,NA,0.77,1.38,1.71,10.13,19,0,9,10
+Fresenius Medical Care AG & Co. KGaA,FME.DE,GDAXI,Medical Care Facilities,Healthcare,22.55,36.16,18.36,NA,NA,1.26,1.81,2.03,11.77,20,0,9,11
+HeidelbergCement AG,HEI.DE,GDAXI,Building Materials,Basic Materials,9.62,20.22,8.82,NA,NA,0.51,0.57,1.07,6.99,28,15,4,9
+Volkswagen AG,VOW3.DE,GDAXI,Auto Manufacturers,Consumer Cyclical,66.81,237.59,5.98,NA,NA,0.27,0.52,0.96,8.68,42,13,12,17
+Wirecard AG,WDI.DE,GDAXI,Software—Application,Technology,-1.73,-1.73,0.48,NA,NA,0.09,0.1,-0.67,-2.33,27,0,12,15
+Hang Seng Bank Limited,0011.HK,HSI,Banks—Regional,Financial Services,236.88,105.6,9.7,NA,NA,6.38,1.32,2.85,NA,22,1,10,10
+Power Assets Holdings Limited,0006.HK,HSI,Utilities—Independent Power Producers,Utilities,91.13,89.47,12.78,NA,NA,67.61,1.07,66.37,53.42,44,23,13,9
+Henderson Land Development Company Limited,0012.HK,HSI,Real Estate Services,Real Estate,140.39,228.68,8.26,NA,NA,5.81,0.44,9.46,23.37,22,4,7,10
+Galaxy Entertainment Group Limited,0027.HK,HSI,Resorts & Casinos,Consumer Cyclical,225.01,209.5,17.24,NA,NA,4.34,3.06,4.04,13.91,26,3,10,13
+BOC Hong Kong (Holdings) Limited,2388.HK,HSI,Banks—Regional,Financial Services,230.49,-7.02,7.16,NA,NA,4.09,0.76,-0.12,NA,26,2,11,13
+Wharf Real Estate Investment Company Limited,1997.HK,HSI,Real Estate Services,Real Estate,85.01,133.22,21.71,NA,NA,5.3,0.39,8.3,10.25,NA,NA,NA,NA
+Hang Lung Properties Limited,0101.HK,HSI,Real Estate Services,Real Estate,86.63,124.63,14.06,NA,NA,9.78,0.62,14.06,20.91,20,3,8,9
+China Mengniu Dairy Company Limited,2319.HK,HSI,Packaged Foods,Consumer Defensive,145.4,146.19,31.52,NA,NA,NA,40.52,NA,NA,39,15,16,7
+CLP Holdings Limited,0002.HK,HSI,Utilities—Regulated Electric,Utilities,183.04,234.38,39.37,NA,NA,2.14,1.67,2.73,10.73,30,14,9,7
+WH Group Limited,0288.HK,HSI,Packaged Foods,Consumer Defensive,101.57,104.16,NA,NA,NA,4.21,11.69,4.32,47.22,35,15,13,8
+"Ping An Insurance (Group) Company of China, Ltd.",2318.HK,HSI,Insurance—Life,Financial Services,1810000,1520000,8.79,NA,NA,NA,18.83,NA,NA,26,2,8,16
+CNOOC Limited,0883.HK,HSI,Oil & Gas E&P,Energy,376.82,380.4,5.51,NA,NA,NA,6.26,NA,NA,42,20,11,11
+Industrial and Commercial Bank of China Limited,1398.HK,HSI,Banks—Diversified,Financial Services,2740000,1680000,4.84,NA,NA,NA,4.81,NA,NA,34,2,16,15
+Tencent Holdings Limited,0700.HK,HSI,Internet Content & Information,Communication Services,5110000,5130000,48.57,NA,NA,NA,105.81,NA,NA,25,3,13,9
+Hengan International Group Company Limited,1044.HK,HSI,Household & Personal Products,Consumer Defensive,78.04,79.05,17.87,NA,NA,NA,31.1,NA,NA,32,13,9,10
+AAC Technologies Holdings Inc.,2018.HK,HSI,Communication Equipment,Technology,71.97,70.97,28.96,NA,NA,NA,27.18,NA,NA,20,9,4,7
+Sands China Ltd.,1928.HK,HSI,Resorts & Casinos,Consumer Cyclical,240.22,239.69,15.17,NA,NA,27.27,54,27.21,79.52,19,2,8,9
+Sun Hung Kai Properties Limited,0016.HK,HSI,Real Estate—Development,Real Estate,272.12,384.93,6.06,NA,NA,3.13,0.47,4.43,9.61,19,5,6,9
+CITIC Limited,0267.HK,HSI,Conglomerates,Industrials,212.07,449.85,3.94,NA,NA,0.29,0.36,0.62,1.67,52,20,18,13
+CK Infrastructure Holdings Limited,1038.HK,HSI,Utilities—Regulated Electric,Utilities,106.16,133.23,9.6,NA,NA,13.29,0.9,16.68,29.01,45,21,14,9
+The Hong Kong and China Gas Company Limited,0003.HK,HSI,Utilities—Regulated Gas,Utilities,197.26,233.52,28.29,NA,NA,4.86,2.96,5.75,22.09,23,9,7,7
+China Life Insurance Company Limited,2628.HK,HSI,Insurance—Life,Financial Services,961.61,519.51,7.81,NA,NA,NA,10.07,NA,NA,27,3,10,14
+New World Development Company Limited,0017.HK,HSI,Real Estate—Diversified,Real Estate,95.97,250.5,1.32,NA,NA,1.6,0.39,4.18,16.54,17,2,5,9
+CSPC Pharmaceutical Group Limited,1093.HK,HSI,Drug Manufacturers—General,Healthcare,120.19,114.35,28.91,NA,NA,NA,5.85,NA,NA,37,2,20,15
+Antofagasta plc,ANTO.L,FTSE,Copper,Basic Materials,10.13,12.89,20.2,NA,NA,2.04,137.25,2.6,5.91,29,14,9,6
+Reckitt Benckiser Group plc,RB.L,FTSE,Household & Personal Products,Consumer Defensive,55.55,66.89,NA,NA,NA,4.11,557.01,4.95,16.85,23,6,10,7
+Royal Dutch Shell plc,RDSB.L,FTSE,Oil & Gas Integrated,Energy,88.68,169.38,9.11,NA,NA,0.28,48.49,0.53,4.04,37,19,10,9
+MERCK Kommanditgesellschaft auf Aktien,MRK.DE,GDAXI,Drug Manufacturers—Specialty & Generic,Healthcare,47.22,60.8,29.67,NA,NA,2.81,2.54,3.62,13.43,24,1,13,9
+Covestro AG,1COV.DE,GDAXI,Specialty Chemicals,Basic Materials,6.36,7.83,41.5,3.59,0.62,0.58,1.21,0.71,10.03,20,11,3,6
+Techtronic Industries Company Limited,0669.HK,HSI,Tools & Accessories,Industrials,150.06,150.1,31.26,NA,NA,19.57,44.18,19.58,183.47,25,10,10,6
+Sino Land Company Limited,0083.HK,HSI,Real Estate—Development,Real Estate,65.45,29.21,9.02,NA,NA,9.95,0.44,4.44,9.09,19,5,6,8
+China Petroleum & Chemical Corporation,0386.HK,HSI,Oil & Gas Integrated,Energy,508.95,414.06,6.41,NA,NA,NA,3.75,NA,NA,52,20,19,12
+China Mobile Limited,0941.HK,HSI,Telecom Services,Communication Services,1090000,1090000,9.12,NA,NA,NA,6.93,NA,NA,20,3,9,7
+China Resources Land Limited,1109.HK,HSI,Real Estate—Development,Real Estate,230.33,232.47,7.02,NA,NA,NA,1.56,NA,NA,21,5,7,8
+AIA Group Limited,1299.HK,HSI,Insurance—Life,Financial Services,856.59,796.11,16.54,NA,NA,17.87,14.84,16.6,85.47,15,0,7,7
+The Procter & Gamble Company,PG,DJI,Household & Personal Products,Consumer Defensive,325.35,340.46,70.81,25.13,3.38,4.62,7.29,4.84,17.86,26,8,9,8
