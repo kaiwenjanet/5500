@@ -68,6 +68,22 @@ biplot(pca_value, expand=10,xlim=c(-0.5,0.6),ylim=c(-0.05,0.1))
 stocks %>% filter(Industry == "Technology")
 ```
 
+## Value analysis(All)
+
+```{r}
+all_value <- stocks %>% 
+  select(intra_day:ebitda) %>%
+  prcomp(scale. = TRUE)
+summary(all_value)
+rownames(all_value$x) <- pull(stocks, Symbol)
+biplot(all_value)
+#all_value$rotation
+screeplot(all_value, type = "lines")
+```
+
+
+
+
 ## Risk 
 ```{r first_check}
 d <- apply(cbind(stocks$Environmental.Risk.Score, stocks$Social.Risk.Score, stocks$Governance.Risk.Score), 1, sum)
