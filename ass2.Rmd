@@ -87,6 +87,22 @@ stocks %>%
   facet_wrap(~Industry)
 ```
 
+### Considering outliers
+- outliers in `intra_day` and `ent_value`: MSFT & AAPL
+- outliers in `trail_pe`: TSLA
+- outliers in `for_pe`: ILMN & TSLA
+- outliers in `peg`: DIS, VZ, KO, MMM, CVX, PCAR, CAT, XOM
+- outliers in `ttm`: ILMN, V
+- outliers in `mrq`: TSLA
+- outliers in `rev`: ILMN, V
+- outliers in `ebitda`: INTU, ILMN, TSLA, NKE
+
+```{r}
+df <- issuer[!(issuer$Symbol %in% c("MSFT", "AAPL", "TSLA", "ILMN", "DIS", "VZ", "KO", "MMM", "CVX", "PCAR", "CAT", "XOM", "V", "INTU", "NKE")),]
+```
+
+
+
 ## Value Analysis
 ```{r value}
 issuer<-stocks%>%
