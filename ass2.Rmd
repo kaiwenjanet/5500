@@ -7,24 +7,32 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 library(dplyr)
 library(ggplot2)
+library(tidyverse)
 ```
 
+
 ```{r data}
-stocks <- read.csv("stocks.csv")
-nrow(stocks)
-head(stocks)
-stocks <- na.omit(stocks)%>%
-  rename(intra_day=Market.cap..intra.day.)%>%
-  rename(ent_value=Enterprise.value)%>%
-  rename(trail_pe=Trailing.P.E)%>%
-  rename(for_pe=Forward.P.E)%>%
-  rename(peg=PEG.ratio..5.yr.expected.)%>%
-  rename(ttm=Price.sales..ttm.)%>%
-  rename(mrq=Price.book..mrq.)%>%
-  rename(rev=Enterprise.value.revenue)%>%
-  rename(ebitda=Enterprise.value.EBITDA)
+stocks_ori <- read.csv("stocks.csv")
+#nrow(stocks)
+#head(stocks)
+stocks <- na.omit(stocks_ori)%>%
+  rename(intra_day=Market.cap..intra.day.,
+         ent_value=Enterprise.value,
+         trail_pe=Trailing.P.E,
+         for_pe=Forward.P.E,
+         peg=PEG.ratio..5.yr.expected.,
+         ttm=Price.sales..ttm.,
+         mrq=Price.book..mrq.,
+         rev=Enterprise.value.revenue,
+         ebitda=Enterprise.value.EBITDA,
+         tot_risk = Total.ESG.risk.score,
+         envir_risk = Environmental.Risk.Score,
+         social_risk = Social.Risk.Score,
+         gover_risk = Governance.Risk.Score)
+  
 #stocks <- na.omit(stocks)
 #nrow(stocks)
+glimpse(stocks)
 ```
 
 147 variables with 102 having the missing value
@@ -61,7 +69,7 @@ pca_value<-issuer%>%
   select(intra_day,ent_value,trail_pe,for_pe,peg,ttm,mrq,rev,ebitda)%>%
   prcomp(scale.=TRUE)
 rownames(pca_value$x)<-pull(issuer,Symbol)
-biplot(pca_value, expand=10,xlim=c(-0.5,0.6),ylim=c(-0.05,0.1))
+biplot(pca_value, expand=10,xlim=c(-0.2,0.2),ylim=c(-0.01,0.05),cex=0.7)
 ```
 
 ```{r}
