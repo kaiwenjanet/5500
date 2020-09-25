@@ -39,7 +39,7 @@ library(tidyverse)
 
 
 ```{r data}
-stocks_ori <- read.csv("stocks.csv")
+stocks_ori <- read_csv("stocks.csv")
 #nrow(stocks)
 #head(stocks)
 stocks <- na.omit(stocks_ori)%>%
