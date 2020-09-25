@@ -35,6 +35,7 @@ knitr::opts_chunk$set(echo = FALSE, cache=TRUE, messages=FALSE, warning=FALSE)
 library(dplyr)
 library(ggplot2)
 library(tidyverse)
+library(plotly)
 ```
 
 
@@ -43,23 +44,23 @@ stocks_ori <- read_csv("stocks.csv")
 #nrow(stocks)
 #head(stocks)
 stocks <- na.omit(stocks_ori)%>%
-  rename(intra_day=Market.cap..intra.day.,
-         ent_value=Enterprise.value,
-         trail_pe=Trailing.P.E,
-         for_pe=Forward.P.E,
-         peg=PEG.ratio..5.yr.expected.,
-         ttm=Price.sales..ttm.,
-         mrq=Price.book..mrq.,
-         rev=Enterprise.value.revenue,
-         ebitda=Enterprise.value.EBITDA,
-         tot_risk = Total.ESG.risk.score,
-         envir_risk = Environmental.Risk.Score,
-         social_risk = Social.Risk.Score,
-         gover_risk = Governance.Risk.Score)
+  rename(intra_day=`Market cap (intra-day)`,
+         ent_value=`Enterprise value`,
+         trail_pe=`Trailing P/E`,
+         for_pe=`Forward P/E`,
+         peg=`PEG ratio (5-yr expected)`,
+         ttm=`Price/sales (ttm)`,
+         mrq=`Price/book (mrq)`,
+         rev=`Enterprise value/revenue`,
+         ebitda=`Enterprise value/EBITDA`,
+         tot_risk = `Total ESG risk score`,
+         envir_risk = `Environmental Risk Score`,
+         social_risk = `Social Risk Score`,
+         gover_risk = `Governance Risk Score`)
   
 #stocks <- na.omit(stocks)
 #nrow(stocks)
-#glimpse(stocks)
+glimpse(stocks_ori)
 ```
 
 147 variables with 102 having the missing value
@@ -99,6 +100,7 @@ stocks %>%
 
 ```{r}
 df <- issuer[!(issuer$Symbol %in% c("MSFT", "AAPL", "TSLA", "ILMN", "DIS", "VZ", "KO", "MMM", "CVX", "PCAR", "CAT", "XOM", "V", "INTU", "NKE")),]
+view(df)
 ```
 
 
@@ -136,11 +138,12 @@ screeplot(all_value, type = "lines")
 
 
 ## Risk 
-```{r risk_df}
+```{r risk-df}
 risk <- subset(stocks[(stocks$Symbol %in% df$Symbol),], select = c("Symbol", "tot_risk", "envir_risk", "social_risk", "gover_risk"))
+view(risk)
 ```
 
-```{r first_check, eval=FALSE}
+```{r first-check, eval=FALSE}
 d <- apply(cbind(risk$envir_risk, risk$social_risk, risk$gover_risk), 1, sum)
 all(risk$tot_risk == d)
 ```
@@ -154,10 +157,10 @@ head(risk_tesg)
 nrow(risk_tesg)
 ```
 
-```{r pca_risk, fig.height=5,eval=FALSE}
+```{r pca-risk, fig.height=5,eval=FALSE}
 pca_risk <- risk_tesg %>% select_if(is.numeric) %>% prcomp(scale. = TRUE)
 rownames(pca_risk$x) <- pull(risk_tesg, Symbol)
-biplot(pca_risk, ylim = c(-0.5, 0.3), cex = 0.7)
+biplot(pca_risk, xlim = c(-0.5, 0.5), ylim = c(-0.6, 0.4),  cex = 0.7)
 ```
 
 
