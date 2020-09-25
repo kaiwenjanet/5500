@@ -87,6 +87,22 @@ stocks %>%
   facet_wrap(~Industry)
 ```
 
+### Considering outliers
+- outliers in `intra_day` and `ent_value`: MSFT & AAPL
+- outliers in `trail_pe`: TSLA
+- outliers in `for_pe`: ILMN & TSLA
+- outliers in `peg`: DIS, VZ, KO, MMM, CVX, PCAR, CAT, XOM
+- outliers in `ttm`: ILMN, V
+- outliers in `mrq`: TSLA
+- outliers in `rev`: ILMN, V
+- outliers in `ebitda`: INTU, ILMN, TSLA, NKE
+
+```{r}
+df <- issuer[!(issuer$Symbol %in% c("MSFT", "AAPL", "TSLA", "ILMN", "DIS", "VZ", "KO", "MMM", "CVX", "PCAR", "CAT", "XOM", "V", "INTU", "NKE")),]
+```
+
+
+
 ## Value Analysis
 ```{r value}
 issuer<-stocks%>%
@@ -120,23 +136,28 @@ screeplot(all_value, type = "lines")
 
 
 ## Risk 
+```{r risk_df}
+risk <- subset(stocks[(stocks$Symbol %in% df$Symbol),], select = c("Symbol", "tot_risk", "envir_risk", "social_risk", "gover_risk"))
+```
+
 ```{r first_check, eval=FALSE}
-d <- apply(cbind(stocks$Environmental.Risk.Score, stocks$Social.Risk.Score, stocks$Governance.Risk.Score), 1, sum)
-all(stocks$Total.ESG.risk.score == d)
+d <- apply(cbind(risk$envir_risk, risk$social_risk, risk$gover_risk), 1, sum)
+all(risk$tot_risk == d)
 ```
 
 ```{r risk data, eval=FALSE}
 # checking if total esg risk score = environmrnt + social + government 
-stocks_tesg <- stocks[stocks[,15] == d,]
-d <- apply(cbind(stocks_tesg$Environmental.Risk.Score, stocks_tesg$Social.Risk.Score, stocks_tesg$Governance.Risk.Score), 1, sum)
-all(stocks_tesg$Total.ESG.risk.score == d, na.rm = TRUE)
-stocks_risk <- stocks_tesg %>% select(Symbol, Environmental.Risk.Score, Social.Risk.Score, Governance.Risk.Score)
+risk_tesg <- risk[risk$tot_risk == d,]
+d2 <- apply(cbind(risk_tesg$envir_risk, risk_tesg$social_risk, risk_tesg$gover_risk), 1, sum)
+all(risk_tesg$tot_risk == d2)
+head(risk_tesg)
+nrow(risk_tesg)
 ```
 
-```{r pca_risk, eval=FALSE}
-pca_risk <- stocks_risk %>% select_if(is.numeric) %>% prcomp(scale. = TRUE)
-rownames(pca_risk$x) <- pull(stocks_risk, Symbol)
-biplot(pca_risk, xlim=c(-0.4,0.4), cex=0.7)
+```{r pca_risk, fig.height=5,eval=FALSE}
+pca_risk <- risk_tesg %>% select_if(is.numeric) %>% prcomp(scale. = TRUE)
+rownames(pca_risk$x) <- pull(risk_tesg, Symbol)
+biplot(pca_risk, ylim = c(-0.5, 0.3), cex = 0.7)
 ```
 
 
