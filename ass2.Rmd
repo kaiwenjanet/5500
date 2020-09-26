@@ -36,6 +36,7 @@ library(dplyr)
 library(ggplot2)
 library(tidyverse)
 library(plotly)
+library(mclust)
 ```
 
 # Introduction
@@ -226,7 +227,7 @@ screeplot(all_value, type = "lines")
 
 
 
-## Risk 
+### Risk 
 ```{r risk-df}
 risk <- subset(stocks[(stocks$Symbol %in% df$Symbol),], select = c("Symbol", "tot_risk", "envir_risk", "social_risk", "gover_risk"))
 #view(risk)
@@ -253,18 +254,61 @@ biplot(pca_risk, ylim = c(-0.5, 0.3),  cex = 0.8)
 screeplot(pca_risk, type = "lines")
 ```
 
-```{r}
+```{r dat-cluster}
 dat <- stocks[(stocks$Symbol %in% df$Symbol),]
-StocksCluster <- dat %>% select_if(is.numeric) %>% scale %>% dist %>% hclust(method = "complete")
-StocksCluster$labels <- dat$Symbol
-StocksCluster %>% plot(cex = 0.5)
-rect.hclust(StocksCluster, k = 4)
+d <- dat %>% select_if(is.numeric) %>% scale %>% dist 
+```
+
+Prefer using Ward's method..
+
+```{r Ward's}
+hc_w <- hclust(d, method = "ward.D2")
+hc_w$labels <- dat$Symbol
+plot(hc_w, cex = 0.5)
+rect.hclust(hc_w, k = 3)
+```
+
+```{r memb_w}
+memb_three_w <- cutree(hc_w, k = 3)
+```
+
+```{r complete}
+hc_c <- hclust(d, method = "complete")
+hc_c$labels <- dat$Symbol
+plot(hc_c, cex = 0.5)
+rect.hclust(hc_c, k = 3)
+```
+
+```{r memb-complete}
+memb_three_c <- cutree(hc_c, k = 3) 
+```
+
+```{r average}
+hc_al <- hclust(d, method = "average")
+hc_al$labels <- dat$Symbol
+plot(hc_al, cex = 0.5)
+rect.hclust(hc_al, k = 3)
+```
+
+```{r memb_al}
+memb_three_al <- cutree(hc_al, k = 3)
+```
+
+```{r centroid}
+hc_cm <- hclust(d, method = "centroid")
+hc_cm$labels <- dat$Symbol
+plot(hc_cm, cex = 0.5)
+rect.hclust(hc_cm, k = 3)
+```
+
+```{r memb_cm}
+memb_three_cm <- cutree(hc_cm, k = 3)
 ```
 
 ```{r}
-unique(df$Industry)
-stocks[(stocks$Symbol %in% c("VRSK", "MXIM", "TXN", "ATVI", "FISV", "CERN")),]
-stocks[stocks$Symbol %in% c("JNJ", "PFE", "MRK", "WMT", "PG"),] # DJI
-stocks[stocks$Symbol %in% c("AMGN", "UNH", "INTC", "CSCO", "WBA", "IBM", "CDW", "ADS.DE", "AMAT", "DLTR", "EOAN.DE"),]
-stocks[stocks$Symbol %in% c("1COV.DE", "DTE.DE", "ALV.DE", "TRV", "BMW.DE", "BAYN.DE", "MCHP", "MDLZ"),]
+adjustedRandIndex(memb_three_w, memb_three_c)
+adjustedRandIndex(memb_three_w, memb_three_al)
+adjustedRandIndex(memb_three_w, memb_three_cm)
 ```
+
+
