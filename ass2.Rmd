@@ -242,14 +242,15 @@ all(risk$tot_risk == d)
 risk_tesg <- risk[risk$tot_risk == d,]
 d2 <- apply(cbind(risk_tesg$envir_risk, risk_tesg$social_risk, risk_tesg$gover_risk), 1, sum)
 all(risk_tesg$tot_risk == d2)
-head(risk_tesg)
+#head(risk_tesg)
 nrow(risk_tesg)
 ```
 
-```{r pca-risk, fig.height=5,eval=FALSE}
+```{r pca-risk, fig.height=5}
 pca_risk <- risk_tesg %>% select_if(is.numeric) %>% prcomp(scale. = TRUE)
 rownames(pca_risk$x) <- pull(risk_tesg, Symbol)
-biplot(pca_risk, ylim = c(-0.55, 0.35),  cex = 0.8)
+biplot(pca_risk, ylim = c(-0.5, 0.3),  cex = 0.8)
+screeplot(pca_risk, type = "lines")
 ```
 
 ```{r}
