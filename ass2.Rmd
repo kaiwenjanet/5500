@@ -40,7 +40,12 @@ library(plotly)
 
 # Introduction
 
-Principal component analysis (PCA) plays an important role in the evaluation of the stock price. By utilising the small number of the principle components to explain the general variation in the original dataset. In this report, we will apply the PCA method to address whether it is a good measurement in the stock pricing. By investigating the measurement of stock value and stock risk to further find our the potential limitation that PCA might face. We will also compare the performance of PCA with another method which is Clustering Analysis to check the accuracy of our result. 
+Principal component analysis (PCA) plays an important role in the evaluation of the stock price. By utilising the small number of the principle components to explain the general variation in the original data. This report will apply the PCA method to address whether it is a good measurement in the stock pricing. By investigating the measurement of stock value and stock risk to further find our the potential limitation that PCA might face. We will also compare the performance of PCA with another method which is Clustering Analysis to check the accuracy of our result. 
+
+
+In financial market, the value of stocks would be investigated by many different variables. However, the large number of variables of each stock might make readers hard to make the comparison. Therefore, principal component analysis (PCA) would be utilised to help with evaluating stocks. PCA plays an important role in the evaluation of the stock price.
+
+
 
 # Data Description
 ```{r data}
@@ -64,7 +69,7 @@ stocks <- na.omit(stocks_ori)%>%
   
 #stocks <- na.omit(stocks)
 #nrow(stocks)
-glimpse(stocks_ori)
+#glimpse(stocks_ori)
 
 
 #nrow(stocks)
@@ -88,7 +93,7 @@ glimpse(stocks_ori)
 
 ```
 
-Our dataset contains 18 variables of 147 stocks from five major financial indices. Thoes 18 variables could be further classified into 3 categories. The first categories captures the 5 variables provides the basic background of thoes stocks which are **Name**, **Symbol**, **Market**, **Sector**, **Industry**. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables are shown in the table below. 
+The dataset contains 18 variables of 147 stocks from five major financial indices. Those 18 variables could be further classified into 3 categories. The first categories captures the 5 variables provides the basic background of those stocks which are **Name**, **Symbol**, **Market**, **Sector**, **Industry**. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables are shown in the table below. 
 
 Our dataset contain
 | Names         |abbreviation| Description         | 
