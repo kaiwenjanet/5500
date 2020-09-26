@@ -168,6 +168,8 @@ biplot(pca_risk, xlim = c(-0.5, 0.5), ylim = c(-0.6, 0.4),  cex = 0.7)
 
 
 # Data Description
+
+The data which used to analyse in this report was sourced from 
 | Names         | Description         | 
 | :----------- |:-------------------|
 | Market capitalization:  |   How much a company is worth as determined by the stock market.  | 
