@@ -44,7 +44,7 @@ library(mclust)
 Principal component analysis (PCA) plays an important role in the evaluation of the stock price. By utilising the small number of the principle components to explain the general variation in the original data. This report will apply the PCA method to address whether it is a good measurement in the stock pricing. By investigating the measurement of stock value and stock risk to further find our the potential limitation that PCA might face. We will also compare the performance of PCA with another method which is Clustering Analysis to check the accuracy of our result. 
 
 
-In financial market, the value of stocks would be investigated by many different variables. However, the large number of variables of each stock might make readers hard to make the comparison. Therefore, principal component analysis (PCA) would be utilised to help with evaluating stocks. PCA plays an important role in the evaluation of the stock price.
+In financial market, the value of stocks would be investigated by many different variables. However, the large number of variables of each stock might make readers hard to make the comparison. Therefore, principal component analysis (PCA) would be utilised to help with evaluating stocks. PCA plays an important role in the evaluation of the stock price, which help combine many variables into a index, and the index of each stock would be a element to help with evaluation. This report would focus on the PCA, as well as the clustering analysis, to analysis all the stock in the dataset. Meanwhile, arising useful suggestions among all stocks. In addition, the limitation of the analysis would be pointed out.
 
 
 
