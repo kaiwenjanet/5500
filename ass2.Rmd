@@ -167,7 +167,8 @@ biplot(pca_risk, xlim = c(-0.5, 0.5), ylim = c(-0.6, 0.4),  cex = 0.7)
 # Introduction
 
 
-# Data Description
+
+# Data Description 
 | Names         | Description         | 
 | :----------- |:-------------------|
 | Market capitalization:  |   How much a company is worth as determined by the stock market.  | 
@@ -183,5 +184,7 @@ biplot(pca_risk, xlim = c(-0.5, 0.5), ylim = c(-0.6, 0.4),  cex = 0.7)
 | Environmental Risk Score: |   Evaluation scores of the portfolios performance when they meet the environmental challenges. | 
 | Social Risk Score: |  Evaluation scores of the portfolios performance when they meet the social challenges. | 
 | Governance Risk Score: |  Evaluation scores of the portfolios performance when they meet the governance challenges. | 
+
+
 
 
