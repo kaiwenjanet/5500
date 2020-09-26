@@ -38,7 +38,11 @@ library(tidyverse)
 library(plotly)
 ```
 
+# Introduction
 
+Principal component analysis (PCA) plays an important role in the evaluation of the stock price. By utilising the small number of the principle components to explain the general variation in the original dataset. In this report, we will apply the PCA method to address whether it is a good measurement in the stock pricing. By investigating the measurement of stock value and stock risk to further find our the potential limitation that PCA might face. We will also compare the performance of PCA with another method which is Clustering Analysis to check the accuracy of our result. 
+
+# Data Description
 ```{r data}
 stocks_ori <- read_csv("stocks.csv")
 #nrow(stocks)
@@ -61,9 +65,48 @@ stocks <- na.omit(stocks_ori)%>%
 #stocks <- na.omit(stocks)
 #nrow(stocks)
 glimpse(stocks_ori)
+
+
+#nrow(stocks)
+#head(stocks)
+#stocks <- na.omit(stocks)
+#nrow(stocks)
+#stocks_ori <- stocks_ori%>%
+#  rename(intra_day=`Market cap (intra-day)`,
+#         ent_value=`Enterprise value`,
+#         trail_pe=`Trailing P/E`,
+#         for_pe=`Forward P/E`,
+#         peg=`PEG ratio (5-yr expected)`,
+#         ttm=`Price/sales (ttm)`,
+#         mrq=`Price/book (mrq)`,
+#         rev=`Enterprise value/revenue`,
+#         ebitda=`Enterprise value/EBITDA`,
+#         tot_risk = `Total ESG risk score`,
+#         envir_risk = `Environmental Risk Score`,
+#         social_risk = `Social Risk Score`,
+#         gover_risk = `Governance Risk Score`)
+
 ```
 
-147 variables with 102 having the missing value
+Our dataset contains 18 variables of 147 stocks from five major financial indices. Thoes 18 variables could be further classified into 3 categories. The first categories captures the 5 variables provides the basic background of thoes stocks which are **Name**, **Symbol**, **Market**, **Sector**, **Industry**. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables are shown in the table below. 
+
+Our dataset contain
+| Names         |abbreviation| Description         | 
+| :------------ |:-----------|:--------------------|
+| Market capitalization:  | intra_day| How much a company is worth as determined by the stock market.  | 
+| Enterprise value:  |ent_value| A measure of a company's total value | 
+| Trailing P/E:  | trail_pe|  Price to Earning Ratio based on the earnings per share over the previous 12 months.   |
+| Forward P/E ratio:  | for_pe|  Estimate further earnings per share in the next 12 months. | 
+| PEG ratio:  | peg | Enhances the P/E ratio by adding the expected earnings growth into calculation. | 
+| P/S ratio:  | ttm | Price to Sales ratio, a valuation ratio by comparing a company’s stock price to its revenues | 
+| P/B ratio:  |  mrq| Price to Book ratio is a measurement of the market's valuation of a company relative to its book value. |
+| Enterprise value-to-revenue: |  rev | Also refers as the EV/R, it measures the value of a stock that compares a company's enterprise value to its revenue.| 
+| EV/EBITDA | ebitda  | Enterprise value to earnings before interest, taxed, depreciation and amortization ratio compares the value of a company, debt included to the company's cash earnings less non-cash expenses.  | 
+| Total ESG risk score: | tot_risk  |The overall rating scores based on the Morningstar Sustainability Rating systems.  | 
+| Environmental Risk Score: | envir_risk | Evaluation scores of the portfolios performance when they meet the environmental challenges. | 
+| Social Risk Score: | social_risk  |Evaluation scores of the portfolios performance when they meet the social challenges. | 
+| Governance Risk Score: | gover_risk  |Evaluation scores of the portfolios performance when they meet the governance challenges. | 
+
 
 ```{r}
 summary(stocks)
@@ -88,7 +131,38 @@ stocks %>%
   facet_wrap(~Industry)
 ```
 
-### Considering outliers
+# Analysis 
+
+## Preliminary Analysis 
+
+Before we start our Principal Components Analysis, we will firstly tidy our orginal dataset by removing the missing variables and further figure out any other features. 
+
+By summarising orginal variables, we could notice that the initial 147 variables have up to 102 missing value.
+
+```{r sum_tab}
+sum_tab<-stocks_ori%>%
+   select(-Name,-Symbol,-Market,-Sector,-Industry)%>%
+   summary(stocks_ori)
+```
+
+| Names | Min |Median|Mean |Max |NA | 
+| :---- |:----|:-----|:----|:---|:--|
+| intra_day |-2|63 |95065|5110000|NA|
+| ent_value |-264|70|85683|5130000|NA|
+| trail_pe |0.48|20.11|43.62	|1479.29| 18|
+| for_pe|3.59|19.92|43.04|1044.81	| 80
+| peg |-62.380|2.405|15.223|713.670|81|
+| ttm |0.9|2.8|9.941|548.150|17|
+| mrq |0.1|5.4|174.16|11765.96|10|
+| rev |-27.720|2.875|9.827|5411.160|17|
+| ebitda |-465.460|13.765|19.461|1117.510|23|
+| tot_risk|11|23|25.39|75|13|
+| envir_risk |0|4|6.731|62| 13|
+| social_risk |3|10|11.4|88|13|
+| gover_risk |3|8 |9.343|80|13|
+
+In the meanwhile, the summary table provided above could show us the information about the ourliers. Most of the variables we have here, they all have the really small median and mean, but a extremely high maximum value as well. We could say that the extremely value will definitely dominate our Principle component analysis. And here are the outliers we get:
+
 - outliers in `intra_day` and `ent_value`: MSFT & AAPL
 - outliers in `trail_pe`: TSLA
 - outliers in `for_pe`: ILMN & TSLA
@@ -98,23 +172,38 @@ stocks %>%
 - outliers in `rev`: ILMN, V
 - outliers in `ebitda`: INTU, ILMN, TSLA, NKE
 
-```{r}
-df <- issuer[!(issuer$Symbol %in% c("MSFT", "AAPL", "TSLA", "ILMN", "DIS", "VZ", "KO", "MMM", "CVX", "PCAR", "CAT", "XOM", "V", "INTU", "NKE")),]
-view(df)
+
+We will generate a new dataset **stocks** by removing the missing value and conduct our following analysis based on our new dataset. 
+```{r stocks}
+stocks <- na.omit(stocks_ori)
 ```
 
+## Principle Component Analysis
 
+### Value Analysis 
 
-## Value Analysis
+Based on the preliminary analysis we have above, besides of the missing value removement, what we also need to do is the outliers removement. Since our variables are measured in the different unit, after removing the high influential values, we will standardised our data by using the **scale.** function in R. Biplot could visualise the data by selecting two principal components. The graphs and interpretation will also be provided below. 
+
 ```{r value}
 issuer<-stocks%>%
   select(Symbol,intra_day,ent_value,trail_pe,for_pe,peg,ttm,mrq,rev,ebitda)
+df <- issuer[!(issuer$Symbol %in% c("MSFT", "AAPL", "TSLA", "ILMN", "DIS", "VZ", "KO", "MMM", "CVX", "PCAR", "CAT", "XOM", "V", "INTU", "NKE")),]
+```
 
-pca_value<-issuer%>%
-  select(intra_day,ent_value,trail_pe,for_pe,peg,ttm,mrq,rev,ebitda)%>%
+```{r pca_value}
+pca_value<-df%>%
+  select_if(is.numeric)%>%
   prcomp(scale.=TRUE)
-rownames(pca_value$x)<-pull(issuer,Symbol)
-biplot(pca_value, expand=10,xlim=c(-0.2,0.2),ylim=c(-0.01,0.05),cex=0.7)
+rownames(pca_value$x)<-pull(df,Symbol)
+biplot(pca_value,xlim=c(-0.6,0.3),cex=0.8)
+```
+
+
+The limitation 
+
+```{r lim}
+summary(pca_value)
+screeplot(pca_value, type = "lines")
 ```
 
 ```{r, eval=FALSE}
@@ -162,26 +251,5 @@ pca_risk <- risk_tesg %>% select_if(is.numeric) %>% prcomp(scale. = TRUE)
 rownames(pca_risk$x) <- pull(risk_tesg, Symbol)
 biplot(pca_risk, xlim = c(-0.5, 0.5), ylim = c(-0.6, 0.4),  cex = 0.7)
 ```
-
-
-# Introduction
-
-
-# Data Description
-| Names         | Description         | 
-| :----------- |:-------------------|
-| Market capitalization:  |   How much a company is worth as determined by the stock market.  | 
-| Enterprise value:  | A measure of a company's total value | 
-| Trailing P/E:  |   Price to Earning Ratio based on the earnings per share over the previous 12 months.   | 
-| Forward P/E ratio:  |   Estimate further earnings per share in the next 12 months. | 
-| PEG ratio:  |  Enhances the P/E ratio by adding the expected earnings growth into calculation. | 
-| P/S ratio:  |   Price to Sales ratio, a valuation ratio by comparing a company’s stock price to its revenues | 
-| P/B ratio:  |  Price to Book ratio is a measurement of the market's valuation of a company relative to its book value. | 
-| Enterprise value-to-revenue: |   Also refers as the EV/R, it measures the value of a stock that compares a company's enterprise value to its revenue.| 
-| EV/EBITDA |   Enterprise value to earnings before interest, taxed, depreciation and amortization ratio compares the value of a company, debt included to the company's cash earnings less non-cash expenses.  | 
-| Total ESG risk score: |   The overall rating scores based on the Morningstar Sustainability Rating systems.  | 
-| Environmental Risk Score: |   Evaluation scores of the portfolios performance when they meet the environmental challenges. | 
-| Social Risk Score: |  Evaluation scores of the portfolios performance when they meet the social challenges. | 
-| Governance Risk Score: |  Evaluation scores of the portfolios performance when they meet the governance challenges. | 
 
 
