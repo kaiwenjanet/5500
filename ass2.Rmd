@@ -165,3 +165,23 @@ biplot(pca_risk, xlim = c(-0.5, 0.5), ylim = c(-0.6, 0.4),  cex = 0.7)
 
 
 # Introduction
+
+
+# Data Description
+| Names         | Description         | 
+| :----------- |:-------------------|
+| Market capitalization:  |   How much a company is worth as determined by the stock market.  | 
+| Enterprise value:  | A measure of a company's total value | 
+| Trailing P/E:  |   Price to Earning Ratio based on the earnings per share over the previous 12 months.   | 
+| Forward P/E ratio:  |   Estimate further earnings per share in the next 12 months. | 
+| PEG ratio:  |  Enhances the P/E ratio by adding the expected earnings growth into calculation. | 
+| P/S ratio:  |   Price to Sales ratio, a valuation ratio by comparing a company’s stock price to its revenues | 
+| P/B ratio:  |  Price to Book ratio is a measurement of the market's valuation of a company relative to its book value. | 
+| Enterprise value-to-revenue: |   Also refers as the EV/R, it measures the value of a stock that compares a company's enterprise value to its revenue.| 
+| EV/EBITDA |   Enterprise value to earnings before interest, taxed, depreciation and amortization ratio compares the value of a company, debt included to the company's cash earnings less non-cash expenses.  | 
+| Total ESG risk score: |   The overall rating scores based on the Morningstar Sustainability Rating systems.  | 
+| Environmental Risk Score: |   Evaluation scores of the portfolios performance when they meet the environmental challenges. | 
+| Social Risk Score: |  Evaluation scores of the portfolios performance when they meet the social challenges. | 
+| Governance Risk Score: |  Evaluation scores of the portfolios performance when they meet the governance challenges. | 
+
+
