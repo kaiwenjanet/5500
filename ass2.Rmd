@@ -229,7 +229,7 @@ screeplot(all_value, type = "lines")
 ## Risk 
 ```{r risk-df}
 risk <- subset(stocks[(stocks$Symbol %in% df$Symbol),], select = c("Symbol", "tot_risk", "envir_risk", "social_risk", "gover_risk"))
-view(risk)
+#view(risk)
 ```
 
 ```{r first-check, eval=FALSE}
@@ -249,7 +249,21 @@ nrow(risk_tesg)
 ```{r pca-risk, fig.height=5,eval=FALSE}
 pca_risk <- risk_tesg %>% select_if(is.numeric) %>% prcomp(scale. = TRUE)
 rownames(pca_risk$x) <- pull(risk_tesg, Symbol)
-biplot(pca_risk, xlim = c(-0.5, 0.5), ylim = c(-0.6, 0.4),  cex = 0.7)
+biplot(pca_risk, ylim = c(-0.55, 0.35),  cex = 0.8)
 ```
 
+```{r}
+dat <- stocks[(stocks$Symbol %in% df$Symbol),]
+StocksCluster <- dat %>% select_if(is.numeric) %>% scale %>% dist %>% hclust(method = "complete")
+StocksCluster$labels <- dat$Symbol
+StocksCluster %>% plot(cex = 0.5)
+rect.hclust(StocksCluster, k = 4)
+```
 
+```{r}
+unique(df$Industry)
+stocks[(stocks$Symbol %in% c("VRSK", "MXIM", "TXN", "ATVI", "FISV", "CERN")),]
+stocks[stocks$Symbol %in% c("JNJ", "PFE", "MRK", "WMT", "PG"),] # DJI
+stocks[stocks$Symbol %in% c("AMGN", "UNH", "INTC", "CSCO", "WBA", "IBM", "CDW", "ADS.DE", "AMAT", "DLTR", "EOAN.DE"),]
+stocks[stocks$Symbol %in% c("1COV.DE", "DTE.DE", "ALV.DE", "TRV", "BMW.DE", "BAYN.DE", "MCHP", "MDLZ"),]
+```
