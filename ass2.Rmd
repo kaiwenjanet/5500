@@ -26,7 +26,7 @@ output:
     keep_tex: yes
     number_sections: yes
     citation_package: biblatex
-    toc: false
+    toc: true
 ---
 
 ```{r setup, include=FALSE}
@@ -201,7 +201,7 @@ Based on the preliminary analysis we have above, besides of the missing value re
 issuer<-stocks%>%
   select(Symbol,intra_day,ent_value,trail_pe,for_pe,peg,ttm,mrq,rev,ebitda)
 df <- issuer[!(issuer$Symbol %in% c("MSFT", "AAPL", "TSLA", "ILMN", "DIS", "VZ", "KO", "MMM", "CVX", "PCAR", "CAT", "XOM", "V", "INTU", "NKE")),]
-view(df)
+#view(df)
 ```
 
 ```{r pca_value}
@@ -261,13 +261,25 @@ all(risk_tesg$tot_risk == d2)
 #nrow(risk_tesg)
 ```
 
-```{r pca-risk, fig.height=5}
+```{r pca-risk-distance, fig.height=5, fig.cap= "Distance biplot of PCA of stocks' risk"}
 pca_risk <- risk_tesg %>% select_if(is.numeric) %>% prcomp(scale. = TRUE)
 rownames(pca_risk$x) <- pull(risk_tesg, Symbol)
-biplot(pca_risk, ylim = c(-0.5, 0.3),  cex = 0.8)
+biplot(pca_risk, xlim=c(-0.5, 0.5), ylim = c(-0.6, 0.3),  cex = 0.8)
+```
+
+```{r pca-risk-correlation, fig.height=5, fig.cap="Correlation biplot of PCA of stocks' risk"}
+biplot(pca_risk, scale = 0, xlim = c(-4, 4), cex = 0.8)
+```
+
+```{r fig.cap="Screeplot of PCs in PCA"}
 screeplot(pca_risk, type = "lines")
 ```
 
+```{r}
+summary(pca_risk_)
+pca_risk$x
+pca_risk$rotation
+```
 
 ## Cluster Analysis
 ```{r dat-cluster}
