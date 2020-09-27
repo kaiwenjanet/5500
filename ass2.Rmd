@@ -146,12 +146,12 @@ stocks %>%
 
 Before we start our Principal Components Analysis, we will firstly observe the original data and tidy it by removing the missing variables and further figure out any other features. Figure \@ref(fig:vis-dat) shows the data structure of the original dataset. It is clear that there are three different types of data contain in the dataset, which are character, numeric and missing value.
 
-```{r vis-data, fig.cap="The data structure of stocks data"}
+```{r vis-data, fig.cap="The data structure of original data"}
 vis_dat(stocks)
 ```
 
 By further observing the missing value, figure \@ref(fig:vis-missing) is generated. we could find that there are 11.3% missing value included in the original dataset. Excepted the five seven variables, the rest variables all contain the missing values. 
-```{r vis-missing, fig.cap="The missing values of stocks data"}
+```{r vis-missing, fig.cap="The missing values of original data"}
 vis_miss(stocks)
 ```
 
@@ -263,7 +263,7 @@ screeplot(all_value, type = "lines")
 
 
 
-### Risk 
+### Risk Analysis
 ```{r risk-df}
 risk <- subset(stocks[(stocks$Symbol %in% df$Symbol),], select = c("Symbol", "tot_risk", "envir_risk", "social_risk", "gover_risk"))
 #view(risk)
