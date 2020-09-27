@@ -37,6 +37,10 @@ library(ggplot2)
 library(tidyverse)
 library(plotly)
 library(mclust)
+library(visdat)
+library(gridExtra)
+library(kableExtra)
+library(tibble)
 ```
 
 # Introduction
@@ -53,7 +57,7 @@ In financial market, the value of stocks would be investigated by many different
 stocks_ori <- read_csv("stocks.csv")
 #nrow(stocks)
 #head(stocks)
-stocks <- na.omit(stocks_ori)%>%
+stocks <- stocks_ori%>%
   rename(intra_day=`Market cap (intra-day)`,
          ent_value=`Enterprise value`,
          trail_pe=`Trailing P/E`,
@@ -140,14 +144,42 @@ stocks %>%
 
 ## Preliminary Analysis 
 
-Before we start our Principal Components Analysis, we will firstly tidy our orginal dataset by removing the missing variables and further figure out any other features. 
+Before we start our Principal Components Analysis, we will firstly observe the original data and tidy it by removing the missing variables and further figure out any other features. Figure \@ref(fig:vis-dat) shows the data structure of the original dataset. It is clear that there are three different types of data contain in the dataset, which are character, numeric and missing value.
 
-By summarising orginal variables, we could notice that the initial 147 variables have up to 102 missing value.
+```{r vis-data, fig.cap="The data structure of stocks data"}
+vis_dat(stocks)
+```
 
-```{r sum_tab}
+By further observing the missing value, figure \@ref(fig:vis-missing) is generated. we could find that there are 11.3% missing value included in the original dataset. Excepted the five seven variables, the rest variables all contain the missing values. 
+```{r vis-missing, fig.cap="The missing values of stocks data"}
+vis_miss(stocks)
+```
+
+Meanwhile, by summarising original variables, table \@ref(tab:summary-table) indicates that the initial 147 observations have up to 102 missing value.
+
+```{r sum_tab, eval = FALSE}
 sum_tab<-stocks_ori%>%
    select(-Name,-Symbol,-Market,-Sector,-Industry)%>%
    summary(stocks_ori)
+```
+
+```{r summary-table}
+tribble(~Names, ~Min, ~Median, ~Mean, ~Max, ~`NA`,
+        "intra_day","-2","63","95065","5110000","NA",
+        "ent_value" ,"-264","70","85683","5130000","NA",
+        "trail_pe" ,"0.48","20.11","43.62","1479.29", "18",
+        "for_pe","3.59","19.92","43.04","1044.81", "80",
+        "peg" ,"-62.380","2.405","15.223","713.670","81",
+        "ttm" ,"0.9","2.8","9.941","548.150","17",
+        "mrq" ,"0.1","5.4","174.16","11765.96","10",
+        "rev" ,"-27.720","2.875","9.827","5411.160","17",
+        "ebitda" ,"-465.460","13.765","19.461","1117.510","23",
+        "tot_risk","11","23","25.39","75","13",
+        "envir_risk","0","4","6.731","62", "13",
+        "social_risk","3","10","11.4","88","13",
+        "gover_risk","3","8" ,"9.343","80","13") %>%
+  kable(caption = "Summary table of original data") %>%
+  kable_styling(bootstrap_options = c("bordered", "striped", "hover"))
 ```
 
 | Names | Min |Median|Mean |Max |NA | 
@@ -166,7 +198,7 @@ sum_tab<-stocks_ori%>%
 | social_risk |3|10|11.4|88|13|
 | gover_risk |3|8 |9.343|80|13|
 
-In the meanwhile, the summary table provided above could show us the information about the ourliers. Most of the variables we have here, they all have the really small median and mean, but a extremely high maximum value as well. We could say that the extremely value will definitely dominate our Principle component analysis. And here are the outliers we get:
+In the meanwhile, table \@ref(tab:summary-table) shows us the information about the ourliers. Most of the variables we have here, they all have the really small median and mean, but a extremely high maximum value as well. We could say that the extremely value will definitely dominate our Principle component analysis. And here are the outliers we get:
 
 - outliers in `intra_day` and `ent_value`: MSFT & AAPL
 - outliers in `trail_pe`: TSLA
