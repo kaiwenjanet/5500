@@ -94,9 +94,8 @@ stocks <- na.omit(stocks_ori)%>%
 
 ```
 
-The dataset contains 18 variables of 147 stocks from five major financial indices. Those 18 variables could be further classified into 3 categories. The first categories captures the 5 variables provides the basic background of those stocks which are **Name**, **Symbol**, **Market**, **Sector**, **Industry**. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables are shown in the table below. 
+The data which used in this report was sourced from [Yahoo Finance](https://au.finance.yahoo.com/). The dataset contains 18 variables of 147 stocks from five major financial indices. Those 18 variables could be further classified into 3 categories. The first categories captures the 5 variables provides the basic background of those stocks which are **Name**, **Symbol**, **Market**, **Sector**, **Industry**. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables are shown in the table below: 
 
-Our dataset contain
 | Names         |abbreviation| Description         | 
 | :------------ |:-----------|:--------------------|
 | Market capitalization:  | intra_day| How much a company is worth as determined by the stock market.  | 
