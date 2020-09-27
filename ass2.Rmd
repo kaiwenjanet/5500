@@ -57,7 +57,7 @@ In financial market, the value of stocks would be investigated by many different
 stocks_ori <- read_csv("stocks.csv")
 #nrow(stocks)
 #head(stocks)
-stocks <- stocks_ori%>%
+stocks_ori <- stocks_ori%>%
   rename(intra_day=`Market cap (intra-day)`,
          ent_value=`Enterprise value`,
          trail_pe=`Trailing P/E`,
@@ -71,31 +71,6 @@ stocks <- stocks_ori%>%
          envir_risk = `Environmental Risk Score`,
          social_risk = `Social Risk Score`,
          gover_risk = `Governance Risk Score`)
-  
-#stocks <- na.omit(stocks)
-#nrow(stocks)
-#glimpse(stocks_ori)
-
-
-#nrow(stocks)
-#head(stocks)
-#stocks <- na.omit(stocks)
-#nrow(stocks)
-#stocks_ori <- stocks_ori%>%
-#  rename(intra_day=`Market cap (intra-day)`,
-#         ent_value=`Enterprise value`,
-#         trail_pe=`Trailing P/E`,
-#         for_pe=`Forward P/E`,
-#         peg=`PEG ratio (5-yr expected)`,
-#         ttm=`Price/sales (ttm)`,
-#         mrq=`Price/book (mrq)`,
-#         rev=`Enterprise value/revenue`,
-#         ebitda=`Enterprise value/EBITDA`,
-#         tot_risk = `Total ESG risk score`,
-#         envir_risk = `Environmental Risk Score`,
-#         social_risk = `Social Risk Score`,
-#         gover_risk = `Governance Risk Score`)
-
 ```
 
 The data which used in this report was sourced from [Yahoo Finance](https://au.finance.yahoo.com/). The dataset contains 18 variables of 147 stocks from five major financial indices. Those 18 variables could be further classified into 3 categories. The first categories captures the 5 variables provides the basic background of those stocks which are **Name**, **Symbol**, **Market**, **Sector**, **Industry**. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables are shown in the table below: 
@@ -222,9 +197,11 @@ stocks <- na.omit(stocks_ori)
 Based on the preliminary analysis we have above, besides of the missing value removement, what we also need to do is the outliers removement. Since our variables are measured in the different unit, after removing the high influential values, we will standardised our data by using the **scale.** function in R. Biplot could visualise the data by selecting two principal components. The graphs and interpretation will also be provided below. 
 
 ```{r value}
+# filter out the outliers
 issuer<-stocks%>%
   select(Symbol,intra_day,ent_value,trail_pe,for_pe,peg,ttm,mrq,rev,ebitda)
 df <- issuer[!(issuer$Symbol %in% c("MSFT", "AAPL", "TSLA", "ILMN", "DIS", "VZ", "KO", "MMM", "CVX", "PCAR", "CAT", "XOM", "V", "INTU", "NKE")),]
+view(df)
 ```
 
 ```{r pca_value}
@@ -265,8 +242,9 @@ screeplot(all_value, type = "lines")
 
 ### Risk Analysis
 ```{r risk-df}
+# filter out the outliers
 risk <- subset(stocks[(stocks$Symbol %in% df$Symbol),], select = c("Symbol", "tot_risk", "envir_risk", "social_risk", "gover_risk"))
-#view(risk)
+view(risk)
 ```
 
 ```{r first-check, eval=FALSE}
@@ -280,7 +258,7 @@ risk_tesg <- risk[risk$tot_risk == d,]
 d2 <- apply(cbind(risk_tesg$envir_risk, risk_tesg$social_risk, risk_tesg$gover_risk), 1, sum)
 all(risk_tesg$tot_risk == d2)
 #head(risk_tesg)
-nrow(risk_tesg)
+#nrow(risk_tesg)
 ```
 
 ```{r pca-risk, fig.height=5}
@@ -290,6 +268,8 @@ biplot(pca_risk, ylim = c(-0.5, 0.3),  cex = 0.8)
 screeplot(pca_risk, type = "lines")
 ```
 
+
+## Cluster Analysis
 ```{r dat-cluster}
 dat <- stocks[(stocks$Symbol %in% df$Symbol),]
 d <- dat %>% select_if(is.numeric) %>% scale %>% dist 
