@@ -209,16 +209,34 @@ pca_value<-df%>%
   select_if(is.numeric)%>%
   prcomp(scale.=TRUE)
 rownames(pca_value$x)<-pull(df,Symbol)
-biplot(pca_value,xlim=c(-0.6,0.3),cex=0.8)
 ```
 
+```{r pca_cor,fig.cap="Correlation Biplot of Stock Value"}
+cor_va<-biplot(pca_value,scale=0,cex=0.8)
+```
 
-The limitation 
+Referring to the correlation biplot Figure \ref(fig:cor_va)we could notice that the the PC1 is positive correlated with the measurement of the company value indication which are **intra_day** and **ent_value** even if the correlation is pretty not strong. The PC2 is positive correlated with the stock earning ratio (ebitda and trail_pe) which means that the increasing in the measurement of the stock earning ratio will increase the PC2 slightly. The rest of the ratio are neither postive correlated with  PC1 nor PC2, but we could notice that the other variables which are related to the price based evaluation of the stock are pretty close to the PC2. The **peg** ratio could not be well explained by both PC1 and PV2. In the meanwhile, this plot also highlights that the two measurement of the company value have a really strong association with each other and do not have any association with other variables which related to the stock price and earning evaluation. Therefore, we could say that the market value of a company may not influence on their stock price and earning per share. However, the relationship between those stock price and earning measurement are quite strong. 
+
+```{r bi_dis,fig.cap="Distance Biplot of Stock Value"}
+dis_va<-biplot(pca_value,xlim=c(-0.6,0.3),cex=0.8)
+``` 
+
+After we identify the relationship between those measurement of the variable, what we do next is to figure out the connection of each observation by using the distance biplot \ref(fig:dis_va). What this biplot could tell us is that **Johnson & Johnson** and **Walmart** have a pretty high value of the company, and **Activision Blizzard**, **Texas Instruments Incorporated**, **Maxim Integrated Products** indicate the high earnings in the stock. 
+
+In the meanwhile, we also need to pay attention on the **Verisk analytics** the potential outlier for the PC1, and **Johnson & Johnson** and **Walmart** the potential outlier for PC2. Since we notice that the price and earning per share for **VRSK** are quite high the reason may due to that **VRSK** is mainly a data analytics and risk assessment firm. The mainly provide the consulting service instead of the selling goods. Therefore, compaing with the multinational retail company, the might not have a really large firm size, as for a financial sector, their stock value is postively correlated with the service they provide. 
+
+**JNJ** and **WMT** perform just in the opposite way. As for the multination company, their profit mainly come from the selling products. Therefore, they need to continuously increase their market share to maintain their market profit. 
 
 ```{r lim}
 summary(pca_value)
 screeplot(pca_value, type = "lines")
 ```
+
+Besides of the information we get from the biplot, there are also some of limitations in our value analysis. The first limitation is mainly due to our small sample space. Based on the 30 out of 147 variables,  there are 70.42% of the overall variation could be explained by the first two principle. It indeed could explain the sufficient amount of the variables but if we take the whole variables into consideration, this might not be accurate enough and also not very representative. Therefore, alternative approach is required. Another limitation is that about the number of eigenvalue selection. Screeplot suggests that the better PC value we need to include is three and this is a little bit contradict to our biplot.
+
+Overall we could say that PCA in the value analysis in our sample stocks could express some information, but it might not be really representative in the general stock market. 
+
+
 
 ```{r, eval=FALSE}
 stocks %>% filter(Industry == "Technology")
