@@ -241,6 +241,10 @@ screeplot(all_value, type = "lines")
 
 
 ### Risk Analysis
+
+Besides evaluating the price and value of those stocks, the reports would also analysis the potential risk of each stock based on the risk score of stocks, as well as make the comparison. Firstly, for the purpose of improving the accuracy of PCA for analysing the risk of stocks, the report has compared the total ESG risk score with the sum of the rest three risk scores and filtered out the inconsistent observations, to ensure the consistency in order to avoid errors and improve the accuracy of analysis.  
+Before executing PCA, a screeplot is generated. Figure \@ref(fig:pca-risk-screeplot) indicates the variance explanation of each principal component. According to the Kaiser's Rule, principal component of one and two would be selected because they all with a variance greater than 1. Figure \@ref(fig:pca-risk-distance) shows   
+
 ```{r risk-df}
 # filter out the outliers
 risk <- subset(stocks[(stocks$Symbol %in% df$Symbol),], select = c("Symbol", "tot_risk", "envir_risk", "social_risk", "gover_risk"))
@@ -271,7 +275,7 @@ biplot(pca_risk, xlim=c(-0.5, 0.5), ylim = c(-0.6, 0.3),  cex = 0.8)
 biplot(pca_risk, scale = 0, xlim = c(-4, 4), cex = 0.8)
 ```
 
-```{r fig.cap="Screeplot of PCs in PCA"}
+```{r pca-risk-screeplot, fig.cap="Screeplot of PCs in PCA"}
 screeplot(pca_risk, type = "lines")
 ```
 
