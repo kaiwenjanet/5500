@@ -20,7 +20,7 @@ author:
   correspondingauthor: true
   qualifications: 29012449
 department: Department of\newline Econometrics &\newline Business Statistics
-organization: ETF5500 
+organization: ETF5500 Assignment2
 bibliography: references.bib
 biblio-style: authoryear-comp
 linestretch: 1.5
