@@ -1,18 +1,26 @@
 ---
 title: "Expert advice from experts"
 author:
-- familyname: Curie
-  othernames: Marie
-  address: University of Paris
-  email: mcurie.notreal@gmail.com
+- familyname: Jin
+  othernames: Kaiwen
+  address: Monash University 
+  email: xxxxx@student.monash.edu
   correspondingauthor: true
-  qualifications: Nobel Prize, PhD
-- familyname: Curie
-  othernames: Pierre
-  address: University of Paris
-  qualifications: Nobel Prize, PhD
+  qualifications: 1111111
+- familyname: Zhang
+  othernames: Zhiruo
+  address: Monash University
+  email: xxxxxxxxx@student.monash.edu
+  correspondingauthor: true
+  qualifications: 2222222
+- familyname: Luo
+  othernames: Jinhao
+  address: Monash University
+  email: jluo0015@student.monash.edu
+  correspondingauthor: true
+  qualifications: Master of Business Analytics (enrolled)
 department: Department of\newline Econometrics &\newline Business Statistics
-organization: Acme Corporation
+organization: ETF5500 
 bibliography: references.bib
 biblio-style: authoryear-comp
 linestretch: 1.5
@@ -29,8 +37,9 @@ output:
     toc: true
 ---
 
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, cache=TRUE, messages=FALSE, warning=FALSE)
+knitr::opts_chunk$set(echo = FALSE, cache=FALSE, messages=FALSE, warning=FALSE)
 # Make sure you have the latest versions of rmarkdown and bookdown installed
 library(dplyr)
 library(ggplot2)
@@ -43,16 +52,14 @@ library(kableExtra)
 library(tibble)
 ```
 
+\clearpage
+
 # Introduction
 
 Principal component analysis (PCA) plays an important role in the evaluation of the stock price. By utilising the small number of the principle components to explain the general variation in the original data. This report will apply the PCA method to address whether it is a good measurement in the stock pricing. By investigating the measurement of stock value and stock risk to further find our the potential limitation that PCA might face. We will also compare the performance of PCA with another method which is Clustering Analysis to check the accuracy of our result. 
 
 
-In financial market, the value of stocks would be investigated by many different variables. However, the large number of variables of each stock might make readers hard to make the comparison. Therefore, linear combination (LC) would be applied to combine all the variables into a index and principal component analysis (PCA) would be utilised to help with evaluating stocks. Principal components (PCs) are the indexes of linear combination which explain the variance of the original variables, and the variance could help with differentiating the performing of each observations. PCA would use the principal components to evaluate the potential value and risk of each stock. In addition, cluster analysis would also be performed in this report to analyse all the stock in the dataset. At last, some useful suggestions for the stocks choosing will be concluded, as well as the limitations of the analysis.
-
-
-(PCA plays an important role in the evaluation of the stock price, which help combine many variables into a index, and the index of each stock would be a element to help with evaluation. This report would focus on the PCA, as well as the clustering analysis, to analysis all the stock in the dataset. Meanwhile, arising useful suggestions among all stocks. In addition, the limitation of the analysis would be pointed out.)
-
+In financial market, the value of stocks would be investigated by many different variables. However, the large number of variables of each stock might make readers hard to make the comparison. Therefore, linear combination (LC) would be applied to combine all the variables into a index and principal component analysis (PCA) would be utilised to help with evaluating stocks. Principal components (PCs) are the indexes of linear combination which explain the variance of the original variables, and the variance could help with differentiating the performing of each observations. PCA would use the principal components to evaluate the potential value and risk of each stock. In addition, cluster analysis would also be performed in this report to analyse all the stock in the dataset. At last, some useful suggestions for the stocks choosing will be concluded, as well as concluding the biases generated from the limitations in analysis.
 
 
 # Data Description
@@ -76,7 +83,7 @@ stocks_ori <- stocks_ori%>%
          gover_risk = `Governance Risk Score`)
 ```
 
-The data which used in this report was sourced from [Yahoo Finance](https://au.finance.yahoo.com/). The dataset contains 18 variables of 147 stocks from five major financial indices. Those 18 variables could be further classified into 3 categories. The first categories captures the 5 variables provides the basic background of those stocks which are **Name**, **Symbol**, **Market**, **Sector**, **Industry**. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables are shown in the table below: 
+The data which used in this report was sourced from [Yahoo Finance](https://au.finance.yahoo.com/). (Table \@ref(tab:variables-table) shows the information of the variables from the original data, as well as the abbreviation of the variables.) The dataset contains 18 variables of 147 stocks from five major financial indices. Those 18 variables could be further classified into 3 categories. The first categories captures the 5 variables provides the basic background of those stocks which are **Name**, **Symbol**, **Market**, **Sector**, **Industry**. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables are shown in the table below: 
 
 | Names         |abbreviation| Description         | 
 | :------------ |:-----------|:--------------------|
@@ -95,7 +102,27 @@ The data which used in this report was sourced from [Yahoo Finance](https://au.f
 | Governance Risk Score: | gover_risk  |Evaluation scores of the portfolios performance when they meet the governance challenges. | 
 
 
-```{r}
+```{r variables-table}
+tribble(~Names, ~Abbreviation, ~Description,
+        "Market capitalization", "intra_day", "How much a company is worth as determined by the stock market", 
+        "Enterprise value", "ent_value", "A measure of a company's total value", 
+        "Trailing P/E", "trail_pe",  "Price to Earning Ratio based on the earnings per share over the previous 12 months",
+        "Forward P/E ratio", "for_pe",  "Estimate further earnings per share in the next 12 months", 
+        "PEG ratio", "peg", "Enhances the P/E ratio by adding the expected earnings growth into calculation", 
+        "P/S ratio", "ttm", "Price to Sales ratio, a valuation ratio by comparing a company’s stock price to its revenue", 
+        "P/B ratio",  "mrq", "Price to Book ratio is a measurement of the market's valuation of a company relative to its book value",
+        "Enterprise value-to-revenue",  "rev", "Also refers as the EV/R, it measures the value of a stock that compares a company's enterprise value to its revenue", 
+        "EV/EBITDA", "ebitda", "Enterprise value to earnings before interest, taxed, depreciation and amortization ratio compares the value of a company, debt included to the company's cash earnings less non-cash expenses", 
+        "Total ESG risk score", "tot_risk", "The overall rating scores based on the Morningstar Sustainability Rating systems", 
+        "Environmental Risk Score", "envir_risk", "Evaluation scores of the portfolios performance when they meet the environmental challenges", 
+        "Social Risk Score", "social_risk", "Evaluation scores of the portfolios performance when they meet the social challenges", 
+        "Governance Risk Score", "gover_risk","Evaluation scores of the portfolios performance when they meet the governance challenges") %>% 
+  kable(caption = "Information of variables of the original data") %>% 
+  kable_styling(bootstrap_options = c("bordered", "striped", "hover"))
+```
+
+
+```{r, eval=FALSE}
 summary(stocks)
 ```
 
@@ -118,20 +145,23 @@ stocks %>%
   facet_wrap(~Industry)
 ```
 
+However, there are some limitations of the original dataset. Firstly, there are some missing values in the data, which might generate inaccuracy for analysing the data. Secondly, there are only 147 observatios contain in the data, which might insufficient enough to support the analysis and credible results. In addition, if filter out the observations with missing values, the sample size of the data might much less and would increase errors. Thirdly, some inconsistency between total risk score and sum of the other three risk score appear in the dataset, which could also increase the errors of analysis. Those limitations would be further discussed in following sections. At last, the biases in analysis which generate from the limitations would be concluded.
+
+
 # Analysis 
 
 ## Preliminary Analysis 
 
-Before we start our Principal Components Analysis, we will firstly observe the original data and tidy it by removing the missing variables and further figure out any other features. Figure \@ref(fig:vis-dat) shows the data structure of the original dataset. It is clear that there are three different types of data contain in the dataset, which are character, numeric and missing value.
+Before we start our Principal Components Analysis, we will firstly observe the original data and tidy it by removing the missing variables and further figure out any other features. Figure \@ref(fig:vis-data) shows the data structure of the original dataset. It is clear that there are three different types of data contain in the dataset, which are character, numeric and missing value.
 
 ```{r vis-data, fig.cap="The data structure of original data"}
-vis_dat(stocks)
+vis_dat(stocks_ori)
 ```
 
 By further observing the missing value, figure \@ref(fig:vis-missing) is generated. we could find that there are 11.3% missing value included in the original dataset. Excepted the five seven variables, the rest variables all contain the missing values. 
 
 ```{r vis-missing, fig.cap="The missing values of original data"}
-vis_miss(stocks)
+vis_miss(stocks_ori)
 ```
 
 Meanwhile, by summarising original variables, table \@ref(tab:summary-table) indicates that the initial 147 observations have up to 102 missing value.
@@ -259,12 +289,12 @@ risk <- subset(stocks[(stocks$Symbol %in% df$Symbol),], select = c("Symbol", "to
 view(risk)
 ```
 
-```{r first-check, eval=FALSE}
+```{r first-check}
 d <- apply(cbind(risk$envir_risk, risk$social_risk, risk$gover_risk), 1, sum)
 all(risk$tot_risk == d)
 ```
 
-```{r risk data, eval=FALSE}
+```{r risk data}
 # checking if total esg risk score = environmrnt + social + government 
 risk_tesg <- risk[risk$tot_risk == d,]
 d2 <- apply(cbind(risk_tesg$envir_risk, risk_tesg$social_risk, risk_tesg$gover_risk), 1, sum)
@@ -272,6 +302,11 @@ all(risk_tesg$tot_risk == d2)
 #head(risk_tesg)
 #nrow(risk_tesg)
 ```
+
+```{r principal-component-analysis}
+pca_risk <- risk_tesg %>% select_if(is.numeric) %>% prcomp(scale. = TRUE)
+```
+
 
 ```{r pca-risk-summary}
 summary(pca_risk)$importance %>%  
@@ -290,7 +325,6 @@ the stocks of **Verisk Analytics, Inc. (VRSK)** and **UnitedHealth Group Incorpo
 **Pfizer Inc. (PFE)** might be different because they are far away from each other. In order to further analyse the correlation between each stock, a correlation biplot is required.
 
 ```{r pca-risk-distance, fig.height=5, fig.cap= "Distance biplot of PCA of stocks' risk"}
-pca_risk <- risk_tesg %>% select_if(is.numeric) %>% prcomp(scale. = TRUE)
 rownames(pca_risk$x) <- pull(risk_tesg, Symbol)
 biplot(pca_risk, xlim=c(-0.5, 0.5), ylim = c(-0.6, 0.3),  cex = 0.8)
 ```
@@ -330,7 +364,7 @@ d <- dat %>% select_if(is.numeric) %>% scale %>% dist
 
 Prefer using Ward's method..
 
-```{r Ward's}
+```{r Ward}
 hc_w <- hclust(d, method = "ward.D2")
 hc_w$labels <- dat$Symbol
 plot(hc_w, cex = 0.5)
@@ -382,3 +416,7 @@ adjustedRandIndex(memb_three_w, memb_three_cm)
 
 
 # Conclusions 
+
+# Acknowledgement
+
+# References
