@@ -48,7 +48,10 @@ library(tibble)
 Principal component analysis (PCA) plays an important role in the evaluation of the stock price. By utilising the small number of the principle components to explain the general variation in the original data. This report will apply the PCA method to address whether it is a good measurement in the stock pricing. By investigating the measurement of stock value and stock risk to further find our the potential limitation that PCA might face. We will also compare the performance of PCA with another method which is Clustering Analysis to check the accuracy of our result. 
 
 
-In financial market, the value of stocks would be investigated by many different variables. However, the large number of variables of each stock might make readers hard to make the comparison. Therefore, principal component analysis (PCA) would be utilised to help with evaluating stocks. PCA plays an important role in the evaluation of the stock price, which help combine many variables into a index, and the index of each stock would be a element to help with evaluation. This report would focus on the PCA, as well as the clustering analysis, to analysis all the stock in the dataset. Meanwhile, arising useful suggestions among all stocks. In addition, the limitation of the analysis would be pointed out.
+In financial market, the value of stocks would be investigated by many different variables. However, the large number of variables of each stock might make readers hard to make the comparison. Therefore, linear combination (LC) would be applied to combine all the variables into a index and principal component analysis (PCA) would be utilised to help with evaluating stocks. Principal components (PCs) are the indexes of linear combination which explain the variance of the original variables, and the variance could help with differentiating the performing of each observations. PCA would use the principal components to evaluate the potential value and risk of each stock. In addition, cluster analysis would also be performed in this report to analyse all the stock in the dataset. At last, some useful suggestions for the stocks choosing will be concluded, as well as the limitations of the analysis.
+
+
+(PCA plays an important role in the evaluation of the stock price, which help combine many variables into a index, and the index of each stock would be a element to help with evaluation. This report would focus on the PCA, as well as the clustering analysis, to analysis all the stock in the dataset. Meanwhile, arising useful suggestions among all stocks. In addition, the limitation of the analysis would be pointed out.)
 
 
 
@@ -243,7 +246,7 @@ screeplot(all_value, type = "lines")
 ### Risk Analysis
 
 Besides evaluating the price and value of those stocks, the reports would also analysis the potential risk of each stock based on the risk score of stocks, as well as make the comparison. Firstly, for the purpose of improving the accuracy of PCA for analysing the risk of stocks, the report has compared the total ESG risk score with the sum of the rest three risk scores and filtered out the inconsistent observations, to ensure the consistency in order to avoid errors and improve the accuracy of analysis.  
-Before executing PCA, a screeplot is generated. Figure \@ref(fig:pca-risk-screeplot) indicates the variance explanation of each principal component. According to the Kaiser's Rule, principal component of one and two would be selected because they all with a variance greater than 1. Figure \@ref(fig:pca-risk-distance) shows   
+Before executing PCA, which principal components need to be utilised should be considered. Table \@ref(tab:pca-risk-summary) shows the summary statistics of components. It is clear that PC1 and PC2 have explained almost 86% of the total variation of 4 variables. In addition, figure \@ref(fig:pca-risk-screeplot) is a scree plot which indicates the variance explanation of each principal component. According to the Kaiser's Rule, principal component of one and two would be selected because they all with a variance greater than 1. Therefore, PC1 and PC2 are the two principal components applied to the following analysis. 
 
 ```{r risk-df}
 # filter out the outliers
@@ -265,24 +268,50 @@ all(risk_tesg$tot_risk == d2)
 #nrow(risk_tesg)
 ```
 
-```{r pca-risk-distance, fig.height=5, fig.cap= "Distance biplot of PCA of stocks' risk"}
-pca_risk <- risk_tesg %>% select_if(is.numeric) %>% prcomp(scale. = TRUE)
-rownames(pca_risk$x) <- pull(risk_tesg, Symbol)
-biplot(pca_risk, xlim=c(-0.5, 0.5), ylim = c(-0.6, 0.3),  cex = 0.8)
-```
-
-```{r pca-risk-correlation, fig.height=5, fig.cap="Correlation biplot of PCA of stocks' risk"}
-biplot(pca_risk, scale = 0, xlim = c(-4, 4), cex = 0.8)
+```{r pca-risk-summary}
+summary(pca_risk)$importance %>%  
+  round(4) %>%
+  kable(caption = "Summary table of PCA") %>%
+  kable_styling(bootstrap_options = c("bordered", "hover", "striped"))
 ```
 
 ```{r pca-risk-screeplot, fig.cap="Screeplot of PCs in PCA"}
 screeplot(pca_risk, type = "lines")
 ```
 
-```{r}
-summary(pca_risk_)
-pca_risk$x
+Figure \@ref(fig:pca-risk-distance) is the distance biplot which shows the distance among each stock in the dataset, and implies the similarity between stocks. Based on the figure \@ref(fig:pca-risk-distance), VRHK and UNH may be exactly same because they seem likely perfectly superimpose. Besides, ALV.DE and DLTR, as well as CERN and FISV might be similar, because they are close to each other. While the stocks like VRHK and MCHP, or CDW and PFE might be different because they are far away from each other. In order to further analyse the correlation between each stock, a correlation biplot is required.
+
+```{r pca-risk-distance, fig.height=5, fig.cap= "Distance biplot of PCA of stocks' risk"}
+pca_risk <- risk_tesg %>% select_if(is.numeric) %>% prcomp(scale. = TRUE)
+rownames(pca_risk$x) <- pull(risk_tesg, Symbol)
+biplot(pca_risk, xlim=c(-0.5, 0.5), ylim = c(-0.6, 0.3),  cex = 0.8)
+```
+
+Figure \@ref(fig:pca-risk-correlation) is the correlation biplot which explains the correlation between different 
+risk scores, as well as the correlation between different stocks. Or even allow readers to compare stocks to different types of risk. According to figure \@ref(fig:pca-risk-correlation), VRHK, UNH, CERN, and FISV are with the high values of social risk score, which could indicate that these four stock might have strong resilience against the social challenges and might perform better than the other stocks when facing the social problems. While, those stocks might not be good at facing the challenges from the internal or external environment because the angle between variable of social risk score and variable of environmental risk is close to 180 degree, which might imply the highly negative correlation approximately. On the contrary, 1COV.DE and MCHP are the two stocks seem likely with the strongest abilities to face the environmental challenges. In addition, MCHP might also the stock with the highest score of governance risk, which could indicate good performance when meeting the governance challenges. Meanwhile, PFE, BMW.DE, and MRK are the another three stocks also perform well in governance challenges. While the performance of these three stocks might gradually decline. Because the projected positions of these three stocks along the axis of governance risk score reflect the gradually decreasing trend of approximate actual values. 
+Furthermore, comparing stocks to total ESG risk score might give readers a comprehensive sense of the overall performance of each stock. In general, MCHP and BMW.DE are the stock with the best overall performance compared with other stocks, which indicate that they might be hard to be influences by internal and external challenges, and they have strong resilience when meeting that three risks. Therefore, there might not be significant fluctuations of these stocks when facing challenges, and could be seen as stable stocks. In contrast, the stock of CDW has a weak overall performance when facing challenges. Based on the approximation actual value which generates by projecting CDW to the axis of total risk score, it has a low value. It indicates that the risks might impact on CDW easily, and CDW might experience a significant fluctuation when facing risks.  
+
+```{r pca-risk-correlation, fig.height=5, fig.cap="Correlation biplot of PCA of stocks' risk"}
+biplot(pca_risk, scale = 0, xlim = c(-4, 4), cex = 0.8)
+```
+
+```{r, eval=FALSE}
+summary(pca_risk)
+pca_risk$x 
 pca_risk$rotation
+```
+
+
+```{r pca-risk-observations, eval=FALSE}
+pca_risk$x %>%
+  kable(caption = "") %>%
+  kable_styling(bootstrap_options = c("bordered", "hover", "striped"))
+```
+
+```{r pca-risk-weights, eval=FALSE}
+pca_risk$rotation %>%
+  kable(caption = "") %>%
+  kable_styling(bootstrap_options = c("bordered", "hover", "striped"))
 ```
 
 ## Cluster Analysis
@@ -344,3 +373,4 @@ adjustedRandIndex(memb_three_w, memb_three_cm)
 ```
 
 
+# Conclusions 
