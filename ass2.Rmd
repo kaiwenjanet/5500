@@ -18,7 +18,7 @@ author:
   address: Monash University
   email: jluo0015@student.monash.edu
   correspondingauthor: true
-  qualifications: Master of Business Analytics (enrolled)
+  qualifications: 29012449
 department: Department of\newline Econometrics &\newline Business Statistics
 organization: ETF5500 
 bibliography: references.bib
