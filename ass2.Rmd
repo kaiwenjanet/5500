@@ -1,5 +1,5 @@
 ---
-title: "Expert advice from experts"
+title: "How will the stock market react to the PCA: Envidence From Yahoo Finance Stock Market"
 author:
 - familyname: Jin
   othernames: Kaiwen
@@ -10,9 +10,9 @@ author:
 - familyname: Zhang
   othernames: Zhiruo
   address: Monash University
-  email: xxxxxxxxx@student.monash.edu
+  email: zzha0001@student.monash.edu
   correspondingauthor: true
-  qualifications: 2222222
+  qualifications: 28009487
 - familyname: Luo
   othernames: Jinhao
   address: Monash University
@@ -82,7 +82,7 @@ stocks_ori <- stocks_ori%>%
          social_risk = `Social Risk Score`,
          gover_risk = `Governance Risk Score`)
 ```
-
+## Description
 The data which used in this report was sourced from [Yahoo Finance](https://au.finance.yahoo.com/). (Table \@ref(tab:variables-table) shows the information of the variables from the original data, as well as the abbreviation of the variables.) The dataset contains 18 variables of 147 stocks from five major financial indices. Those 18 variables could be further classified into 3 categories. The first categories captures the 5 variables provides the basic background of those stocks which are **Name**, **Symbol**, **Market**, **Sector**, **Industry**. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables are shown in the table below: 
 
 | Names         |abbreviation| Description         | 
@@ -145,8 +145,15 @@ stocks %>%
   facet_wrap(~Industry)
 ```
 
+## Limitation
 However, there are some limitations of the original dataset. Firstly, there are some missing values in the data, which might generate inaccuracy for analysing the data. Secondly, there are only 147 observatios contain in the data, which might insufficient enough to support the analysis and credible results. In addition, if filter out the observations with missing values, the sample size of the data might much less and would increase errors. Thirdly, some inconsistency between total risk score and sum of the other three risk score appear in the dataset, which could also increase the errors of analysis. Those limitations would be further discussed in following sections. At last, the biases in analysis which generate from the limitations would be concluded.
 
+
+In this part we will briefly introduce a couple of limitations in our dataset and those limitation will also be discussed in the following section. 
+1.	This dataset contains a lot of missing value which would cause some bias in our final result. 
+2.	This dataset does not contain enough observations. The insufficient sample space will make our final result become unreliable. In addition, if we further filter out the missing values, the sample size of the data would be even smaller. And the relatively small sample would not be representative enough to clarify the overall condition. 
+3.	There is some inconsistency between total ESG risk score and sum of individual ESG risk score. This inconsistency would directly increase the error in our final output. 
+Those limitations would be further discussed in following sections. At last, the biases in analysis which generate from the limitations would be concluded.
 
 # Analysis 
 
