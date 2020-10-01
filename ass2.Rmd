@@ -64,6 +64,7 @@ Furthermore, the performance of PCA will also be compared with another method wh
 
 
 # Data Description
+
 ```{r data}
 stocks_ori <- read_csv("stocks.csv")
 #nrow(stocks)
@@ -88,7 +89,6 @@ stocks_ori <- stocks_ori%>%
 
 The data which used in this report was sourced from [Yahoo Finance](https://au.finance.yahoo.com/). Table \@ref(tab:variables-table) shows the information of the variables from the original data, as well as the abbreviation of the variables. The dataset contains 18 variables of 147 stocks from five major financial indices. Those 18 variables could be further classified into 3 categories. The first categories captures the 5 variables provides the basic background of those stocks which are **Name**, **Symbol**, **Market**, **Sector**, **Industry**. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables are shown in the table below: 
 
-
 ```{r variables-table}
 tribble(~Names, ~Abbreviation, ~Description,
         "Market capitalization", "intra_day", "How much a company is worth as determined by the stock market", 
@@ -107,7 +107,6 @@ tribble(~Names, ~Abbreviation, ~Description,
   kable(caption = "Information of variables of the original data") %>% 
   kable_styling(bootstrap_options = c("bordered", "striped", "hover"))
 ```
-
 
 ## Limitation
 
@@ -202,7 +201,7 @@ rownames(pca_value$x)<-pull(df,Symbol)
 cor_va<-biplot(pca_value,scale=0,cex=0.8)
 ```
 
-Referring to the correlation biplot Figure \ref(fig:cor_va)we could notice that the the PC1 is positive correlated with the measurement of the company value indication which are **intra_day** and **ent_value** even if the correlation is pretty not strong. The PC2 is positive correlated with the stock earning ratio (ebitda and trail_pe) which means that the increasing in the measurement of the stock earning ratio will increase the PC2 slightly. The rest of the ratio are neither postive correlated with  PC1 nor PC2, but we could notice that the other variables which are related to the price based evaluation of the stock are pretty close to the PC2. The **peg** ratio could not be well explained by both PC1 and PV2. In the meanwhile, this plot also highlights that the two measurement of the company value have a really strong association with each other and do not have any association with other variables which related to the stock price and earning evaluation. Therefore, we could say that the market value of a company may not influence on their stock price and earning per share. However, the relationship between those stock price and earning measurement are quite strong. 
+Referring to the correlation biplot Figure \ref(fig:cor_va) we could notice that the the PC1 is positive correlated with the measurement of the company value indication which are **intra_day** and **ent_value** even if the correlation is pretty not strong. The PC2 is positive correlated with the stock earning ratio (ebitda and trail_pe) which means that the increasing in the measurement of the stock earning ratio will increase the PC2 slightly. The rest of the ratio are neither postive correlated with  PC1 nor PC2, but we could notice that the other variables which are related to the price based evaluation of the stock are pretty close to the PC2. The **peg** ratio could not be well explained by both PC1 and PV2. In the meanwhile, this plot also highlights that the two measurement of the company value have a really strong association with each other and do not have any association with other variables which related to the stock price and earning evaluation. Therefore, we could say that the market value of a company may not influence on their stock price and earning per share. However, the relationship between those stock price and earning measurement are quite strong. 
 
 ```{r bi_dis,fig.cap="Distance Biplot of Stock Value"}
 dis_va<-biplot(pca_value,xlim=c(-0.6,0.3),cex=0.8)
@@ -210,7 +209,7 @@ dis_va<-biplot(pca_value,xlim=c(-0.6,0.3),cex=0.8)
 
 After we identify the relationship between those measurement of the variable, what we do next is to figure out the connection of each observation by using the distance biplot \ref(fig:dis_va). What this biplot could tell us is that **Johnson & Johnson** and **Walmart** have a pretty high value of the company, and **Activision Blizzard**, **Texas Instruments Incorporated**, **Maxim Integrated Products** indicate the high earnings in the stock. 
 
-In the meanwhile, we also need to pay attention on the **Verisk analytics** the potential outlier for the PC1, and **Johnson & Johnson** and **Walmart** the potential outlier for PC2. Since we notice that the price and earning per share for **VRSK** are quite high the reason may due to that **VRSK** is mainly a data analytics and risk assessment firm. The mainly provide the consulting service instead of the selling goods. Therefore, compaing with the multinational retail company, the might not have a really large firm size, as for a financial sector, their stock value is postively correlated with the service they provide. 
+In the meanwhile, we also need to pay attention on the **Verisk analytics (VRSK)** the potential outlier for the PC1, and **JNJ** and **WMT** the potential outlier for PC2. Since we notice that the price and earning per share for **VRSK** are quite high the reason may due to that **VRSK** is mainly a data analytics and risk assessment firm. The mainly provide the consulting service instead of the selling goods. Therefore, compaing with the multinational retail company, the might not have a really large firm size, as for a financial sector, their stock value is positively correlated with the service they provide. 
 
 **JNJ** and **WMT** perform just in the opposite way. As for the multination company, their profit mainly come from the selling products. Therefore, they need to continuously increase their market share to maintain their market profit. 
 
@@ -223,12 +222,9 @@ Besides of the information we get from the biplot, there are also some of limita
 
 Overall we could say that PCA in the value analysis in our sample stocks could express some information, but it might not be really representative in the general stock market. 
 
-
-
 ```{r, eval=FALSE}
 stocks %>% filter(Industry == "Technology")
 ```
-
 
 ### Risk Analysis
 
@@ -388,7 +384,6 @@ adjustedRandIndex(memb_three_w, memb_three_c)
 adjustedRandIndex(memb_three_w, memb_three_al)
 adjustedRandIndex(memb_three_w, memb_three_cm)
 ```
-
 
 # Conclusions 
 
