@@ -4,9 +4,9 @@ author:
 - familyname: Jin
   othernames: Kaiwen
   address: Monash University 
-  email: xxxxx@student.monash.edu
+  email: kjin7@student.monash.edu
   correspondingauthor: true
-  qualifications: 1111111
+  qualifications: 26686953
 - familyname: Zhang
   othernames: Zhiruo
   address: Monash University
@@ -357,23 +357,48 @@ pca_risk$rotation %>%
 ```
 
 ## Cluster Analysis
+
+Using the hierarchical clustering analysis with algromerative method, it is a bottom-up approach. We first select the data set that is consistent with the value data by equivalent stocks symbol. After standardised the data for the numeric variables, we use the Euclidian distance to find the distance between all pairs of observations. We employ the Ward's methodology to sort the clusters. And the resulting of clusters are shown in the dendogram, which is a tree-like diagram that displays the sequences of merges or splits. Based on the Figure \@ref{fig:Ward}, the two and four clusters solutions are not stable. Hence, the three cluster solution is stable which is shown in \@ref{fig:ward_3}.
+
 ```{r dat-cluster}
 dat <- stocks[(stocks$Symbol %in% df$Symbol),]
 d <- dat %>% select_if(is.numeric) %>% scale %>% dist 
 ```
 
-Prefer using Ward's method..
-
-```{r Ward}
+```{r Ward, fig.cap="Choosing clusters"}
 hc_w <- hclust(d, method = "ward.D2")
 hc_w$labels <- dat$Symbol
-plot(hc_w, cex = 0.5)
+par(mfrow = c(1,3))
+plot(hc_w, cex = 0.5, xlab= "Stocks", ylab="Distance")
+rect.hclust(hc_w, k = 2)
+plot(hc_w, cex = 0.5, xlab= "Stocks", ylab="Distance")
+rect.hclust(hc_w, k = 3)
+plot(hc_w, cex = 0.5, xlab= "Stocks", ylab="Distance")
+rect.hclust(hc_w, k = 4)
+```
+
+```{r ward_3, fig.cap="Dendogram using Ward methodology and taking Euclidian distances"}
+plot(hc_w, cex = 0.5, xlab= "Stocks", ylab="Distance")
 rect.hclust(hc_w, k = 3)
 ```
 
+From the dendogram, there are three different clusters. The first cluster contians the following stocks:
 ```{r memb_w}
 memb_three_w <- cutree(hc_w, k = 3)
+dat[dat$Symbol %in%  rownames(as.data.frame(memb_three_w) %>% filter(memb_three_w == 2)),]$Name
 ```
+
+The second cluster includes the following stocks:
+```{r}
+dat[dat$Symbol %in%  rownames(as.data.frame(memb_three_w) %>% filter(memb_three_w == 3)),]$Name
+```
+
+The last one consists of the rest stocks:
+```{r}
+dat[dat$Symbol %in%  rownames(as.data.frame(memb_three_w) %>% filter(memb_three_w == 1)),]$Name
+```
+
+We also using other methods to do the cluster analysis, such as complete linkage method, average linkage and centroid method. In order to check the robustness, we compute the adjusted rand index using `adjustedRandIndex` function. The result shows that the complete linkage method has a relatively high level of aggrement with the Ward's method. 
 
 ```{r complete}
 hc_c <- hclust(d, method = "complete")
