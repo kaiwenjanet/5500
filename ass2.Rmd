@@ -22,7 +22,7 @@ author:
 department: Department of\newline Econometrics &\newline Business Statistics
 organization: ETF5500 Assignment2
 bibliography: references.bib
-biblio-style: authoryear-comp
+biblio-style: apa
 linestretch: 1.5
 output:
   MonashEBSTemplates::report:
@@ -55,13 +55,6 @@ library(tibble)
 
 # Introduction
 
-In financial market, the value of stocks would be investigated by many different variables. However, the large number of variables of each stock might make readers hard to make the comparison. Therefore, this report would apply linear combination (LC) to combine all the variables into a index and utilise principal component analysis (PCA) to help with evaluating stocks. Principal components (PCs) are the indexes of linear combination which explain the variance of the original variables, and the variance could help with differentiating the performing of each observations. PCA plays an important role in evaluating the potential values and risks of each stock, which   utilises the small number of the PCs to explain the general variation in the original data.
-
-In addition, this report will also consider the PCA method whether is a good measurement in the stock pricing and risk measuring. By investigating the measurement of stock value and stock risk to further find our the potential limitation that PCA might face. 
-
-Furthermore, the performance of PCA will also be compared with another method which is Clustering Analysis to check the accuracy of our result. At last, some useful suggestions for the stocks choosing will be concluded, as well as concluding the biases generated from the limitations in analysis.
-
--Modified:
 In financial market, the value of stocks would be investigated by many different variables. However, the large number of variables of each stock might make investors hard to make their decision. Therefore, this report would apply linear combination (LC) to combine all the variables into a index and utilise principal component analysis (PCA) to evaluate the performance of stocks. 
 
 In addition, this report will also consider the accuracy of PCA and will discuss about the potential limitation of PCA in the stock performance evaluation. Based on the result, the comparative analysis with Clustering Approach will also be provided. 
@@ -375,7 +368,56 @@ According to our general evaluation of the Yahoo Finance market, we could say th
 - Companies need to improve the ability of self-resilience and anti-risks so than enhance the performance when facing different types of risks.
 
 
-# Appendix
+# Acknowledgement
+
+The data could be downloaded from [Yahoo Finance](https://au.finance.yahoo.com/). Meanwhile, the report uses the template called **Monash Consulting Report** which could use by downloading the package called [MonashEBSTemplates](https://github.com/robjhyndman/MonashEBSTemplates). In addition, the programming language used to analyse the stocks is R (4.0.2) (R Core Team, 2020).
+
+Following packages has been included in our Rmd file:
+
+- package dplyr (1.0.1) (Wickham et al., 2020),
+- package ggplot2 (3.3.2)  (Wickham, 2016),
+- package tidyverse (1.3.0)  (Wickham et al., 2019),
+- package mclust (5.4.6)  (Scrucca et al., 2016),
+- package visdat (0.5.3)  (Tierney, 2017),
+- package gridExtra (2.3)  (Auguie, 2017),
+- package kableExtra (1.1.0)  (Zhu, 2019),
+- package tibble (3.0.3)  (Müller & Wickham, 2020).
+
+\clearpage
+
+
+# References
+
+Auguie, B. (2017). Gridextra: Miscellaneous functions for "grid" graphics [R package version 2.3].
+    https://CRAN.R-project.org/package=gridExtra
+    
+Müller, K, & Wickham, H. (2020). Tibble: Simple data frames [R package version 3.0.3].                        https://CRAN.R-project.org/package=tibble
+
+R Core Team. (2020). R: A language and environment for statistical computing. R Foundation for                Statistical Computing. Vienna, Austria. https://www.R-project.org/
+
+Scrucca, L, Fop, M, Murphy, TB, & Raftery, AE. (2016). mclust 5: Clustering, classification and density
+    estimation using Gaussian finite mixture models. The R Journal, 8(1), 289–317.
+    
+Tierney, N. (2017). Visdat: Visualising whole data frames. JOSS, 2(16), 355.
+
+Wickham, H. (2016). Ggplot2: Elegant graphics for data analysis. Springer-Verlag New York.                  https://ggplot2.tidyverse.org
+
+Wickham, H, Averick, M, Bryan, J, Chang, W, McGowan, LD, François, R, Grolemund, G, Hayes, A,
+    Henry, L, Hester, J, Kuhn, M, Pedersen, TL, Miller, E, Bache, SM, Müller, K, Ooms, J, Robinson,
+    D, Seidel, DP, Spinu, V, ... Yutani, H. (2019). Welcome to the tidyverse. Journal of Open
+    Source Software, 4(43), 1686.
+    
+Wickham, H, François, R, Henry, L, & Müller, K. (2020). Dplyr: A grammar of data manipulation [R
+    package version 1.0.1]. https://CRAN.R-project.org/package=dplyr
+    
+Zhu, H. (2019). Kableextra: Construct complex table with ’kable’ and pipe syntax [R package version
+    1.1.0]. https://CRAN.R-project.org/package=kableExtra
+
+
+\clearpage
+
+\appendix
+\section{\\Appendix}
 
 ## Ends with Emphasis 
 
@@ -428,21 +470,3 @@ al_method %>%
   kable_styling(bootstrap_options = c("bordered", "hover", "striped")) 
 ```
 
-## Acknowledgement
-
-The data could be downloaded from [Yahoo Finance](https://au.finance.yahoo.com/). Meanwhile, the report uses the template called **Monash Consulting Report** which could use by downloading the package called [MonashEBSTemplates](https://github.com/robjhyndman/MonashEBSTemplates). In addition, the programming language used to analyse the stocks is R (4.0.2) [@R].
-
-Following packages has been included in our Rmd file:
-
-- package dplyr (1.0.1) [@dplyr],
-- package ggplot2 (3.3.2) [@ggplot2],
-- package tidyverse (1.3.0) [@tidyverse],
-- package mclust (5.4.6) [@mclust],
-- package visdat (0.5.3) [@visdat],
-- package gridExtra (2.3) [@gridExtra],
-- package kableExtra (1.1.0) [@kableExtra],
-- package tibble (3.0.3) [@tibble].
-
-\clearpage
-
-## References

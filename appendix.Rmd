@@ -1,0 +1,113 @@
+---
+title: "appendix"
+author: "Jinhao Luo"
+date: "2020/10/2"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, cache=FALSE, messages=FALSE, warning=FALSE)
+# Make sure you have the latest versions of rmarkdown and bookdown installed
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(mclust)
+library(visdat)
+library(gridExtra)
+library(kableExtra)
+library(tibble)
+```
+
+```{r data, message=FALSE}
+stocks_ori <- read_csv("stocks.csv")
+#nrow(stocks)
+#head(stocks)
+stocks_ori <- stocks_ori%>%
+  rename(intra_day=`Market cap (intra-day)`,
+         ent_value=`Enterprise value`,
+         trail_pe=`Trailing P/E`,
+         for_pe=`Forward P/E`,
+         peg=`PEG ratio (5-yr expected)`,
+         ttm=`Price/sales (ttm)`,
+         mrq=`Price/book (mrq)`,
+         rev=`Enterprise value/revenue`,
+         ebitda=`Enterprise value/EBITDA`,
+         tot_risk = `Total ESG risk score`,
+         envir_risk = `Environmental Risk Score`,
+         social_risk = `Social Risk Score`,
+         gover_risk = `Governance Risk Score`)
+```
+
+```{r stocks}
+stocks <- na.omit(stocks_ori)
+```
+
+```{r value}
+# filter out the outliers
+issuer<-stocks%>%
+  select(Symbol,intra_day,ent_value,trail_pe,for_pe,peg,ttm,mrq,rev,ebitda)
+df <- issuer[!(issuer$Symbol %in% c("MSFT", "AAPL", "TSLA", "ILMN", "DIS", "VZ", "KO", "MMM", "CVX", "PCAR", "CAT", "XOM", "V", "INTU", "NKE")),]
+#view(df)
+```
+
+```{r dat-cluster}
+dat <- stocks[(stocks$Symbol %in% df$Symbol),]
+d <- dat %>% select_if(is.numeric) %>% scale %>% dist 
+```
+
+```{r}
+hc_w <- hclust(d, method = "ward.D2")
+hc_w$labels <- dat$Symbol
+
+memb_three_w <- cutree(hc_w, k = 3)
+memb_one <- dat[dat$Symbol %in% rownames(as.data.frame(memb_three_w) %>% filter(memb_three_w == 2)),]$Name
+```
+
+At the end of our report, it is necessary to emphasis that due to the small sample space and the incomplete eigenvalue selection, our result might not be representative and the biplot could not fully state the overall situation. Even though, in our case, the biplot is suitable for risks analysis. We still could not deny fact that in general the small sample size would lead to the bias in output. Therefore, our report use the cluster analysis as alternative approach The agglomerative method indicates that stable solution is three cluster. And here we would show complete linkage method (Figure \@ref(fig:complete)), average linkage (Figure \@ref(fig:average)) and centroid method (Figure \@ref(fig:centroid)). In order to check the robustness, we compute the adjusted rand index using `adjustedRandIndex` function. Table \@ref(tab:adjusted-index) indicates that the complete linkage method has a relatively high level of agreement with the Ward's method. 
+
+```{r complete, fig.cap="Cluster dendrogram of complete linkage method"}
+hc_c <- hclust(d, method = "complete")
+hc_c$labels <- dat$Symbol
+plot(hc_c, cex = 0.5)
+rect.hclust(hc_c, k = 3)
+```
+
+```{r memb-complete}
+memb_three_c <- cutree(hc_c, k = 3) 
+```
+
+```{r average, fig.cap="Cluster dendrogram of average linkage method"}
+hc_al <- hclust(d, method = "average")
+hc_al$labels <- dat$Symbol
+plot(hc_al, cex = 0.5)
+rect.hclust(hc_al, k = 3)
+```
+
+```{r memb_al}
+memb_three_al <- cutree(hc_al, k = 3)
+```
+
+```{r centroid, fig.cap="Cluster dendrogram of centroid method"}
+hc_cm <- hclust(d, method = "centroid")
+hc_cm$labels <- dat$Symbol
+plot(hc_cm, cex = 0.5)
+rect.hclust(hc_cm, k = 3)
+```
+
+```{r memb_cm}
+memb_three_cm <- cutree(hc_cm, k = 3)
+```
+
+```{r adjusted-index}
+c <- adjustedRandIndex(memb_three_w, memb_three_c)
+al <- adjustedRandIndex(memb_three_w, memb_three_al)
+cm <- adjustedRandIndex(memb_three_w, memb_three_cm)
+
+
+al_method <- rbind(c, al, cm) 
+rownames(al_method) <- c("complete linkage method", "average linkage method", "centroid method")
+al_method %>% 
+  kable(col.names = c("adjusted rand index"), 
+        caption = "The adjusted rand index of the three clustering methods") %>%
+  kable_styling(bootstrap_options = c("bordered", "hover", "striped")) 
+```

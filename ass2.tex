@@ -1,0 +1,801 @@
+\documentclass[11pt,a4paper,]{article}
+\usepackage{lmodern}
+
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdftitle={How will the stock market react to the PCA: Envidence From Yahoo Finance Stock Market},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{geometry}
+\geometry{a4paper, centering, text={16cm,24cm}}
+\usepackage[style=apa,]{biblatex}
+\addbibresource{references.bib}
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\title{How will the stock market react to the PCA: Envidence From Yahoo Finance Stock Market}
+
+%% MONASH STUFF
+
+%% CAPTIONS
+\RequirePackage{caption}
+\DeclareCaptionStyle{italic}[justification=centering]
+ {labelfont={bf},textfont={it},labelsep=colon}
+\captionsetup[figure]{style=italic,format=hang,singlelinecheck=true}
+\captionsetup[table]{style=italic,format=hang,singlelinecheck=true}
+
+
+%% FONT
+\RequirePackage{bera}
+\RequirePackage[charter,expert,sfscaled]{mathdesign}
+\RequirePackage{fontawesome}
+
+%% HEADERS AND FOOTERS
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\rfoot{\Large\sffamily\raisebox{-0.1cm}{\textbf{\thepage}}}
+\makeatletter
+\lhead{\textsf{\expandafter{\@title}}}
+\makeatother
+\rhead{}
+\cfoot{}
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[C]{\sffamily\thepage} % except the center
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+
+%% MATHS
+\RequirePackage{bm,amsmath}
+\allowdisplaybreaks
+
+%% GRAPHICS
+\RequirePackage{graphicx}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.8}
+
+
+%\RequirePackage[section]{placeins}
+
+%% SECTION TITLES
+
+
+%% SECTION TITLES
+\RequirePackage[compact,sf,bf]{titlesec}
+\titleformat*{\section}{\Large\sf\bfseries\color[rgb]{0.7,0,0}}
+\titleformat*{\subsection}{\large\sf\bfseries\color[rgb]{0.7,0,0}}
+\titleformat*{\subsubsection}{\sf\bfseries\color[rgb]{0.7,0,0}}
+\titlespacing{\section}{0pt}{2ex}{.5ex}
+\titlespacing{\subsection}{0pt}{1.5ex}{0ex}
+\titlespacing{\subsubsection}{0pt}{.5ex}{0ex}
+
+
+%% TITLE PAGE
+\def\Date{\number\day}
+\def\Month{\ifcase\month\or
+ January\or February\or March\or April\or May\or June\or
+ July\or August\or September\or October\or November\or December\fi}
+\def\Year{\number\year}
+
+%% LINE AND PAGE BREAKING
+\sloppy
+\clubpenalty = 10000
+\widowpenalty = 10000
+\brokenpenalty = 10000
+\RequirePackage{microtype}
+
+%% PARAGRAPH BREAKS
+\setlength{\parskip}{1.4ex}
+\setlength{\parindent}{0em}
+
+%% HYPERLINKS
+\RequirePackage{xcolor} % Needed for links
+\definecolor{darkblue}{rgb}{0,0,.6}
+\RequirePackage{url}
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{\RequirePackage{hyperref}}
+\makeatother
+\hypersetup{
+     citecolor=0 0 0,
+     breaklinks=true,
+     bookmarksopen=true,
+     bookmarksnumbered=true,
+     linkcolor=darkblue,
+     urlcolor=blue,
+     citecolor=darkblue,
+     colorlinks=true}
+
+\usepackage[showonlyrefs]{mathtools}
+\usepackage[no-weekday]{eukdate}
+
+%% BIBLIOGRAPHY
+
+\makeatletter
+\@ifpackageloaded{biblatex}{}{\usepackage[style=authoryear-comp, backend=biber, natbib=true]{biblatex}}
+\makeatother
+\ExecuteBibliographyOptions{bibencoding=utf8,minnames=1,maxnames=3, maxbibnames=99,dashed=false,terseinits=true,giveninits=true,uniquename=false,uniquelist=false,doi=false, isbn=false,url=true,sortcites=false}
+
+\DeclareFieldFormat{url}{\texttt{\url{#1}}}
+\DeclareFieldFormat[article]{pages}{#1}
+\DeclareFieldFormat[inproceedings]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[incollection]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{title}{\MakeCapital{#1}}
+\DeclareFieldFormat[article]{url}{}
+%\DeclareFieldFormat[book]{url}{}
+%\DeclareFieldFormat[inbook]{url}{}
+%\DeclareFieldFormat[incollection]{url}{}
+%\DeclareFieldFormat[inproceedings]{url}{}
+\DeclareFieldFormat[inproceedings]{title}{#1}
+\DeclareFieldFormat{shorthandwidth}{#1}
+%\DeclareFieldFormat{extrayear}{}
+% No dot before number of articles
+\usepackage{xpatch}
+\xpatchbibmacro{volume+number+eid}{\setunit*{\adddot}}{}{}{}
+% Remove In: for an article.
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{%
+  \printtext{\bibstring{in}\intitlepunct}}}
+
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryCitekey{\clearfield{month}}
+
+\makeatletter
+\DeclareDelimFormat[cbx@textcite]{nameyeardelim}{\addspace}
+\makeatother
+
+\author{\sf\Large\textbf{ Kaiwen Jin}\\ {\sf\large 26686953\\[0.5cm]} \sf\Large\textbf{ Zhiruo Zhang}\\ {\sf\large 28009487\\[0.5cm]} \sf\Large\textbf{ Jinhao Luo}\\ {\sf\large 29012449\\[0.5cm]}}
+
+\date{\sf\Date~\Month~\Year}
+\makeatletter
+\lfoot{\sf Jin, Zhang, Luo: \@date}
+\makeatother
+
+
+%%%% PAGE STYLE FOR FRONT PAGE OF REPORTS
+
+\makeatletter
+\def\organization#1{\gdef\@organization{#1}}
+\def\telephone#1{\gdef\@telephone{#1}}
+\def\email#1{\gdef\@email{#1}}
+\makeatother
+  \organization{ETF5500 Assignment2}
+
+  \def\name{Department of\newline Econometrics \&\newline Business Statistics}
+
+  \telephone{(03) 9905 2478}
+
+  \email{BusEco-Econometrics@monash.edu}
+
+\def\webaddress{\url{http://buseco.monash.edu/ebs/consulting/}}
+\def\abn{12 377 614 012}
+\def\logo{\includegraphics[width=6cm]{MBSportrait}}
+\def\extraspace{\vspace*{1.6cm}}
+\makeatletter
+\def\contactdetails{\faicon{phone} & \@telephone \\
+                    \faicon{envelope} & \@email}
+\makeatother
+
+%%%% FRONT PAGE OF REPORTS
+
+\def\reporttype{Report for}
+
+\long\def\front#1#2#3{
+\newpage
+\begin{singlespacing}
+\thispagestyle{empty}
+\vspace*{-1.4cm}
+\hspace*{-1.4cm}
+\hbox to 16cm{
+  \hbox to 6.5cm{\vbox to 14cm{\vbox to 25cm{
+    \logo
+    \vfill
+    \parbox{6.3cm}{\raggedright
+      \sf\color[rgb]{0.00,0.00,0.70}
+      {\large\textbf{\name}}\par
+      \vspace{.7cm}
+      \tabcolsep=0.12cm\sf\small
+      \begin{tabular}{@{}ll@{}}\contactdetails
+      \end{tabular}
+      \vspace*{0.3cm}\par
+      ABN: \abn\par
+    }
+  }\vss}\hss}
+  \hspace*{0.2cm}
+  \hbox to 1cm{\vbox to 14cm{\rule{1pt}{26.8cm}\vss}\hss\hfill}
+  \hbox to 10cm{\vbox to 14cm{\vbox to 25cm{
+      \vspace*{3cm}\sf\raggedright
+      \parbox{11cm}{\sf\raggedright\baselineskip=1.2cm
+         \fontsize{24.88}{30}\color[rgb]{0.70,0.00,0.00}\sf\textbf{#1}}
+      \par
+      \vfill
+      \large
+      \vbox{\parskip=0.8cm #2}\par
+      \vspace*{2cm}\par
+      \reporttype\\[0.3cm]
+      \hbox{#3}%\\[2cm]\
+      \vspace*{1cm}
+      {\large\sf\textbf{\Date~\Month~\Year}}
+   }\vss}
+  }}
+\end{singlespacing}
+\newpage
+}
+
+\makeatletter
+\def\titlepage{\front{\expandafter{\@title}}{\@author}{\@organization}}
+\makeatother
+
+\usepackage{setspace}
+\setstretch{1.5}
+
+%% Any special functions or other packages can be loaded here.
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+
+
+\begin{document}
+\titlepage
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\clearpage
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+In financial market, the value of stocks would be investigated by many different variables. However, the large number of variables of each stock might make investors hard to make their decision. Therefore, this report would apply linear combination (LC) to combine all the variables into a index and utilise principal component analysis (PCA) to evaluate the performance of stocks.
+
+In addition, this report will also consider the accuracy of PCA and will discuss about the potential limitation of PCA in the stock performance evaluation. Based on the result, the comparative analysis with Clustering Approach will also be provided.
+
+At last, some useful suggestions for the stocks choosing will be concluded, as well as concluding the biases generated from the limitations in analysis.
+
+The appendix will contain some notes which would be helpful in understanding our reports.
+
+\hypertarget{data-description}{%
+\section{Data Description}\label{data-description}}
+
+\hypertarget{description}{%
+\subsection{Description}\label{description}}
+
+The data which used in this report was sourced from \href{https://au.finance.yahoo.com/}{Yahoo Finance}. Table \ref{tab:variables-table} shows the information of the variables from the original data, as well as the abbreviation of the variables. The dataset contains 18 variables of 147 stocks from five major financial indices. Those 18 variables could be further classified into 3 categories. The first categories captures the 5 variables provides the basic background of those stocks which are \textbf{Name}, \textbf{Symbol}, \textbf{Market}, \textbf{Sector}, \textbf{Industry}. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables are shown in the table below:
+
+\begin{table}
+
+\caption{\label{tab:variables-table}Information of variables of the original data}
+\centering
+\begin{tabular}[t]{l|l|>{\raggedright\arraybackslash}p{150px}}
+\hline
+Names & Abbreviation & Description\\
+\hline
+Market capitalization & intra\_day & How much a company is worth as determined by the stock market\\
+\hline
+Enterprise value & ent\_value & A measure of a company's total value\\
+\hline
+Trailing P/E & trail\_pe & Price to Earning Ratio based on the earnings per share over the previous 12 months\\
+\hline
+Forward P/E ratio & for\_pe & Estimate further earnings per share in the next 12 months\\
+\hline
+PEG ratio & peg & Enhances the P/E ratio by adding the expected earnings growth into calculation\\
+\hline
+P/S ratio & ttm & Price to Sales ratio, a valuation ratio by comparing a company’s stock price to its revenue\\
+\hline
+P/B ratio & mrq & Price to Book ratio is a measurement of the market's valuation of a company relative to its book value\\
+\hline
+Enterprise value-to-revenue & rev & Also refers as the EV/R, it measures the value of a stock that compares a company's enterprise value to its revenue\\
+\hline
+EV/EBITDA & ebitda & Enterprise value to earnings before interest, taxed, depreciation and amortization ratio compares the value of a company, debt included to the company's cash earnings less non-cash expenses\\
+\hline
+Total ESG risk score & tot\_risk & The overall rating scores based on the Morningstar Sustainability Rating systems\\
+\hline
+Environmental Risk Score & envir\_risk & Evaluation scores of the portfolios performance when they meet the environmental challenges\\
+\hline
+Social Risk Score & social\_risk & Evaluation scores of the portfolios performance when they meet the social challenges\\
+\hline
+Governance Risk Score & gover\_risk & Evaluation scores of the portfolios performance when they meet the governance challenges\\
+\hline
+\end{tabular}
+\end{table}
+
+\hypertarget{limitation}{%
+\subsection{Limitation}\label{limitation}}
+
+In this part we will briefly introduce a couple of limitations in our dataset and those limitation will also be discussed in the following section.
+
+\begin{itemize}
+\tightlist
+\item
+  This dataset contains a lot of missing value which would cause some bias in our final result
+\item
+  This dataset does not contain enough observations. The insufficient sample space will make our final result become unreliable. In addition, if we further filter out the missing values, the sample size of the data would be even smaller. And the relatively small sample would not be representative enough to clarify the overall condition.
+\item
+  There is some inconsistency between total ESG risk score and sum of individual ESG risk score. This inconsistency would directly increase the error in our final output.
+\end{itemize}
+
+Those limitations would be further discussed in following sections. At last, the biases in analysis which generate from the limitations would be concluded.
+
+\hypertarget{analysis}{%
+\section{Analysis}\label{analysis}}
+
+\hypertarget{preliminary-analysis}{%
+\subsection{Preliminary Analysis}\label{preliminary-analysis}}
+
+Based on the original dataset, we will firstly tidy it by removing the missing variables and further figure out other features. Figure \ref{fig:vis-data} shows the general data structure and it could be classified into three types which are character, numeric and missing value.
+
+\begin{figure}
+\centering
+\includegraphics{ass2_files/figure-latex/vis-data-1.pdf}
+\caption{\label{fig:vis-data}The data structure of original data}
+\end{figure}
+
+Table \ref{tab:summary-table} indicates that the initial 147 observations have up to 102 missing value and also some potential outliers.
+
+\begin{table}
+
+\caption{\label{tab:summary-table}Summary table of original data}
+\centering
+\begin{tabular}[t]{l|l|l|l|l|l}
+\hline
+Names & Min & Median & Mean & Max & NA\\
+\hline
+intra\_day & -2 & 63 & 95065 & 5110000 & NA\\
+\hline
+ent\_value & -264 & 70 & 85683 & 5130000 & NA\\
+\hline
+trail\_pe & 0.48 & 20.11 & 43.62 & 1479.29 & 18\\
+\hline
+for\_pe & 3.59 & 19.92 & 43.04 & 1044.81 & 80\\
+\hline
+peg & -62.380 & 2.405 & 15.223 & 713.670 & 81\\
+\hline
+ttm & 0.9 & 2.8 & 9.941 & 548.150 & 17\\
+\hline
+mrq & 0.1 & 5.4 & 174.16 & 11765.96 & 10\\
+\hline
+rev & -27.720 & 2.875 & 9.827 & 5411.160 & 17\\
+\hline
+ebitda & -465.460 & 13.765 & 19.461 & 1117.510 & 23\\
+\hline
+tot\_risk & 11 & 23 & 25.39 & 75 & 13\\
+\hline
+envir\_risk & 0 & 4 & 6.731 & 62 & 13\\
+\hline
+social\_risk & 3 & 10 & 11.4 & 88 & 13\\
+\hline
+gover\_risk & 3 & 8 & 9.343 & 80 & 13\\
+\hline
+\end{tabular}
+\end{table}
+
+Most of the variables have the really small median and mean, but a extremely high maximum value. Those extreme value would definitely dominate our Principle Component Analysis and those outliers are shown below:
+
+\begin{itemize}
+\tightlist
+\item
+  outliers in \texttt{intra\_day} and \texttt{ent\_value}: MSFT \& AAPL
+\item
+  outliers in \texttt{trail\_pe}: TSLA
+\item
+  outliers in \texttt{for\_pe}: ILMN \& TSLA
+\item
+  outliers in \texttt{peg}: DIS, VZ, KO, MMM, CVX, PCAR, CAT, XOM
+\item
+  outliers in \texttt{ttm}: ILMN, V
+\item
+  outliers in \texttt{mrq}: TSLA
+\item
+  outliers in \texttt{rev}: ILMN, V
+\item
+  outliers in \texttt{ebitda}: INTU, ILMN, TSLA, NKE
+\end{itemize}
+
+New dataset \textbf{stocks} will be generated by removing the missing value.
+
+\hypertarget{principle-component-analysis}{%
+\subsection{Principle Component Analysis}\label{principle-component-analysis}}
+
+\hypertarget{value-analysis}{%
+\subsubsection{Value Analysis}\label{value-analysis}}
+
+Value analysis will be conducted by removing the outliers. It is necessary to filter out high influential outliers and we will standardised our data as well since it is based on different unit. Biplot and interpretation will also be provided.
+
+\begin{figure}
+\centering
+\includegraphics{ass2_files/figure-latex/pca-cor-1.pdf}
+\caption{\label{fig:pca-cor}Correlation Biplot of Stock Value}
+\end{figure}
+
+Referring to the correlation biplot Figure \ref{fig:pca-cor} we could notice that the the PC1 is positive correlated with the measurement of the company value indication which are \textbf{intra\_day} and \textbf{ent\_value}. The PC2 is positive correlated with the stock earning ratio (ebitda and trail\_pe) which means that the increasing in the measurement of the stock earning ratio will increase the PC2 slightly. The rest of the ratio are neither positive correlated with PC1 nor PC2, but we could notice that the other variables which are related to the price based evaluation of the stock are pretty close to the PC2. The \textbf{peg} ratio could not be well explained by both PC1 and PV2.
+
+Meanwhile, this plot also highlights that the two measurement of the company value have a really strong association with each other and do not have any association with other variables which related to the stock price and earning evaluation. Therefore, we could say that the market value of a company may not influence on their stock price and earning per share. However, the relationship between those stock price and earning measurement are quite strong.
+
+\begin{figure}
+\centering
+\includegraphics{ass2_files/figure-latex/bi-dis-1.pdf}
+\caption{\label{fig:bi-dis}Distance Biplot of Stock Value}
+\end{figure}
+
+Distance biplot \ref{fig:bi-dis} indicates that \textbf{Johnson \& Johnson (JNJ)} and \textbf{Walmart (WMT)} have a high value in PC1, and \textbf{Activision Blizzard (ATVI)}, \textbf{Texas Instruments Incorporated (TXN)}, \textbf{Maxim Integrated Products (MXIM)} are higher in PC2.
+
+Meanwhile, we notice that the \textbf{Verisk analytics (VRSK)} the potential outlier for the PC1, and \textbf{JNJ} and \textbf{WMT} the potential outlier for PC2. We could explain the reason by identify the characteristic of these firm. \textbf{VRSK} is a data analytics and risk assessment firm. They mainly provide the consulting service instead of the selling goods. Therefore, being a financial service sector, they will not have a large firm size, but the stock value and EPS will be higher. \textbf{JNJ} and \textbf{WMT} perform in the opposite way because they mainly generate profit by selling goods. The continuously increasing market share will keep their market profit in a high level.
+
+\begin{table}
+
+\caption{\label{tab:lim-1}Summary table of PCA for value analysis of stocks}
+\centering
+\begin{tabular}[t]{l|r|r|r|r|r|r|r|r|r}
+\hline
+  & PC1 & PC2 & PC3 & PC4 & PC5 & PC6 & PC7 & PC8 & PC9\\
+\hline
+Standard deviation & 2.0468 & 1.4658 & 0.9319 & 0.9005 & 0.7316 & 0.5625 & 0.3081 & 0.1727 & 0.0784\\
+\hline
+Proportion of Variance & 0.4655 & 0.2387 & 0.0965 & 0.0901 & 0.0595 & 0.0352 & 0.0106 & 0.0033 & 0.0007\\
+\hline
+Cumulative Proportion & 0.4655 & 0.7042 & 0.8007 & 0.8908 & 0.9503 & 0.9855 & 0.9960 & 0.9993 & 1.0000\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics{ass2_files/figure-latex/lim-2-1.pdf}
+\caption{\label{fig:lim-2}Screeplot of PCs in PCA for value analysis of stocks}
+\end{figure}
+
+The limitation for the value analysis also exists.
+- After we filter out the outliers, the number of variables we put into use is 30 out of 147 and only 70.42\% of the overall variation could be explained by the first two principle (Table \ref{tab:lim-1}). The really small space size is not representative and also would not accurate enough to explain the whole stock market condition.
+- There is some contradictory in PC selection in Screeplot (Figure \ref{fig:lim-2}) and biplot.
+Therefore, we need to consider alternative approach to make sure of the accuracy of our suggestion.
+
+\hypertarget{risk-analysis}{%
+\subsubsection{Risk Analysis}\label{risk-analysis}}
+
+In this part, we will discuss about the potential risk of each stock based on the ESG risk score. We will compare the total risk score with the sum of the ESG scores to make sure the consistency of our data. Filtering out the inconsistent value would improve the accuracy of our result.
+
+Meanwhile, this report would also need to consider which PCs should be used. Table \ref{tab:pca-risk-summary} shows the summary statistics of components. It is clear that PC1 and PC2 have explained almost 86\% of the total variation of 4 variables. Besides, figure \ref{fig:pca-risk-screeplot} also suggests that principal component of one and two should be selected because they all with a variance greater than 1 according to the Kaiser's Rule.
+
+\begin{table}
+
+\caption{\label{tab:pca-risk-summary}Summary table of PCA for risks analysis of stocks}
+\centering
+\begin{tabular}[t]{l|r|r|r|r}
+\hline
+  & PC1 & PC2 & PC3 & PC4\\
+\hline
+Standard deviation & 1.3946 & 1.2190 & 0.7544 & 0\\
+\hline
+Proportion of Variance & 0.4862 & 0.3715 & 0.1423 & 0\\
+\hline
+Cumulative Proportion & 0.4862 & 0.8577 & 1.0000 & 1\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics{ass2_files/figure-latex/pca-risk-screeplot-1.pdf}
+\caption{\label{fig:pca-risk-screeplot}Screeplot of PCs in PCA for risk analysis of stocks}
+\end{figure}
+
+Figure \ref{fig:pca-risk-distance} shows the distance among each stock in the dataset, and implies the similarity between stocks. The stocks of \textbf{VRSK} and \textbf{UnitedHealth Group Incorporated (UNH)} may be exactly same because they seem perfectly superimpose. Besides, \textbf{Allianz SE (ALV.DE)} and \textbf{Dollar Tree, Inc.~(DLTR)}, as well as \textbf{Cerner Corporation (CERN)} and \textbf{Fiserv, Inc.~(FISV)} might be similar, because they are close to each other. While the stocks like \textbf{VRSK} and \textbf{Microchip Technology Incorporated (MCHP)}, or \textbf{CDW Corporation (CDW)} and \textbf{Pfizer Inc.~(PFE)} might be different because they are far away from each other. In order to further analysing the correlation between each stock, a correlation biplot is required.
+
+\begin{figure}
+\centering
+\includegraphics{ass2_files/figure-latex/pca-risk-distance-1.pdf}
+\caption{\label{fig:pca-risk-distance}Distance biplot of PCA of stocks' risk}
+\end{figure}
+
+Figure \ref{fig:pca-risk-correlation} explains the correlation between different risk scores, as well as the correlation between different stocks. Or even allow readers to compare stocks to different types of risk. \textbf{VRSK}, \textbf{UNH}, \textbf{CERN}, and \textbf{FISV} with the high values of social risk score, which indicate that these four stocks might perform better than the others when facing the social challenges. While, those stocks might not be good at facing the challenges from environmental risks because the angle between social risk score and environmental risk socre is close to 180 degree, which imply a highly negative correlation approximately. In contrast, \textbf{Covestro AG (1COV.DE)} and \textbf{MCHP} have the strongest abilities to face the environmental challenges. Meanwhile, \textbf{MCHP} also has the highest score of governance risk, which indicates a good performance when meeting the governance challenges. Besides, \textbf{PFE}, \textbf{Bayerische Motoren Werke AG (BMW.DE)}, and \textbf{Merck \& Co., Inc.~(MRK)} also perform well in governance challenges. While because of the projected positions of these three stocks along the axis of governance risk score are gradually decreasing, the approximate actual values of stocks performance might gradually decline.
+
+In general, based on the total ESG risk score, \textbf{MCHP} and \textbf{BMW.DE} are the stock with the best overall performance compared with other stocks, which indicate that they might be hard to be influences by challenges, and have strong resilience when meeting risks. Therefore, there might not be significant fluctuations of them when facing challenges, and could be stable. In contrast, the stock of \textbf{CDW} has a weak overall performance when facing challenges because the approximation actual value in the axis of total risk score is very low. It indicates that the risks might impact on \textbf{CDW} easily, and \textbf{CDW} might experience a significant fluctuation when facing risks.
+
+\begin{figure}
+\centering
+\includegraphics{ass2_files/figure-latex/pca-risk-correlation-1.pdf}
+\caption{\label{fig:pca-risk-correlation}Correlation biplot of PCA of stocks' risk}
+\end{figure}
+
+\hypertarget{cluster-analysis}{%
+\subsection{Cluster Analysis}\label{cluster-analysis}}
+
+Using the hierarchical clustering analysis with agglomerative method, it is a bottom-up approach. We first select the data set that is consistent with the value data by equivalent stocks symbol. After standardised the data for the numeric variables, we use the Euclidian distance to find the distance between all pairs of observations. We employ the Ward's methodology to sort the clusters. And the resulting of clusters are shown in the dendogram, which is a tree-like diagram that displays the sequences of merges or splits. Based on the Figure \ref{fig:ward}, the two and four clusters solutions are not stable. Hence, the three cluster solution is stable which is shown in \ref{fig:ward-3}.
+
+\begin{figure}
+\centering
+\includegraphics{ass2_files/figure-latex/ward-1.pdf}
+\caption{\label{fig:ward}Choosing clusters}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{ass2_files/figure-latex/ward-3-1.pdf}
+\caption{\label{fig:ward-3}Dendogram using Ward methodology and taking Euclidian distances}
+\end{figure}
+
+From the dendogram, there are three different clusters. Table \ref{tab:memb-w} shows the first cluster of stocks, table \ref{tab:memb-two} shows the second cluster of stocks, and table \ref{tab:memb-three} shows the third cluster of stocks.
+
+\begin{table}
+
+\caption{\label{tab:memb-w}The stocks of the first cluster}
+\centering
+\begin{tabular}[t]{l}
+\hline
+stock\\
+\hline
+Verisk Analytics, Inc.\\
+\hline
+Activision Blizzard, Inc.\\
+\hline
+Fiserv, Inc.\\
+\hline
+Maxim Integrated Products, Inc.\\
+\hline
+Texas Instruments Incorporated\\
+\hline
+Cerner Corporation\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:memb-two}The stocks of the second cluster}
+\centering
+\begin{tabular}[t]{l}
+\hline
+stock\\
+\hline
+Amgen Inc.\\
+\hline
+Johnson \& Johnson\\
+\hline
+Pfizer Inc.\\
+\hline
+Walmart Inc.\\
+\hline
+Merck \& Co., Inc.\\
+\hline
+Bayer Aktiengesellschaft\\
+\hline
+The Procter \& Gamble Company\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+
+\caption{\label{tab:memb-three}The stocks of the third cluster}
+\centering
+\begin{tabular}[t]{l}
+\hline
+stock\\
+\hline
+CDW Corporation\\
+\hline
+Microchip Technology Incorporated\\
+\hline
+Dollar Tree, Inc.\\
+\hline
+Mondelez International, Inc.\\
+\hline
+Applied Materials, Inc.\\
+\hline
+Intel Corporation\\
+\hline
+UnitedHealth Group Incorporated\\
+\hline
+Cisco Systems, Inc.\\
+\hline
+The Travelers Companies, Inc.\\
+\hline
+Walgreens Boots Alliance, Inc.\\
+\hline
+International Business Machines Corporation\\
+\hline
+E.ON SE\\
+\hline
+Deutsche Telekom AG\\
+\hline
+adidas AG\\
+\hline
+Bayerische Motoren Werke AG\\
+\hline
+Allianz SE\\
+\hline
+Covestro AG\\
+\hline
+\end{tabular}
+\end{table}
+
+\hypertarget{conclusions}{%
+\section{Conclusions}\label{conclusions}}
+
+According to our general evaluation of the Yahoo Finance market, we could say that \textbf{JNJ} and \textbf{WMT} perform better in company evaluation while \textbf{ATVI}, \textbf{TXN}, \textbf{MXIM} are better in price and earning. \textbf{VRSK}, \textbf{JNJ} and \textbf{WMT} could be considered as the special cases since they outperform in their own area. What ESG risk analysis provides us is that \textbf{MCHP} and \textbf{BMW.DE} have a great performance in overall anti-risk, some other companies are perform better in a specific risk score. For instance, \textbf{UNH}, \textbf{CERN}, and \textbf{FISV} perform well in anti-social risk, but they are not resilient enough when meeting the challenges from environmental risk compared with \textbf{1COV.DE} and \textbf{MCHP}. And our investment suggestions are listed below:
+
+\begin{itemize}
+\tightlist
+\item
+  Fully consider the characteristics of the firm and consider the factors which might dominate in the stock value.
+\item
+  Both internal and external risks would on the value of stocks and will generate the fluctuation of prices in the stock market as well.
+\item
+  Investors need to make the investment decision based on their risk tolerance and well balance differences in the risk-control of each companies.
+\item
+  Companies need to improve the ability of self-resilience and anti-risks so than enhance the performance when facing different types of risks.
+\end{itemize}
+
+\hypertarget{acknowledgement}{%
+\section{Acknowledgement}\label{acknowledgement}}
+
+The data could be downloaded from \href{https://au.finance.yahoo.com/}{Yahoo Finance}. Meanwhile, the report uses the template called \textbf{Monash Consulting Report} which could use by downloading the package called \href{https://github.com/robjhyndman/MonashEBSTemplates}{MonashEBSTemplates}. In addition, the programming language used to analyse the stocks is R (4.0.2) (R Core Team, 2020).
+
+Following packages has been included in our Rmd file:
+
+\begin{itemize}
+\tightlist
+\item
+  package dplyr (1.0.1) (Wickham et al., 2020),
+\item
+  package ggplot2 (3.3.2) (Wickham, 2016),
+\item
+  package tidyverse (1.3.0) (Wickham et al., 2019),
+\item
+  package mclust (5.4.6) (Scrucca et al., 2016),
+\item
+  package visdat (0.5.3) (Tierney, 2017),
+\item
+  package gridExtra (2.3) (Auguie, 2017),
+\item
+  package kableExtra (1.1.0) (Zhu, 2019),
+\item
+  package tibble (3.0.3) (Müller \& Wickham, 2020).
+\end{itemize}
+
+\clearpage
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+Auguie, B. (2017). Gridextra: Miscellaneous functions for ``grid'' graphics {[}R package version 2.3{]}.
+\url{https://CRAN.R-project.org/package=gridExtra}
+
+Müller, K, \& Wickham, H. (2020). Tibble: Simple data frames {[}R package version 3.0.3{]}. \url{https://CRAN.R-project.org/package=tibble}
+
+R Core Team. (2020). R: A language and environment for statistical computing. R Foundation for Statistical Computing. Vienna, Austria. \url{https://www.R-project.org/}
+
+Scrucca, L, Fop, M, Murphy, TB, \& Raftery, AE. (2016). mclust 5: Clustering, classification and density
+estimation using Gaussian finite mixture models. The R Journal, 8(1), 289--317.
+
+Tierney, N. (2017). Visdat: Visualising whole data frames. JOSS, 2(16), 355.
+
+Wickham, H. (2016). Ggplot2: Elegant graphics for data analysis. Springer-Verlag New York. \url{https://ggplot2.tidyverse.org}
+
+Wickham, H, Averick, M, Bryan, J, Chang, W, McGowan, LD, François, R, Grolemund, G, Hayes, A,
+Henry, L, Hester, J, Kuhn, M, Pedersen, TL, Miller, E, Bache, SM, Müller, K, Ooms, J, Robinson,
+D, Seidel, DP, Spinu, V, \ldots{} Yutani, H. (2019). Welcome to the tidyverse. Journal of Open
+Source Software, 4(43), 1686.
+
+Wickham, H, François, R, Henry, L, \& Müller, K. (2020). Dplyr: A grammar of data manipulation {[}R
+package version 1.0.1{]}. \url{https://CRAN.R-project.org/package=dplyr}
+
+Zhu, H. (2019). Kableextra: Construct complex table with 'kable' and pipe syntax {[}R package version
+1.1.0{]}. \url{https://CRAN.R-project.org/package=kableExtra}
+
+\clearpage
+
+\appendix
+\section{\\Appendix}
+
+\hypertarget{ends-with-emphasis}{%
+\subsection{Ends with Emphasis}\label{ends-with-emphasis}}
+
+At the end of our report, it is necessary to emphasis that due to the small sample space and the incomplete eigenvalue selection, our result might not be representative and the biplot could not fully state the overall situation. Even though, in our case, the biplot is suitable for risks analysis. We still could not deny fact that in general the small sample size would lead to the bias in output. Therefore, our report use the cluster analysis as alternative approach The agglomerative method indicates that stable solution is three cluster. And here we would show complete linkage method (Figure \ref{fig:complete}), average linkage (Figure \ref{fig:average}) and centroid method (Figure \ref{fig:centroid}). In order to check the robustness, we compute the adjusted rand index using \texttt{adjustedRandIndex} function. Table \ref{tab:adjusted-index} indicates that the complete linkage method has a relatively high level of agreement with the Ward's method.
+
+\begin{figure}
+\centering
+\includegraphics{ass2_files/figure-latex/complete-1.pdf}
+\caption{\label{fig:complete}Cluster dendrogram of complete linkage method}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{ass2_files/figure-latex/average-1.pdf}
+\caption{\label{fig:average}Cluster dendrogram of average linkage method}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{ass2_files/figure-latex/centroid-1.pdf}
+\caption{\label{fig:centroid}Cluster dendrogram of centroid method}
+\end{figure}
+
+\begin{table}
+
+\caption{\label{tab:adjusted-index}The adjusted rand index of the three clustering methods}
+\centering
+\begin{tabular}[t]{l|r}
+\hline
+  & adjusted rand index\\
+\hline
+complete linkage method & 0.7934295\\
+\hline
+average linkage method & 0.4481954\\
+\hline
+centroid method & 0.0919079\\
+\hline
+\end{tabular}
+\end{table}
+
+\printbibliography
+
+\end{document}
+
