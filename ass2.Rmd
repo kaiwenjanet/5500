@@ -68,7 +68,7 @@ In addition, this report will also consider the accuracy of PCA and will discuss
 
 At last, some useful suggestions for the stocks choosing will be concluded, as well as concluding the biases generated from the limitations in analysis.
 
-The appendix will contain some notes which would be helpful in understanind our reports.
+The appendix will contain some notes which would be helpful in understanding our reports.
 
 # Data Description
 
@@ -118,9 +118,11 @@ tribble(~Names, ~Abbreviation, ~Description,
 ## Limitation
 
 In this part we will briefly introduce a couple of limitations in our dataset and those limitation will also be discussed in the following section. 
-- This dataset contains a lot of missing value which would cause some bias in our final result. 
+
+- This dataset contains a lot of missing value which would cause some bias in our final result
 - This dataset does not contain enough observations. The insufficient sample space will make our final result become unreliable. In addition, if we further filter out the missing values, the sample size of the data would be even smaller. And the relatively small sample would not be representative enough to clarify the overall condition. 
 - There is some inconsistency between total ESG risk score and sum of individual ESG risk score. This inconsistency would directly increase the error in our final output. 
+
 Those limitations would be further discussed in following sections. At last, the biases in analysis which generate from the limitations would be concluded.
 
 # Analysis 
@@ -159,6 +161,7 @@ tribble(~Names, ~Min, ~Median, ~Mean, ~Max, ~`NA`,
   kable(caption = "Summary table of original data") %>%
   kable_styling(bootstrap_options = c("bordered", "striped", "hover"))
 ```
+
 Most of the variables have the really small median and mean, but a extremely high maximum value. Those extreme value would definitely dominate our Principle Component Analysis and those outliers are shown below:
 
 - outliers in `intra_day` and `ent_value`: MSFT & AAPL
@@ -203,7 +206,8 @@ cor_va<-biplot(pca_value,scale=0,cex=0.8)
 
 Referring to the correlation biplot Figure \@ref(fig:pca-cor) we could notice that the the PC1 is positive correlated with the measurement of the company value indication which are **intra_day** and **ent_value**. The PC2 is positive correlated with the stock earning ratio (ebitda and trail_pe) which means that the increasing in the measurement of the stock earning ratio will increase the PC2 slightly. The rest of the ratio are neither positive correlated with  PC1 nor PC2, but we could notice that the other variables which are related to the price based evaluation of the stock are pretty close to the PC2. The **peg** ratio could not be well explained by both PC1 and PV2. 
 
-In the meanwhile, this plot also highlights that the two measurement of the company value have a really strong association with each other and do not have any association with other variables which related to the stock price and earning evaluation. Therefore, we could say that the market value of a company may not influence on their stock price and earning per share. However, the relationship between those stock price and earning measurement are quite strong. 
+Meanwhile, this plot also highlights that the two measurement of the company value have a really strong association with each other and do not have any association with other variables which related to the stock price and earning evaluation. Therefore, we could say that the market value of a company may not influence on their stock price and earning per share. However, the relationship between those stock price and earning measurement are quite strong. 
+
 ```{r bi-dis,fig.cap="Distance Biplot of Stock Value"}
 dis_va<-biplot(pca_value,xlim=c(-0.6,0.3),cex=0.8)
 ``` 
@@ -236,15 +240,9 @@ stocks %>% filter(Industry == "Technology")
 
 ### Risk Analysis
 
-Besides evaluating the price and value of those stocks, the reports would also analysis the potential risk of each stock based on the risk score of stocks, as well as make the comparison. Before executing the risk analysis, this report has compared the total ESG risk score with the sum of the rest three risk scores and filtered out the inconsistent observations in order to improve the accuracy of PCA for risk analysis and avoid errors.
-
-Meanwhile, this report would also need to consider which PCs should be used. Table \@ref(tab:pca-risk-summary) shows the summary statistics of components. It is clear that PC1 and PC2 have explained almost 86% of the total variation of 4 variables. In addition, figure \@ref(fig:pca-risk-screeplot) also suggests that principal component of one and two should be selected because they all with a variance greater than 1 according to the Kaiser's Rule.
-
-
-- Modified:
 In this part, we will discuss about the potential risk of each stock based on the ESG risk score. We will compare the total risk score with the sum of the ESG scores to make sure the consistency of our data. Filtering out the inconsistent value would improve the accuracy of our result. 
 
-Meanwhile, this report would also need to consider which PCs should be used. Table \@ref(tab:pca-risk-summary) shows the summary statistics of components. It is clear that PC1 and PC2 have explained almost 86% of the total variation of 4 variables. In addition, figure \@ref(fig:pca-risk-screeplot) also suggests that principal component of one and two should be selected because they all with a variance greater than 1 according to the Kaiser's Rule.
+Meanwhile, this report would also need to consider which PCs should be used. Table \@ref(tab:pca-risk-summary) shows the summary statistics of components. It is clear that PC1 and PC2 have explained almost 86% of the total variation of 4 variables. Besides, figure \@ref(fig:pca-risk-screeplot) also suggests that principal component of one and two should be selected because they all with a variance greater than 1 according to the Kaiser's Rule.
 
 ```{r risk-df}
 # filter out the outliers
@@ -281,17 +279,16 @@ summary(pca_risk)$importance %>%
 screeplot(pca_risk, type = "lines")
 ```
 
-Figure \@ref(fig:pca-risk-distance) is the distance biplot which shows the distance among each stock in the dataset, and implies the similarity between stocks. Based on the figure \@ref(fig:pca-risk-distance), the stocks of **VRSK** and **UnitedHealth Group Incorporated (UNH)** may be exactly same because they seem perfectly superimpose. Besides, **Allianz SE (ALV.DE)** and **Dollar Tree, Inc. (DLTR)**, as well as **Cerner Corporation (CERN)** and **Fiserv, Inc. (FISV)** might be similar, because they are close to each other. While the stocks like **VRSK** and **Microchip Technology Incorporated (MCHP)**, or **CDW Corporation (CDW)** and **Pfizer Inc. (PFE)** might be different because they are far away from each other. In order to further analyse the correlation between each stock, a correlation biplot is required.
+Figure \@ref(fig:pca-risk-distance) shows the distance among each stock in the dataset, and implies the similarity between stocks. The stocks of **VRSK** and **UnitedHealth Group Incorporated (UNH)** may be exactly same because they seem perfectly superimpose. Besides, **Allianz SE (ALV.DE)** and **Dollar Tree, Inc. (DLTR)**, as well as **Cerner Corporation (CERN)** and **Fiserv, Inc. (FISV)** might be similar, because they are close to each other. While the stocks like **VRSK** and **Microchip Technology Incorporated (MCHP)**, or **CDW Corporation (CDW)** and **Pfizer Inc. (PFE)** might be different because they are far away from each other. In order to further analysing the correlation between each stock, a correlation biplot is required.
 
 ```{r pca-risk-distance, fig.height=5, fig.cap= "Distance biplot of PCA of stocks' risk"}
 rownames(pca_risk$x) <- pull(risk_tesg, Symbol)
 biplot(pca_risk, xlim=c(-0.5, 0.5), ylim = c(-0.6, 0.3),  cex = 0.8)
 ```
 
-Figure \@ref(fig:pca-risk-correlation) is the correlation biplot which explains the correlation between different 
-risk scores, as well as the correlation between different stocks. Or even allow readers to compare stocks to different types of risk. According to figure \@ref(fig:pca-risk-correlation), **VRSK**, **UNH**, **CERN**, and **FISV** are with the high values of social risk score, which could indicate that these four stock might have strong resilience against the social challenges and might perform better than the other stocks when facing the social problems. While, those stocks might not be good at facing the challenges from the internal or external environment because the angle between variable of social risk score and variable of environmental risk is close to 180 degree, which might imply the highly negative correlation approximately. On the contrary, **Covestro AG (1COV.DE)** and **MCHP** are the two stocks seem likely with the strongest abilities to face the environmental challenges. In addition, **MCHP** might also the stock with the highest score of governance risk, which could indicate good performance when meeting the governance challenges. Meanwhile, **PFE**, **Bayerische Motoren Werke AG (BMW.DE)**, and **Merck & Co., Inc. (MRK)** are the another three stocks also perform well in governance challenges. While because of the projected positions of these three stocks along the axis of governance risk score are gradually decreasing, the approximate actual values of stocks performance might gradually decline.
+Figure \@ref(fig:pca-risk-correlation) explains the correlation between different risk scores, as well as the correlation between different stocks. Or even allow readers to compare stocks to different types of risk. **VRSK**, **UNH**, **CERN**, and **FISV** with the high values of social risk score, which indicate that these four stocks might perform better than the others when facing the social challenges. While, those stocks might not be good at facing the challenges from environmental risks because the angle between social risk score and  environmental risk socre is close to 180 degree, which imply a highly negative correlation approximately. In contrast, **Covestro AG (1COV.DE)** and **MCHP** have the strongest abilities to face the environmental challenges. Meanwhile, **MCHP** also has the highest score of governance risk, which indicates a good performance when meeting the governance challenges. Besides, **PFE**, **Bayerische Motoren Werke AG (BMW.DE)**, and **Merck & Co., Inc. (MRK)** also perform well in governance challenges. While because of the projected positions of these three stocks along the axis of governance risk score are gradually decreasing, the approximate actual values of stocks performance might gradually decline.
 
-In general, based on the total ESG risk score, **MCHP** and **BMW.DE** are the stock with the best overall performance compared with other stocks, which indicate that they might be hard to be influences by internal and external challenges, and they have strong resilience when meeting that three risks. Therefore, there might not be significant fluctuations of these stocks when facing challenges, and could be seen as stable stocks. In contrast, the stock of **CDW** has a weak overall performance when facing challenges because the approximation actual value in the axis of total risk score is very low. It indicates that the risks might impact on **CDW** easily, and **CDW** might experience a significant fluctuation when facing risks.  
+In general, based on the total ESG risk score, **MCHP** and **BMW.DE** are the stock with the best overall performance compared with other stocks, which indicate that they might be hard to be influences by challenges, and have strong resilience when meeting risks. Therefore, there might not be significant fluctuations of them when facing challenges, and could be stable. In contrast, the stock of **CDW** has a weak overall performance when facing challenges because the approximation actual value in the axis of total risk score is very low. It indicates that the risks might impact on **CDW** easily, and **CDW** might experience a significant fluctuation when facing risks.  
 
 ```{r pca-risk-correlation, fig.height=5, fig.cap="Correlation biplot of PCA of stocks' risk"}
 biplot(pca_risk, scale = 0, xlim = c(-4, 4), cex = 0.8)
@@ -369,7 +366,6 @@ memb_three %>%
 ```
 
 # Conclusions 
-
 
 According to our general evaluation of the Yahoo Finance market, we could say that **JNJ** and **WMT** perform better in company evaluation while **ATVI**, **TXN**, **MXIM** are better in price and earning.  **VRSK**, **JNJ** and **WMT** could be considered as the special cases since they outperform in their own area. What ESG risk analysis provides us is that **MCHP** and **BMW.DE** have a great performance in overall anti-risk, some other companies are perform better in a specific risk score. For instance, **UNH**, **CERN**, and **FISV** perform well in anti-social risk, but they are not resilient enough when meeting the challenges from environmental risk compared with **1COV.DE** and **MCHP**. And our investment suggestions are listed below:
 
