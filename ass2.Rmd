@@ -61,6 +61,14 @@ In addition, this report will also consider the PCA method whether is a good mea
 
 Furthermore, the performance of PCA will also be compared with another method which is Clustering Analysis to check the accuracy of our result. At last, some useful suggestions for the stocks choosing will be concluded, as well as concluding the biases generated from the limitations in analysis.
 
+-Modified:
+In financial market, the value of stocks would be investigated by many different variables. However, the large number of variables of each stock might make investors hard to make their decision. Therefore, this report would apply linear combination (LC) to combine all the variables into a index and utilise principal component analysis (PCA) to evaluate the performance of stocks. 
+
+In addition, this report will also consider the accuracy of PCA and will discuss about the potential limitation of PCA in the stock performance evaluation. Based on the result, the comparative analysis with Clustering Approach will also be provided. 
+
+At last, some useful suggestions for the stocks choosing will be concluded, as well as concluding the biases generated from the limitations in analysis.
+
+The appendix will contain some notes which would be helpful in understanind our reports.
 
 # Data Description
 
@@ -85,7 +93,6 @@ stocks_ori <- stocks_ori%>%
 ```
 
 ## Description
-
 The data which used in this report was sourced from [Yahoo Finance](https://au.finance.yahoo.com/). Table \@ref(tab:variables-table) shows the information of the variables from the original data, as well as the abbreviation of the variables. The dataset contains 18 variables of 147 stocks from five major financial indices. Those 18 variables could be further classified into 3 categories. The first categories captures the 5 variables provides the basic background of those stocks which are **Name**, **Symbol**, **Market**, **Sector**, **Industry**. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables are shown in the table below: 
 
 ```{r variables-table, message=FALSE}
@@ -111,22 +118,22 @@ tribble(~Names, ~Abbreviation, ~Description,
 ## Limitation
 
 In this part we will briefly introduce a couple of limitations in our dataset and those limitation will also be discussed in the following section. 
-1.	This dataset contains a lot of missing value which would cause some bias in our final result. 
-2.	This dataset does not contain enough observations. The insufficient sample space will make our final result become unreliable. In addition, if we further filter out the missing values, the sample size of the data would be even smaller. And the relatively small sample would not be representative enough to clarify the overall condition. 
-3.	There is some inconsistency between total ESG risk score and sum of individual ESG risk score. This inconsistency would directly increase the error in our final output. 
+- This dataset contains a lot of missing value which would cause some bias in our final result. 
+- This dataset does not contain enough observations. The insufficient sample space will make our final result become unreliable. In addition, if we further filter out the missing values, the sample size of the data would be even smaller. And the relatively small sample would not be representative enough to clarify the overall condition. 
+- There is some inconsistency between total ESG risk score and sum of individual ESG risk score. This inconsistency would directly increase the error in our final output. 
 Those limitations would be further discussed in following sections. At last, the biases in analysis which generate from the limitations would be concluded.
 
 # Analysis 
 
 ## Preliminary Analysis 
 
-Before we start our Principal Components Analysis, we will firstly observe the original data and tidy it by removing the missing variables and further figure out any other features. Figure \@ref(fig:vis-data) shows the data structure of the original dataset. It is clear that there are three different types of data contain in the dataset, which are character, numeric and missing value.
+Based on the original dataset, we will firstly tidy it by removing the missing variables and further figure out other features. Figure \@ref(fig:vis-data) shows the general data structure and it could be classified into three types which are character, numeric and missing value.
 
 ```{r vis-data, fig.cap="The data structure of original data"}
 vis_dat(stocks_ori)
 ```
 
-Meanwhile, by summarising original variables, table \@ref(tab:summary-table) indicates that the initial 147 observations have up to 102 missing value.
+Table \@ref(tab:summary-table) indicates that the initial 147 observations have up to 102 missing value and also some potential outliers.
 
 ```{r sum-tab, eval = FALSE}
 sum_tab<-stocks_ori%>%
@@ -152,8 +159,7 @@ tribble(~Names, ~Min, ~Median, ~Mean, ~Max, ~`NA`,
   kable(caption = "Summary table of original data") %>%
   kable_styling(bootstrap_options = c("bordered", "striped", "hover"))
 ```
-
-Besides, table \@ref(tab:summary-table) shows the information about the outliers. Most of the variables have the really small median and mean, but a extremely high maximum value as well. We could say that the extremely value would definitely dominate our Principle component analysis. The outliers are as following:
+Most of the variables have the really small median and mean, but a extremely high maximum value. Those extreme value would definitely dominate our Principle Component Analysis and those outliers are shown below:
 
 - outliers in `intra_day` and `ent_value`: MSFT & AAPL
 - outliers in `trail_pe`: TSLA
@@ -164,7 +170,7 @@ Besides, table \@ref(tab:summary-table) shows the information about the outliers
 - outliers in `rev`: ILMN, V
 - outliers in `ebitda`: INTU, ILMN, TSLA, NKE
 
-We will generate a new dataset **stocks** by removing the missing value and conduct our following analysis based on our new dataset. 
+New dataset **stocks** will be generated by removing the missing value. 
 
 ```{r stocks}
 stocks <- na.omit(stocks_ori)
@@ -174,7 +180,7 @@ stocks <- na.omit(stocks_ori)
 
 ### Value Analysis 
 
-Based on the preliminary analysis we have above, besides of the missing value remove, what we also need to do is the outliers removement. Since our variables are measured in the different unit, after removing the high influential values, we will standardised our data by using the **scale.** function in R. Biplot could visualise the data by selecting two principal components. The graphs and interpretation will also be provided below. 
+Value analysis will be conducted by removing the outliers. It is necessary to filter out high influential outliers and we will standardised our data as well since it is based on different unit. Biplot and interpretation will also be provided. 
 
 ```{r value}
 # filter out the outliers
@@ -195,17 +201,18 @@ rownames(pca_value$x)<-pull(df,Symbol)
 cor_va<-biplot(pca_value,scale=0,cex=0.8)
 ```
 
-Referring to the correlation biplot Figure \@ref(fig:pca-cor) we could notice that the the PC1 is positive correlated with the measurement of the company value indication which are **intra_day** and **ent_value** even if the correlation is pretty not strong. The PC2 is positive correlated with the stock earning ratio (ebitda and trail_pe) which means that the increasing in the measurement of the stock earning ratio will increase the PC2 slightly. The rest of the ratio are neither positive correlated with  PC1 nor PC2, but we could notice that the other variables which are related to the price based evaluation of the stock are pretty close to the PC2. The **peg** ratio could not be well explained by both PC1 and PV2. In the meanwhile, this plot also highlights that the two measurement of the company value have a really strong association with each other and do not have any association with other variables which related to the stock price and earning evaluation. Therefore, we could say that the market value of a company may not influence on their stock price and earning per share. However, the relationship between those stock price and earning measurement are quite strong. 
+Referring to the correlation biplot Figure \@ref(fig:pca-cor) we could notice that the the PC1 is positive correlated with the measurement of the company value indication which are **intra_day** and **ent_value**. The PC2 is positive correlated with the stock earning ratio (ebitda and trail_pe) which means that the increasing in the measurement of the stock earning ratio will increase the PC2 slightly. The rest of the ratio are neither positive correlated with  PC1 nor PC2, but we could notice that the other variables which are related to the price based evaluation of the stock are pretty close to the PC2. The **peg** ratio could not be well explained by both PC1 and PV2. 
 
+In the meanwhile, this plot also highlights that the two measurement of the company value have a really strong association with each other and do not have any association with other variables which related to the stock price and earning evaluation. Therefore, we could say that the market value of a company may not influence on their stock price and earning per share. However, the relationship between those stock price and earning measurement are quite strong. 
 ```{r bi-dis,fig.cap="Distance Biplot of Stock Value"}
 dis_va<-biplot(pca_value,xlim=c(-0.6,0.3),cex=0.8)
 ``` 
 
-After we identify the relationship between those measurement of the variable, what we do next is to figure out the connection of each observation by using the distance biplot \@ref(fig:bi-dis). What this biplot could tell us is that **Johnson & Johnson (JNJ)** and **Walmart (WMT)** have a pretty high value of the company, and **Activision Blizzard (ATVI)**, **Texas Instruments Incorporated (TXN)**, **Maxim Integrated Products (MXIM)** indicate the high earnings in the stock. 
 
-In the meanwhile, we also need to pay attention on the **Verisk analytics (VRSK)** the potential outlier for the PC1, and **JNJ** and **WMT** the potential outlier for PC2. Since we notice that the price and earning per share for **VRSK** are quite high the reason may due to that **VRSK** is mainly a data analytics and risk assessment firm. The mainly provide the consulting service instead of the selling goods. Therefore, comparing with the multinational retail company, the might not have a really large firm size, as for a financial sector, their stock value is positively correlated with the service they provide. 
+Distance biplot \@ref(fig:bi-dis) indicates that **Johnson & Johnson (JNJ)** and **Walmart (WMT)** have a high value in PC1, and **Activision Blizzard (ATVI)**, **Texas Instruments Incorporated (TXN)**, **Maxim Integrated Products (MXIM)** are higher in PC2. 
 
-**JNJ** and **WMT** perform just in the opposite way. As for the multinational company, their profit mainly come from the selling products. Therefore, they need to continuously increase their market share to maintain their market profit. 
+Meanwhile, we notice that the **Verisk analytics (VRSK)** the potential outlier for the PC1, and **JNJ** and **WMT** the potential outlier for PC2. We could explain the reason by identify the characteristic of these firm. **VRSK** is a data analytics and risk assessment firm. They mainly provide the consulting service instead of the selling goods. Therefore, being a financial service sector, they will not have a large firm size, but the stock value and EPS will be higher.  **JNJ** and **WMT** perform in the opposite way because they mainly generate profit by selling goods. The continuously increasing market share will keep their market profit in a high level.
+ 
 
 ```{r lim-1}
 summary(pca_value)$importance %>%  
@@ -218,9 +225,10 @@ summary(pca_value)$importance %>%
 screeplot(pca_value, type = "lines")
 ```
 
-Besides of the information we get from the biplot, there are also some of limitations in our value analysis. The first limitation is mainly due to our small sample space. Based on the 30 out of 147 variables, there are 70.42% of the overall variation could be explained by the first two principle (Table \@ref(tab:lim-1)). It indeed could explain the sufficient amount of the variables but if we take the whole variables into consideration, this might not be accurate enough and also not very representative. Therefore, alternative approach is required. Another limitation is that about the number of eigenvalue selection. Screeplot (Figure \@ref(fig:lim-2)) suggests that the better PC value we need to include is three and this is a little bit contradict to our biplot.
-
-Overall we could say that PCA in the value analysis in our sample stocks could express some information, but it might not be really representative in the general stock market. 
+The limitation for the value analysis also exists. 
+-	After we filter out the outliers, the number of variables we put into use is 30 out of 147 and only 70.42% of the overall variation could be explained by the first two principle (Table \@ref(tab:lim-1)). The really small space size is not representative and also would not accurate enough to explain the whole stock market condition. 
+-	There is some contradictory in PC selection in Screeplot (Figure \@ref(fig:lim-2)) and biplot. 
+Therefore, we need to consider alternative approach to make sure of the accuracy of our suggestion.  
 
 ```{r, eval=FALSE}
 stocks %>% filter(Industry == "Technology")
@@ -229,6 +237,12 @@ stocks %>% filter(Industry == "Technology")
 ### Risk Analysis
 
 Besides evaluating the price and value of those stocks, the reports would also analysis the potential risk of each stock based on the risk score of stocks, as well as make the comparison. Before executing the risk analysis, this report has compared the total ESG risk score with the sum of the rest three risk scores and filtered out the inconsistent observations in order to improve the accuracy of PCA for risk analysis and avoid errors.
+
+Meanwhile, this report would also need to consider which PCs should be used. Table \@ref(tab:pca-risk-summary) shows the summary statistics of components. It is clear that PC1 and PC2 have explained almost 86% of the total variation of 4 variables. In addition, figure \@ref(fig:pca-risk-screeplot) also suggests that principal component of one and two should be selected because they all with a variance greater than 1 according to the Kaiser's Rule.
+
+
+- Modified:
+In this part, we will discuss about the potential risk of each stock based on the ESG risk score. We will compare the total risk score with the sum of the ESG scores to make sure the consistency of our data. Filtering out the inconsistent value would improve the accuracy of our result. 
 
 Meanwhile, this report would also need to consider which PCs should be used. Table \@ref(tab:pca-risk-summary) shows the summary statistics of components. It is clear that PC1 and PC2 have explained almost 86% of the total variation of 4 variables. In addition, figure \@ref(fig:pca-risk-screeplot) also suggests that principal component of one and two should be selected because they all with a variance greater than 1 according to the Kaiser's Rule.
 
@@ -354,7 +368,22 @@ memb_three %>%
   kable_styling(bootstrap_options = c("bordered", "hover", "striped")) 
 ```
 
-We also using other methods to do the cluster analysis, such as complete linkage method (Figure \@ref(fig:complete)), average linkage (Figure \@ref(fig:average)) and centroid method (Figure \@ref(fig:centroid)). In order to check the robustness, we compute the adjusted rand index using `adjustedRandIndex` function. Table \@ref(tab:adjusted-index) indicates that the complete linkage method has a relatively high level of agreement with the Ward's method. 
+# Conclusions 
+
+
+According to our general evaluation of the Yahoo Finance market, we could say that **JNJ** and **WMT** perform better in company evaluation while **ATVI**, **TXN**, **MXIM** are better in price and earning.  **VRSK**, **JNJ** and **WMT** could be considered as the special cases since they outperform in their own area. What ESG risk analysis provides us is that **MCHP** and **BMW.DE** have a great performance in overall anti-risk, some other companies are perform better in a specific risk score. For instance, **UNH**, **CERN**, and **FISV** perform well in anti-social risk, but they are not resilient enough when meeting the challenges from environmental risk compared with **1COV.DE** and **MCHP**. And our investment suggestions are listed below:
+
+- Fully consider the characteristics of the firm and consider the factors which might dominate in the stock value. 
+- Both internal and external risks would on the value of stocks and will generate the fluctuation of prices in the stock market as well. 
+- Investors need to make the investment decision based on their risk tolerance and well balance differences in the risk-control of each companies. 
+- Companies need to improve the ability of self-resilience and anti-risks so than enhance the performance when facing different types of risks.
+
+
+# Appendix
+
+## Ends with Emphasis 
+
+At the end of our report, it is necessary to emphasis that due to the small sample space and the incomplete eigenvalue selection, our result might not be representative and the biplot could not fully state the overall situation. Even though, in our case, the biplot is suitable for risks analysis. We still could not deny fact that in general the small sample size would lead to the bias in output. Therefore, our report use the cluster analysis as alternative approach The agglomerative method indicates that stable solution is three cluster. And here we would show complete linkage method (Figure \@ref(fig:complete)), average linkage (Figure \@ref(fig:average)) and centroid method (Figure \@ref(fig:centroid)). In order to check the robustness, we compute the adjusted rand index using `adjustedRandIndex` function. Table \@ref(tab:adjusted-index) indicates that the complete linkage method has a relatively high level of agreement with the Ward's method. 
 
 ```{r complete, fig.cap="Cluster dendrogram of complete linkage method"}
 hc_c <- hclust(d, method = "complete")
@@ -403,16 +432,7 @@ al_method %>%
   kable_styling(bootstrap_options = c("bordered", "hover", "striped")) 
 ```
 
-# Conclusions 
-
-In conclusion, **JNJ** and ** WMT** have high values of the company, while ** ATVI**, ** TXN**, ** MXIM** show the high earnings in the stock market. Besides, **VRSK** shows a high value in both price and earning per share, which might due to the high performance of services gives investors a positive market prospect. Meanwhile, **VRSK** also has high score of social risk which might also because the characteristics of service industry gives the company high performance to meet the social risk.  Furthermore, because **JNJ** and **WMT** are the multinational companies and the main profit would come from products selling, they should continuously increase their market share to keep the market profit.
-
-On the other hand, the risk score of each stock indicates the performance of meeting the challenges from risks. **MCHP** and **BMW.DE** show the best overall performance of anti-risks. **UNH**, **CERN**, and **FISV** are the another three companies have the high performance in social risk, while they are not resilient enough when meeting the challenges from environmental risk compared with **1COV.DE** and **MCHP**. Besides, **PFE**, **BMW.DE** and **MRK** show the high performance in meeting the governance challenges. Overall, the internal and external risks would all impact on the value of stocks which generate the fluctuation of prices in the stock market and might influence the confidence of investors. Companies need to improve the ability of self-resilience and anti-risks so than enhance the performance when facing different types of risks. 
-
-However, because of the small sample space and the incomplete eigenvalue selection, the sample might not be representative and the biplot might be incomplete based on the Screeplot in the values analysis of stocks. Even though the biplot is suitable because the Screeplot only indicates two useful PCs in risks analysis. The sample size, however, is still too small to provide sufficient and accurate results.  Therefore, the report uses another method to analyse the stocks which is cluster analysis. According to agglomerative method, we found that the stable solution is three cluster. Besides, we also found that the complete linkage method is relatively highly agree with the Ward's method.
-
-
-# Acknowledgement
+## Acknowledgement
 
 The data could be downloaded from [Yahoo Finance](https://au.finance.yahoo.com/). Meanwhile, the report uses the template called **Monash Consulting Report** which could use by downloading the package called [MonashEBSTemplates](https://github.com/robjhyndman/MonashEBSTemplates). In addition, the programming language used to analyse the stocks is R (4.0.2) [@R].
 
@@ -429,4 +449,4 @@ Following packages has been included in our Rmd file:
 
 \clearpage
 
-# References
+## References
