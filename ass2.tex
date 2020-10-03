@@ -537,7 +537,7 @@ The limitation of the value analysis also exists.
 \item
   After we filter out the outliers, the number of variables we put into use is 30 out of 147 and only 70.42\% of the overall variation could be explained by the first two principles (Table \ref{tab:lim-1}). The really small space size is not representative and also would not accurate enough to explain the whole stock market condition.
 \item
-  Screeplot (Figure \ref{fig:lim-2}) suggests the best PC selection is 3 which is contradictory to the biplot selection.
+  Screeplot (Figure \ref{fig:lim-2}) suggests the best PC selection is 3 which made the biplot 2 selection inadequate.
 \end{itemize}
 
 Therefore, we need to consider an alternative approach to make sure of the accuracy of our suggestion.
@@ -572,7 +572,7 @@ Cumulative Proportion & 0.4862 & 0.8577 & 1.0000 & 1\\
 \caption{\label{fig:pca-risk-screeplot}Screeplot of PCs in PCA for risk analysis of stocks}
 \end{figure}
 
-Figure \ref{fig:pca-risk-distance} shows the distance among each stock in the dataset and implies the similarity between stocks. The stocks of \textbf{VRSK} and \textbf{UnitedHealth Group Incorporated (UNH)} may be the same because they seem perfectly superimpose. Besides, \textbf{Allianz SE (ALV.DE)} and \textbf{Dollar Tree, Inc. (DLTR)}, as well as \textbf{Cerner Corporation (CERN)} and \textbf{Fiserv, Inc. (FISV)} might be similar, since they are close to each other. While the far distance between \textbf{VRSK} and \textbf{Microchip Technology Incorporated (MCHP)}, or \textbf{CDW Corporation (CDW)} and \textbf{Pfizer Inc. (PFE)} indicate their different risk performance. To further analyzing the correlation between each stock, a correlation biplot is required.
+Figure \ref{fig:pca-risk-distance} shows the distance among each stock in the dataset and implies the similarity between stocks. The stocks of \textbf{VRSK} and \textbf{UnitedHealth Group Incorporated (UNH)} may be the same because they seem perfectly superimpose. Besides, \textbf{Allianz SE (ALV.DE)} and \textbf{Dollar Tree, Inc.~(DLTR)}, as well as \textbf{Cerner Corporation (CERN)} and \textbf{Fiserv, Inc.~(FISV)} might be similar, since they are close to each other. While the far distance between \textbf{VRSK} and \textbf{Microchip Technology Incorporated (MCHP)}, or \textbf{CDW Corporation (CDW)} and \textbf{Pfizer Inc.~(PFE)} indicate their different risk performance. To further analyzing the correlation between each stock, a correlation biplot is required.
 
 \begin{figure}
 \centering
@@ -580,7 +580,7 @@ Figure \ref{fig:pca-risk-distance} shows the distance among each stock in the da
 \caption{\label{fig:pca-risk-distance}Distance biplot of PCA of stocks' risk}
 \end{figure}
 
-According to Figure \ref{fig:pca-risk-correlation} the correlation biplot \textbf{VRSK}, \textbf{UNH}, \textbf{CERN}, and \textbf{FISV} have the high values of social risk score, which indicate that these four stocks might perform better than the others in the social challenges. While they might not good at dealing with the risk from the environment since the social risk score and environmental risk score are approximately negative correlated. In contrast, \textbf{Covestro AG (1COV.DE)} and \textbf{MCHP} have the strongest abilities to face environmental challenges. Meanwhile, \textbf{MCHP} also has the highest score of governance risk, which indicates good performance in anticipating governance challenges. \textbf{PFE}, \textbf{Bayerische Motoren Werke AG (BMW.DE)}, and \textbf{Merck \& Co., Inc. (MRK)} also perform well. While the projected positions of these three stocks along the axis of governance risk score are gradually decreasing, the approximate actual values of stock performance might gradually decline.
+According to Figure \ref{fig:pca-risk-correlation} the correlation biplot \textbf{VRSK}, \textbf{UNH}, \textbf{CERN}, and \textbf{FISV} have the high values of social risk score, which indicate that these four stocks might perform better than the others in the social challenges. While they might not good at dealing with the risk from the environment since the social risk score and environmental risk score are approximately negative correlated. In contrast, \textbf{Covestro AG (1COV.DE)} and \textbf{MCHP} have the strongest abilities to face environmental challenges. Meanwhile, \textbf{MCHP} also has the highest score of governance risk, which indicates good performance in anticipating governance challenges. \textbf{PFE}, \textbf{Bayerische Motoren Werke AG (BMW.DE)}, and \textbf{Merck \& Co., Inc.~(MRK)} also perform well. While the projected positions of these three stocks along the axis of governance risk score are gradually decreasing, the approximate actual values of stock performance might gradually decline.
 
 In general, based on the total ESG risk score, \textbf{MCHP} and \textbf{BMW.DE} have the best overall performance compared with other stocks, which indicate that their strategy in risk management is quite effective. Therefore, even if some external challenges occur, they will not have any significant fluctuations. In contrast, \textbf{CDW} has a weak overall risk performance for the low value in total risk score which indicates that the \textbf{CDW} stock price will not be stable when facing the risk.
 

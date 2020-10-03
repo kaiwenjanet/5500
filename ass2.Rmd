@@ -127,6 +127,7 @@ Those limitations would be further discussed in the following sections. At last,
 # Analysis 
 
 ## Preliminary Analysis 
+
 We will tidy our original dataset by removing the missing variables and further figure out other features. Figure \@ref(fig:vis-data) shows the general data structure and it could be classified into three types which are character, numeric and missing value.
 
 ```{r vis-data, fig.cap="The data structure of original data"}
@@ -236,7 +237,7 @@ screeplot(pca_value, type = "lines")
 The limitation of the value analysis also exists. 
 
 -	After we filter out the outliers, the number of variables we put into use is 30 out of 147 and only 70.42% of the overall variation could be explained by the first two principles (Table \@ref(tab:lim-1)). The really small space size is not representative and also would not accurate enough to explain the whole stock market condition. 
--	Screeplot (Figure \@ref(fig:lim-2)) suggests the best PC selection is 3 which is contradictory to the biplot selection. 
+- Screeplot (Figure \@ref(fig:lim-2)) suggests the best PC selection is 3 which made the biplot 2 selection inadequate. 
 
 Therefore, we need to consider an alternative approach to make sure of the accuracy of our suggestion.  
 
