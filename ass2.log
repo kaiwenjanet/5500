@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.9.30)  3 OCT 2020 14:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.9.30)  3 OCT 2020 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1777,53 +1777,55 @@ ne 599.
 
 ] [16
 
+] [17
+
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 777.
+(hyperref)                removing `\\' on input line 779.
 
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.24173pt on input line 782.
-<ass2_files/figure-latex/complete-1.pdf, id=274, 578.16pt x 361.35pt>
+(Font)              scaled to size 9.24173pt on input line 784.
+<ass2_files/figure-latex/complete-1.pdf, id=278, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/complete-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/complete-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/complete-1.pdf  used on input 
-line 786.
+line 788.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-<ass2_files/figure-latex/average-1.pdf, id=275, 578.16pt x 361.35pt>
+<ass2_files/figure-latex/average-1.pdf, id=279, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/average-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/average-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/average-1.pdf  used on input l
-ine 792.
+ine 794.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-<ass2_files/figure-latex/centroid-1.pdf, id=276, 578.16pt x 361.35pt>
+<ass2_files/figure-latex/centroid-1.pdf, id=280, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/centroid-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/centroid-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/centroid-1.pdf  used on input 
-line 798.
+line 800.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
 
-LaTeX Warning: Empty bibliography on input line 819.
+LaTeX Warning: Empty bibliography on input line 821.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 821.
-[17
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 823.
+[18
 
- <./ass2_files/figure-latex/complete-1.pdf>] [18 <./ass2_files/figure-latex/ave
-rage-1.pdf> <./ass2_files/figure-latex/centroid-1.pdf>] [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 821.
+ <./ass2_files/figure-latex/complete-1.pdf>] [19 <./ass2_files/figure-latex/ave
+rage-1.pdf> <./ass2_files/figure-latex/centroid-1.pdf>] [20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 823.
 (./ass2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 821.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 821.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 823.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 823.
 Package rerunfilecheck Info: File `ass2.out' has not changed.
 (rerunfilecheck)             Checksum: B39A1FE3E568E12757BCB0ADB28C9D2E;1801.
 Package logreq Info: Writing requests to 'ass2.run.xml'.
 \openout1 = `ass2.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 821.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 823.
  ) 
 Here is how much of TeX's memory you used:
- 27235 strings out of 482798
- 458072 string characters out of 5953330
+ 27236 strings out of 482798
+ 458079 string characters out of 5953330
  1229370 words of memory out of 5000000
  41893 multiletter control sequences out of 15000+600000
  639062 words of font info for 259 fonts, out of 8000000 for 9000
@@ -1842,10 +1844,10 @@ vmr8a.pfb><c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public
 /bera/fvsb8a.pfb><c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1
 /public/bera/fvsr8a.pfb><c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/font
 s/type1/public/mathdesign/mdbch/md-chr8t.pfb>
-Output written on ass2.pdf (19 pages, 188011 bytes).
+Output written on ass2.pdf (20 pages, 188471 bytes).
 PDF statistics:
- 362 PDF objects out of 1000 (max. 8388607)
- 302 compressed objects within 4 object streams
- 70 named destinations out of 1000 (max. 500000)
+ 366 PDF objects out of 1000 (max. 8388607)
+ 305 compressed objects within 4 object streams
+ 71 named destinations out of 1000 (max. 500000)
  30890 words of extra memory for PDF output out of 35830 (max. 10000000)
 

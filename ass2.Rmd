@@ -369,6 +369,8 @@ memb_three %>%
   kable_styling(bootstrap_options = c("bordered", "hover", "striped")) 
 ```
 
+\clearpage
+
 # Conclusions 
 
 According to our general evaluation of the Yahoo Finance market, we could say that **JNJ** and **WMT** perform better in company evaluation while **ATVI**, **TXN**, and **MXIM** are better in price and earning.  **VRSK**, **JNJ** and **WMT** could be considered as the special cases since they outperform in their area. What ESG risk analysis provides us is that **MCHP** and **BMW.DE** have a great performance in overall anti-risk, some other companies perform better in a specific risk score. For instance, **UNH**, **CERN**, and **FISV** perform well in anti-social risk, but they are not resilient enough when meeting the challenges from environmental risk compared with **1COV.DE** and **MCHP**. And our investment suggestions are listed below:
