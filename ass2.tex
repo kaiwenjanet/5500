@@ -327,7 +327,7 @@ The appendix will contain some notes to improve the understanding of our reports
 \hypertarget{description}{%
 \subsection{Description}\label{description}}
 
-Our data was sourced from \href{https://au.finance.yahoo.com/}{Yahoo Finance} and it contains 18 variables of 147 stocks from five major financial indices. Those 18 variables could be further classified into 3 categories. The first categories captures \textbf{Name}, \textbf{Symbol}, \textbf{Market}, \textbf{Sector}, \textbf{Industry} which are related to the background of those stocks. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables are shown in Table \ref{tab:variables-table}.
+Our data was sourced from \href{https://au.finance.yahoo.com/}{Yahoo Finance} and it contains 18 variables of 147 stocks from five major financial indices. Those 18 variables could be further classified into 3 categories. The first categories capture \textbf{Name}, \textbf{Symbol}, \textbf{Market}, \textbf{Sector}, \textbf{Industry} which are related to the background of those stocks. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables is shown in Table \ref{tab:variables-table}.
 
 \begin{table}
 
@@ -493,9 +493,9 @@ Value analysis will be conducted by removing the high influential outliers. We a
 \caption{\label{fig:pca-cor}Correlation Biplot of PCA of stocks' value}
 \end{figure}
 
-Referring to the correlation biplot Figure \ref{fig:pca-cor} we could notice that PC1 is positive correlated with the measurement of company value which is \textbf{intra\_day} and \textbf{ent\_value}. PC2 is positive correlated with the stock earnings ratio (ebitda and trail\_pe) which means that the increase in the stock earnings ratio will increase PC2 slightly. The rest of the ratios are neither positively correlated with PC1 nor PC2, but we could notice that the other variables which are related to the price-based evaluation of the stock are pretty close to the PC2. The \textbf{peg} ratio could not be well explained by both PC1 and PV2.
+Referring to the PCA value table, we could notice that PC1 is positive correlated with the measurement of company value which is \textbf{intra\_day} and \textbf{ent\_value}. PC2 is positive correlated with the stock earnings ratio (\textbf{ebitda} and \textbf{trail\_pe}) which means that the increase in the stock earnings ratio will increase PC2 slightly. We could notice that the variables which are related to the price-based evaluation of the stock are pretty close to the PC2.
 
-Meanwhile, this plot also highlights that the two measurements of the company value have a really strong association with each other and do not have any association with stock price and earning evaluation. Therefore, we could say that the market value of a company may not influence its stock price and earn per share. But the relationship between stock price and earnings are quite strong.
+Meanwhile, according to Figure \ref{fig:pca-cor} the narrow angle between \textbf{intra\_day} and \textbf{ent\_value} could highlight their strong association and the nearly 90 degree angle with \textbf{for\_eg},\textbf{ttm}, \textbf{mrq}, \textbf{rev} states the zero relationship. Furthermore, we could say that the angle between the measurement of company value and \textbf{ebita}, \textbf{trail\_pe} is close to 180 degree, their relationship should be negative. In other words, market value of a company will not influence its stock price and earn per share, but price and earnings will highly impact each other.
 
 \begin{figure}
 \centering
@@ -505,7 +505,7 @@ Meanwhile, this plot also highlights that the two measurements of the company va
 
 Distance biplot \ref{fig:bi-dis} indicates that \textbf{Johnson \& Johnson (JNJ)} and \textbf{Walmart (WMT)} have a high value in PC1, and \textbf{Activision Blizzard (ATVI)}, \textbf{Texas Instruments Incorporated (TXN)}, \textbf{Maxim Integrated Products (MXIM)} are higher in PC2.
 
-Meanwhile, we notice that \textbf{Verisk analytics (VRSK)} is a potential outlier for the PC1, \textbf{JNJ}, and \textbf{WMT} are potential outliers for PC2. The reason is based on the characteristic of these firms. Being a data-analytics and risk-assessment firm, \textbf{VRSK} provides the consulting service instead of the goods selling. Therefore, as for the financial sector, they do not generate profit relying on the firm size, but the stock value and EPS. \textbf{JNJ} and \textbf{WMT} perform oppositely since they mainly profit from the selling goods selling. The continuously increasing market share will keep their profit at a high level.
+Furthermore, we notice that \textbf{Verisk analytics (VRSK)} is a potential outlier for the PC1, \textbf{JNJ}, and \textbf{WMT} are potential outliers for PC2. The reason is based on the characteristic of these firms. Being a data-analytics and risk-assessment firm, \textbf{VRSK} provides the consulting service instead of the goods selling. Therefore, as for the financial sector, they profit generating will not directly lead to the increasing firm size. \textbf{JNJ} and \textbf{WMT} perform oppositely since they are operating as the multinational company. The continuously increasing market share will keep their profit at a high level.
 
 \begin{table}
 
@@ -531,8 +531,15 @@ Cumulative Proportion & 0.4655 & 0.7042 & 0.8007 & 0.8908 & 0.9503 & 0.9855 & 0.
 \end{figure}
 
 The limitation of the value analysis also exists.
-- After we filter out the outliers, the number of variables we put into use is 30 out of 147 and only 70.42\% of the overall variation could be explained by the first two principles (Table \ref{tab:lim-1}). The really small space size is not representative and also would not accurate enough to explain the whole stock market condition.
-- There are some contradictions in PC selection in Screeplot (Figure \ref{fig:lim-2}) and biplot.
+
+\begin{itemize}
+\tightlist
+\item
+  After we filter out the outliers, the number of variables we put into use is 30 out of 147 and only 70.42\% of the overall variation could be explained by the first two principles (Table \ref{tab:lim-1}). The really small space size is not representative and also would not accurate enough to explain the whole stock market condition.
+\item
+  Screeplot (Figure \ref{fig:lim-2}) suggests the best PC selection is 3 which is contradictory to the biplot selection.
+\end{itemize}
+
 Therefore, we need to consider an alternative approach to make sure of the accuracy of our suggestion.
 
 \hypertarget{risk-analysis}{%
@@ -565,7 +572,7 @@ Cumulative Proportion & 0.4862 & 0.8577 & 1.0000 & 1\\
 \caption{\label{fig:pca-risk-screeplot}Screeplot of PCs in PCA for risk analysis of stocks}
 \end{figure}
 
-Figure \ref{fig:pca-risk-distance} shows the distance among each stock in the dataset and implies the similarity between stocks. The stocks of \textbf{VRSK} and \textbf{UnitedHealth Group Incorporated (UNH)} may be the same because they seem perfectly superimpose. Besides, \textbf{Allianz SE (ALV.DE)} and \textbf{Dollar Tree, Inc.~(DLTR)}, as well as \textbf{Cerner Corporation (CERN)} and \textbf{Fiserv, Inc.~(FISV)} might be similar, since they are close to each other. While the far distance between \textbf{VRSK} and \textbf{Microchip Technology Incorporated (MCHP)}, or \textbf{CDW Corporation (CDW)} and \textbf{Pfizer Inc.~(PFE)} indicate their different risk performance. To further analyzing the correlation between each stock, a correlation biplot is required.
+Figure \ref{fig:pca-risk-distance} shows the distance among each stock in the dataset and implies the similarity between stocks. The stocks of \textbf{VRSK} and \textbf{UnitedHealth Group Incorporated (UNH)} may be the same because they seem perfectly superimpose. Besides, \textbf{Allianz SE (ALV.DE)} and \textbf{Dollar Tree, Inc. (DLTR)}, as well as \textbf{Cerner Corporation (CERN)} and \textbf{Fiserv, Inc. (FISV)} might be similar, since they are close to each other. While the far distance between \textbf{VRSK} and \textbf{Microchip Technology Incorporated (MCHP)}, or \textbf{CDW Corporation (CDW)} and \textbf{Pfizer Inc. (PFE)} indicate their different risk performance. To further analyzing the correlation between each stock, a correlation biplot is required.
 
 \begin{figure}
 \centering
@@ -573,7 +580,7 @@ Figure \ref{fig:pca-risk-distance} shows the distance among each stock in the da
 \caption{\label{fig:pca-risk-distance}Distance biplot of PCA of stocks' risk}
 \end{figure}
 
-According to Figure \ref{fig:pca-risk-correlation} the correlation biplot \textbf{VRSK}, \textbf{UNH}, \textbf{CERN}, and \textbf{FISV} have the high values of social risk score, which indicate that these four stocks might perform better than the others in the social challenges. While they might not good at dealing with the risk from the environment since the social risk score and environmental risk score are approximately negative correlated. In contrast, \textbf{Covestro AG (1COV.DE)} and \textbf{MCHP} have the strongest abilities to face environmental challenges. Meanwhile, \textbf{MCHP} also has the highest score of governance risk, which indicates good performance in anticipating governance challenges. \textbf{PFE}, \textbf{Bayerische Motoren Werke AG (BMW.DE)}, and \textbf{Merck \& Co., Inc.~(MRK)} also perform well. While the projected positions of these three stocks along the axis of governance risk score are gradually decreasing, the approximate actual values of stock performance might gradually decline.
+According to Figure \ref{fig:pca-risk-correlation} the correlation biplot \textbf{VRSK}, \textbf{UNH}, \textbf{CERN}, and \textbf{FISV} have the high values of social risk score, which indicate that these four stocks might perform better than the others in the social challenges. While they might not good at dealing with the risk from the environment since the social risk score and environmental risk score are approximately negative correlated. In contrast, \textbf{Covestro AG (1COV.DE)} and \textbf{MCHP} have the strongest abilities to face environmental challenges. Meanwhile, \textbf{MCHP} also has the highest score of governance risk, which indicates good performance in anticipating governance challenges. \textbf{PFE}, \textbf{Bayerische Motoren Werke AG (BMW.DE)}, and \textbf{Merck \& Co., Inc. (MRK)} also perform well. While the projected positions of these three stocks along the axis of governance risk score are gradually decreasing, the approximate actual values of stock performance might gradually decline.
 
 In general, based on the total ESG risk score, \textbf{MCHP} and \textbf{BMW.DE} have the best overall performance compared with other stocks, which indicate that their strategy in risk management is quite effective. Therefore, even if some external challenges occur, they will not have any significant fluctuations. In contrast, \textbf{CDW} has a weak overall risk performance for the low value in total risk score which indicates that the \textbf{CDW} stock price will not be stable when facing the risk.
 
@@ -600,7 +607,7 @@ Using the hierarchical clustering analysis with the agglomerative method, it is 
 \caption{\label{fig:ward-3}Dendogram using Ward methodology and taking Euclidian distances}
 \end{figure}
 
-From the dendogram, there are three different clusters. These three clusters are shown in Table \ref{tab:memb-w}, Table \ref{tab:memb-two}, and Table \ref{tab:memb-three}, respectively.
+From the dendrogram, there are three different clusters. These three clusters are shown in Table \ref{tab:memb-w}, Table \ref{tab:memb-two}, and Table \ref{tab:memb-three}, respectively.
 
 \begin{table}
 
@@ -776,7 +783,9 @@ Zhu, H. (2019). Kableextra: Construct complex table with 'kable' and pipe syntax
 \clearpage
 
 \appendix
-\section{\\Appendix}
+
+\hypertarget{appendix}{%
+\section{Appendix}\label{appendix}}
 
 \hypertarget{ends-with-emphasis}{%
 \subsection{Ends with Emphasis}\label{ends-with-emphasis}}

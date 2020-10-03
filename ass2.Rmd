@@ -87,7 +87,7 @@ stocks_ori <- stocks_ori%>%
 
 ## Description
 
-Our data was sourced from [Yahoo Finance](https://au.finance.yahoo.com/) and it contains 18 variables of 147 stocks from five major financial indices. Those 18 variables could be further classified into 3 categories. The first categories captures **Name**, **Symbol**, **Market**, **Sector**, **Industry** which are related to the background of those stocks. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables are shown in Table \@ref(tab:variables-table). 
+Our data was sourced from [Yahoo Finance](https://au.finance.yahoo.com/) and it contains 18 variables of 147 stocks from five major financial indices. Those 18 variables could be further classified into 3 categories. The first categories capture **Name**, **Symbol**, **Market**, **Sector**, **Industry** which are related to the background of those stocks. The second and third categories provide some measurement of the value and risk which are related to the stocks. The further description of those variables is shown in Table \@ref(tab:variables-table). 
 
 ```{r variables-table, message=FALSE}
 tribble(~Variable, ~Abbreviation, ~Description,
@@ -205,15 +205,16 @@ pca_value<-df%>%
 rownames(pca_value$x)<-pull(df,Symbol)
 ```
 
-```{r pca-cor,fig.cap="Correlation Biplot of PCA of stocks' value"}
-cor_va<-biplot(pca_value,scale=0,cex=0.8)
+```{r pca-cor,fig.height=5.5,fig.cap="Correlation Biplot of PCA of stocks' value"}
+cor_va<-biplot(pca_value,scale=0,cex=0.6)
 ```
-Referring to the PCA value table, we could notice that PC1 is positive correlated with the measurement of company value which is **intra_day** and **ent_value**. PC2 is positive correlated with the stock earnings ratio (ebitda and trail_pe) which means that the increase in the stock earnings ratio will increase PC2 slightly. The rest of the ratios are neither positively correlated with  PC1 nor PC2, but we could notice that the other variables which are related to the price-based evaluation of the stock are pretty close to the PC2. The **peg** ratio could not be well explained by both PC1 and PC2. 
 
-Meanwhile, according to Figure \@ref(fig:pca-cor) the narrow angle between **intra_day** and **ent_value** could highlight their strong association and the nearly 90 degree angle with **for_eg**,**ttm**, **mrq**, **rev** states the zero relationship. Furthermore, we could say that the angle between the measurement of company value and **ebita**  **trail_pr** is greater than 90 degree, their relationship should be negative. In other words, market value of a company will not influence its stock price and earn per share, but price and earnings will highly impact each other. 
+Referring to the PCA value table, we could notice that PC1 is positive correlated with the measurement of company value which is **intra_day** and **ent_value**. PC2 is positive correlated with the stock earnings ratio (**ebitda** and **trail_pe**) which means that the increase in the stock earnings ratio will increase PC2 slightly. We could notice that the variables which are related to the price-based evaluation of the stock are pretty close to the PC2.
 
-```{r bi-dis,fig.cap="Distance Biplot of PCA of stocks' value"}
-dis_va<-biplot(pca_value,xlim=c(-0.6,0.3),cex=0.8)
+Meanwhile, according to Figure \@ref(fig:pca-cor) the narrow angle between **intra_day** and **ent_value** could highlight their strong association and the nearly 90 degree angle with **for_eg**,**ttm**, **mrq**, **rev** states the zero relationship. Furthermore, we could say that the angle between the measurement of company value and **ebita**, **trail_pe** is close to 180 degree, their relationship should be negative. In other words, market value of a company will not influence its stock price and earn per share, but price and earnings will highly impact each other. 
+
+```{r bi-dis,fig.height=5.5,fig.cap="Distance Biplot of PCA of stocks' value"}
+dis_va<-biplot(pca_value,xlim=c(-0.6,0.3),cex=0.6)
 ``` 
 
 Distance biplot \@ref(fig:bi-dis) indicates that **Johnson & Johnson (JNJ)** and **Walmart (WMT)** have a high value in PC1, and **Activision Blizzard (ATVI)**, **Texas Instruments Incorporated (TXN)**, **Maxim Integrated Products (MXIM)** are higher in PC2. 
@@ -286,17 +287,17 @@ screeplot(pca_risk, type = "lines")
 
 Figure \@ref(fig:pca-risk-distance) shows the distance among each stock in the dataset and implies the similarity between stocks. The stocks of **VRSK** and **UnitedHealth Group Incorporated (UNH)** may be the same because they seem perfectly superimpose. Besides, **Allianz SE (ALV.DE)** and **Dollar Tree, Inc. (DLTR)**, as well as **Cerner Corporation (CERN)** and **Fiserv, Inc. (FISV)** might be similar, since they are close to each other. While the far distance between **VRSK** and **Microchip Technology Incorporated (MCHP)**, or **CDW Corporation (CDW)** and **Pfizer Inc. (PFE)** indicate their different risk performance. To further analyzing the correlation between each stock, a correlation biplot is required.
 
-```{r pca-risk-distance, fig.height=5, fig.cap= "Distance biplot of PCA of stocks' risk"}
+```{r pca-risk-distance, fig.height=5.5, fig.cap= "Distance biplot of PCA of stocks' risk"}
 rownames(pca_risk$x) <- pull(risk_tesg, Symbol)
-biplot(pca_risk, xlim=c(-0.5, 0.5), ylim = c(-0.6, 0.3),  cex = 0.8)
+biplot(pca_risk, xlim=c(-0.5, 0.5), ylim = c(-0.6, 0.3),  cex = 0.6)
 ```
 
 According to Figure \@ref(fig:pca-risk-correlation) the correlation biplot **VRSK**, **UNH**, **CERN**, and **FISV** have the high values of social risk score, which indicate that these four stocks might perform better than the others in the social challenges. While they might not good at dealing with the risk from the environment since the social risk score and environmental risk score are approximately negative correlated. In contrast, **Covestro AG (1COV.DE)** and **MCHP** have the strongest abilities to face environmental challenges. Meanwhile, **MCHP** also has the highest score of governance risk, which indicates good performance in anticipating governance challenges. **PFE**, **Bayerische Motoren Werke AG (BMW.DE)**, and **Merck & Co., Inc. (MRK)** also perform well. While the projected positions of these three stocks along the axis of governance risk score are gradually decreasing, the approximate actual values of stock performance might gradually decline.
 
 In general, based on the total ESG risk score, **MCHP** and **BMW.DE** have the best overall performance compared with other stocks, which indicate that their strategy in risk management is quite effective. Therefore, even if some external challenges occur, they will not have any significant fluctuations. In contrast, **CDW** has a weak overall risk performance for the low value in total risk score which indicates that the **CDW** stock price will not be stable when facing the risk. 
 
-```{r pca-risk-correlation, fig.height=5, fig.cap="Correlation Biplot of PCA of stocks' risk"}
-biplot(pca_risk, scale = 0, xlim = c(-4, 4), cex = 0.8)
+```{r pca-risk-correlation, fig.height=5.5, fig.cap="Correlation Biplot of PCA of stocks' risk"}
+biplot(pca_risk, scale = 0, xlim = c(-4, 4), cex = 0.6)
 ```
 
 ```{r, eval=FALSE}
@@ -343,7 +344,7 @@ plot(hc_w, cex = 0.5, xlab= "Stocks", ylab="Distance")
 rect.hclust(hc_w, k = 3)
 ```
 
-From the dendogram, there are three different clusters. These three clusters are shown in Table \@ref(tab:memb-w), Table \@ref(tab:memb-two), and Table \@ref(tab:memb-three), respectively.
+From the dendrogram, there are three different clusters. These three clusters are shown in Table \@ref(tab:memb-w), Table \@ref(tab:memb-two), and Table \@ref(tab:memb-three), respectively.
 
 ```{r memb-w}
 memb_three_w <- cutree(hc_w, k = 3)
@@ -432,7 +433,8 @@ Zhu, H. (2019). Kableextra: Construct complex table with ’kable’ and pipe sy
 \clearpage
 
 \appendix
-\section{\\Appendix}
+
+# Appendix
 
 ## Ends with Emphasis 
 
