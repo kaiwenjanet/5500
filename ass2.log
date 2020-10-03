@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.9.30)  3 OCT 2020 00:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.9.30)  3 OCT 2020 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1690,14 +1690,14 @@ LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
 LaTeX Font Info:    Font shape `T1/mdbch/m/it' will be
 (Font)              scaled to size 10.51207pt on input line 334.
 LaTeX Font Info:    Trying to load font information for TS1+mdbch on input line
- 377.
+ 387.
 
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbch/t
 s1mdbch.fd
 File: ts1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for TS1/mdbch.
 )
 LaTeX Font Info:    Font shape `TS1/mdbch/m/n' will be
-(Font)              scaled to size 10.51207pt on input line 377.
+(Font)              scaled to size 10.51207pt on input line 387.
 [3
 
 ] [4]
@@ -1705,128 +1705,130 @@ LaTeX Font Info:    Font shape `TS1/mdbch/m/n' will be
 File: ass2_files/figure-latex/vis-data-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/vis-data-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/vis-data-1.pdf  used on input 
-line 396.
+line 406.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.24173pt on input line 444.
-[5 <./ass2_files/figure-latex/vis-data-1.pdf>]
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
-(Font)              scaled to size 9.24173pt on input line 467.
-<ass2_files/figure-latex/pca-cor-1.pdf, id=123, 578.16pt x 361.35pt>
+(Font)              scaled to size 9.24173pt on input line 486.
+[5 <./ass2_files/figure-latex/vis-data-1.pdf>]
+<ass2_files/figure-latex/pca-cor-1.pdf, id=126, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/pca-cor-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/pca-cor-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/pca-cor-1.pdf  used on input l
-ine 473.
+ine 492.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
 [6]
-<ass2_files/figure-latex/bi-dis-1.pdf, id=134, 578.16pt x 361.35pt>
+<ass2_files/figure-latex/bi-dis-1.pdf, id=135, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/bi-dis-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/bi-dis-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/bi-dis-1.pdf  used on input li
-ne 483.
+ne 502.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
 
-Overfull \hbox (64.19482pt too wide) in paragraph at lines 495--506
+Overfull \hbox (29.8416pt too wide) in paragraph at lines 514--525
  [][] 
  []
 
-[7 <./ass2_files/figure-latex/pca-cor-1.pdf>]
-<ass2_files/figure-latex/lim-2-1.pdf, id=147, 578.16pt x 361.35pt>
+<ass2_files/figure-latex/lim-2-1.pdf, id=137, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/lim-2-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/lim-2-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/lim-2-1.pdf  used on input lin
-e 510.
+e 529.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-[8 <./ass2_files/figure-latex/bi-dis-1.pdf>]
-<ass2_files/figure-latex/pca-risk-screeplot-1.pdf, id=166, 578.16pt x 361.35pt>
+[7 <./ass2_files/figure-latex/pca-cor-1.pdf>]
+<ass2_files/figure-latex/pca-risk-screeplot-1.pdf, id=155, 578.16pt x 361.35pt>
 
 File: ass2_files/figure-latex/pca-risk-screeplot-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/pca-risk-screeplot-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/pca-risk-screeplot-1.pdf  used
- on input line 545.
+ on input line 564.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-<ass2_files/figure-latex/pca-risk-distance-1.pdf, id=168, 578.16pt x 361.35pt>
+[8 <./ass2_files/figure-latex/bi-dis-1.pdf>]
+<ass2_files/figure-latex/pca-risk-distance-1.pdf, id=171, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/pca-risk-distance-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/pca-risk-distance-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/pca-risk-distance-1.pdf  used 
-on input line 553.
+on input line 572.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
 [9 <./ass2_files/figure-latex/lim-2-1.pdf>] [10 <./ass2_files/figure-latex/pca-
 risk-screeplot-1.pdf> <./ass2_files/figure-latex/pca-risk-distance-1.pdf>]
-<ass2_files/figure-latex/pca-risk-correlation-1.pdf, id=198, 578.16pt x 361.35p
+<ass2_files/figure-latex/pca-risk-correlation-1.pdf, id=200, 578.16pt x 361.35p
 t>
 File: ass2_files/figure-latex/pca-risk-correlation-1.pdf Graphic file (type pdf
 )
 <use ass2_files/figure-latex/pca-risk-correlation-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/pca-risk-correlation-1.pdf  us
-ed on input line 563.
+ed on input line 582.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-<ass2_files/figure-latex/ward-1.pdf, id=201, 578.16pt x 361.35pt>
+<ass2_files/figure-latex/ward-1.pdf, id=203, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/ward-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/ward-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/ward-1.pdf  used on input line
- 574.
+ 593.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-<ass2_files/figure-latex/ward-3-1.pdf, id=202, 578.16pt x 361.35pt>
+[11 <./ass2_files/figure-latex/pca-risk-correlation-1.pdf>]
+<ass2_files/figure-latex/ward-3-1.pdf, id=214, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/ward-3-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/ward-3-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/ward-3-1.pdf  used on input li
-ne 580.
+ne 599.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-[11] [12 <./ass2_files/figure-latex/pca-risk-correlation-1.pdf> <./ass2_files/f
-igure-latex/ward-1.pdf>] [13 <./ass2_files/figure-latex/ward-3-1.pdf>] [14] [15
+[12 <./ass2_files/figure-latex/ward-1.pdf>] [13 <./ass2_files/figure-latex/ward
+-3-1.pdf>] [14] [15
+
 ] [16
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 756.
+(hyperref)                removing `\\' on input line 777.
 
-<ass2_files/figure-latex/complete-1.pdf, id=273, 578.16pt x 361.35pt>
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 9.24173pt on input line 782.
+<ass2_files/figure-latex/complete-1.pdf, id=274, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/complete-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/complete-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/complete-1.pdf  used on input 
-line 765.
+line 786.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-<ass2_files/figure-latex/average-1.pdf, id=274, 578.16pt x 361.35pt>
+<ass2_files/figure-latex/average-1.pdf, id=275, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/average-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/average-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/average-1.pdf  used on input l
-ine 771.
+ine 792.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-<ass2_files/figure-latex/centroid-1.pdf, id=275, 578.16pt x 361.35pt>
+<ass2_files/figure-latex/centroid-1.pdf, id=276, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/centroid-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/centroid-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/centroid-1.pdf  used on input 
-line 777.
+line 798.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
 
-LaTeX Warning: Empty bibliography on input line 798.
+LaTeX Warning: Empty bibliography on input line 819.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 800.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 821.
 [17
 
  <./ass2_files/figure-latex/complete-1.pdf>] [18 <./ass2_files/figure-latex/ave
 rage-1.pdf> <./ass2_files/figure-latex/centroid-1.pdf>] [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 800.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 821.
 (./ass2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 800.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 800.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 821.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 821.
 Package rerunfilecheck Info: File `ass2.out' has not changed.
 (rerunfilecheck)             Checksum: B39A1FE3E568E12757BCB0ADB28C9D2E;1801.
 Package logreq Info: Writing requests to 'ass2.run.xml'.
 \openout1 = `ass2.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 800.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 821.
  ) 
 Here is how much of TeX's memory you used:
- 27253 strings out of 482798
- 458256 string characters out of 5953330
- 1229274 words of memory out of 5000000
- 41892 multiletter control sequences out of 15000+600000
- 640237 words of font info for 274 fonts, out of 8000000 for 9000
+ 27235 strings out of 482798
+ 458072 string characters out of 5953330
+ 1229370 words of memory out of 5000000
+ 41893 multiletter control sequences out of 15000+600000
+ 639062 words of font info for 259 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 64i,14n,101p,1344b,4932s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,14n,101p,1067b,4932s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.en
 c}{c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/ly1/texnan
 si.enc}{c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/fonta
@@ -1840,10 +1842,10 @@ vmr8a.pfb><c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public
 /bera/fvsb8a.pfb><c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1
 /public/bera/fvsr8a.pfb><c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/font
 s/type1/public/mathdesign/mdbch/md-chr8t.pfb>
-Output written on ass2.pdf (19 pages, 189421 bytes).
+Output written on ass2.pdf (19 pages, 188011 bytes).
 PDF statistics:
- 359 PDF objects out of 1000 (max. 8388607)
- 300 compressed objects within 3 object streams
- 69 named destinations out of 1000 (max. 500000)
+ 362 PDF objects out of 1000 (max. 8388607)
+ 302 compressed objects within 4 object streams
+ 70 named destinations out of 1000 (max. 500000)
  30890 words of extra memory for PDF output out of 35830 (max. 10000000)
 
