@@ -208,10 +208,9 @@ rownames(pca_value$x)<-pull(df,Symbol)
 ```{r pca-cor,fig.cap="Correlation Biplot of PCA of stocks' value"}
 cor_va<-biplot(pca_value,scale=0,cex=0.8)
 ```
+Referring to the PCA value table, we could notice that PC1 is positive correlated with the measurement of company value which is **intra_day** and **ent_value**. PC2 is positive correlated with the stock earnings ratio (ebitda and trail_pe) which means that the increase in the stock earnings ratio will increase PC2 slightly. The rest of the ratios are neither positively correlated with  PC1 nor PC2, but we could notice that the other variables which are related to the price-based evaluation of the stock are pretty close to the PC2. The **peg** ratio could not be well explained by both PC1 and PC2. 
 
-Referring to the correlation biplot Figure \@ref(fig:pca-cor) we could notice that PC1 is positive correlated with the measurement of company value which is **intra_day** and **ent_value**. PC2 is positive correlated with the stock earnings ratio (ebitda and trail_pe) which means that the increase in the stock earnings ratio will increase PC2 slightly. The rest of the ratios are neither positively correlated with  PC1 nor PC2, but we could notice that the other variables which are related to the price-based evaluation of the stock are pretty close to the PC2. The **peg** ratio could not be well explained by both PC1 and PV2. 
-
-Meanwhile, this plot also highlights that the two measurements of the company value have a really strong association with each other and do not have any association with stock price and earning evaluation. Therefore, we could say that the market value of a company may not influence its stock price and earn per share. But the relationship between stock price and earnings are quite strong. 
+Meanwhile, according to Figure \@ref(fig:pca-cor) the narrow angle between **intra_day** and **ent_value** could highlight their strong association and the nearly 90 degree angle with **for_eg**,**ttm**, **mrq**, **rev** states the zero relationship. Furthermore, we could say that the angle between the measurement of company value and **ebita**  **trail_pr** is greater than 90 degree, their relationship should be negative. In other words, market value of a company will not influence its stock price and earn per share, but price and earnings will highly impact each other. 
 
 ```{r bi-dis,fig.cap="Distance Biplot of PCA of stocks' value"}
 dis_va<-biplot(pca_value,xlim=c(-0.6,0.3),cex=0.8)
@@ -219,7 +218,7 @@ dis_va<-biplot(pca_value,xlim=c(-0.6,0.3),cex=0.8)
 
 Distance biplot \@ref(fig:bi-dis) indicates that **Johnson & Johnson (JNJ)** and **Walmart (WMT)** have a high value in PC1, and **Activision Blizzard (ATVI)**, **Texas Instruments Incorporated (TXN)**, **Maxim Integrated Products (MXIM)** are higher in PC2. 
 
-Meanwhile, we notice that **Verisk analytics (VRSK)** is a potential outlier for the PC1, **JNJ**, and **WMT** are potential outliers for PC2. The reason is based on the characteristic of these firms. Being a data-analytics and risk-assessment firm, **VRSK** provides the consulting service instead of the goods selling. Therefore, as for the financial sector, they do not generate profit relying on the firm size, but the stock value and EPS. **JNJ** and **WMT** perform oppositely since they mainly profit from the selling goods selling. The continuously increasing market share will keep their profit at a high level. 
+Furthermore, we notice that **Verisk analytics (VRSK)** is a potential outlier for the PC1, **JNJ**, and **WMT** are potential outliers for PC2. The reason is based on the characteristic of these firms. Being a data-analytics and risk-assessment firm, **VRSK** provides the consulting service instead of the goods selling. Therefore, as for the financial sector, they profit generating will not directly lead to the increasing firm size. **JNJ** and **WMT** perform oppositely since they are operating as the multinational company. The continuously increasing market share will keep their profit at a high level. 
  
 ```{r lim-1}
 summary(pca_value)$importance %>%  
@@ -234,8 +233,10 @@ screeplot(pca_value, type = "lines")
 ```
 
 The limitation of the value analysis also exists. 
+
 -	After we filter out the outliers, the number of variables we put into use is 30 out of 147 and only 70.42% of the overall variation could be explained by the first two principles (Table \@ref(tab:lim-1)). The really small space size is not representative and also would not accurate enough to explain the whole stock market condition. 
--	There are some contradictions in PC selection in Screeplot (Figure \@ref(fig:lim-2)) and biplot. 
+-	Screeplot (Figure \@ref(fig:lim-2)) suggests the best PC selection is 3 which is contradictory to the biplot selection. 
+
 Therefore, we need to consider an alternative approach to make sure of the accuracy of our suggestion.  
 
 ```{r, eval=FALSE}
