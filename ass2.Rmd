@@ -542,19 +542,32 @@ tribble(~Variable, ~Abbreviation, ~Description,
         "Market", "/", "Major financial indices",
         "Sector", "/", "The belonging section of a stock",
         "Industry", "/", "The belonging industry of a stock",
-        "Market capitalization", "intra_day", "How much a company is worth as determined by the stock market", 
+        "Market capitalization", "intra_day", "How much a company is worth as 
+        determined by the stock market", 
         "Enterprise value", "ent_value", "A measure of a company's total value", 
-        "Trailing P/E", "trail_pe",  "Price to Earning Ratio based on the earnings per share over the previous 12 months",
-        "Forward P/E ratio", "for_pe",  "Estimate further earnings per share in the next 12 months", 
-        "PEG ratio", "peg", "Enhances the P/E ratio by adding the expected earnings growth into calculation", 
-        "P/S ratio", "ttm", "Price to Sales ratio, a valuation ratio by comparing a company’s stock price to its revenue", 
-        "P/B ratio",  "mrq", "Price to Book ratio is a measurement of the market's valuation of a company relative to its book value",
-        "Enterprise value-to-revenue",  "rev", "Also refers as the EV/R, it measures the value of a stock that compares a company's enterprise value to its revenue", 
-        "EV/EBITDA", "ebitda", "Enterprise value to earnings before interest, taxed, depreciation and amortization ratio compares the value of a company, debt included to the company's cash earnings less non-cash expenses", 
-        "Total ESG risk score", "tot_risk", "The overall rating scores based on the Morningstar Sustainability Rating systems", 
-        "Environmental Risk Score", "envir_risk", "Evaluation scores of the portfolios performance when they meet the environmental challenges", 
-        "Social Risk Score", "social_risk", "Evaluation scores of the portfolios performance when they meet the social challenges", 
-        "Governance Risk Score", "gover_risk","Evaluation scores of the portfolios performance when they meet the governance challenges") %>% 
+        "Trailing P/E", "trail_pe",  "Price to Earning Ratio based on the earnings 
+        per share over the previous 12 months",
+        "Forward P/E ratio", "for_pe",  "Estimate further earnings per share in 
+        the next 12 months", 
+        "PEG ratio", "peg", "Enhances the P/E ratio by adding the expected 
+        earnings growth into calculation", 
+        "P/S ratio", "ttm", "Price to Sales ratio, a valuation ratio by comparing a 
+        company’s stock price to its revenue", 
+        "P/B ratio",  "mrq", "Price to Book ratio is a measurement of the market's 
+        valuation of a company relative to its book value",
+        "Enterprise value-to-revenue",  "rev", "Also refers as the EV/R, it measures 
+        the value of a stock that compares a company's enterprise value to its revenue", 
+        "EV/EBITDA", "ebitda", "Enterprise value to earnings before interest, taxed, 
+        depreciation and amortization ratio compares the value of a company, debt 
+        included to the company's cash earnings less non-cash expenses", 
+        "Total ESG risk score", "tot_risk", "The overall rating scores based on 
+        the Morningstar Sustainability Rating systems", 
+        "Environmental Risk Score", "envir_risk", "Evaluation scores of the 
+        portfolios performance when they meet the environmental challenges", 
+        "Social Risk Score", "social_risk", "Evaluation scores of the portfolios 
+        performance when they meet the social challenges", 
+        "Governance Risk Score", "gover_risk","Evaluation scores of the portfolios 
+        performance when they meet the governance challenges") %>% 
   kable(caption = "Information of variables of the original data") %>% 
   kable_styling(bootstrap_options = c("bordered", "striped", "hover")) %>%
   column_spec(3, width = "170px") 
@@ -622,7 +635,9 @@ stocks <- na.omit(stocks_ori)
 # filter out the outliers
 issuer<-stocks%>%
   select(Symbol,intra_day,ent_value,trail_pe,for_pe,peg,ttm,mrq,rev,ebitda)
-df <- issuer[!(issuer$Symbol %in% c("MSFT", "AAPL", "TSLA", "ILMN", "DIS", "VZ", "KO", "MMM", "CVX", "PCAR", "CAT", "XOM", "V", "INTU", "NKE")),]
+df <- issuer[!(issuer$Symbol %in% c("MSFT", "AAPL", "TSLA", "ILMN", "DIS", "VZ", 
+                                    "KO", "MMM","CVX", "PCAR", "CAT", "XOM", 
+                                    "V", "INTU", "NKE")),]
 #view(df)
 ```
 
@@ -662,20 +677,33 @@ screeplot(pca_value, type = "lines")
 
 ```{r risk-df1, echo=TRUE, eval=FALSE}
 # filter out the outliers
-risk <- subset(stocks[(stocks$Symbol %in% df$Symbol),], select = c("Symbol", "tot_risk", "envir_risk", "social_risk", "gover_risk"))
+risk <- subset(stocks[(stocks$Symbol %in% df$Symbol),], 
+               select = c("Symbol", 
+                          "tot_risk", 
+                          "envir_risk", 
+                          "social_risk", 
+                          "gover_risk"))
 view(risk)
 ```
 
 ```{r first-check1, echo=TRUE, eval=FALSE}
-# First check whether total esg risk score = environmental risk + social risk + governance risk
-d <- apply(cbind(risk$envir_risk, risk$social_risk, risk$gover_risk), 1, sum)
+# First check whether total esg risk score = 
+# environmental risk + social risk + governance risk
+d <- apply(cbind(risk$envir_risk, 
+                 risk$social_risk, 
+                 risk$gover_risk), 
+           1, sum)
 all(risk$tot_risk == d)
 ```
 
 ```{r risk-data1, echo=TRUE, eval=FALSE}
-# Second check whether total esg risk score = environmental risk + social risk + governance risk
+# Second check whether total esg risk score = 
+# environmental risk + social risk + governance risk
 risk_tesg <- risk[risk$tot_risk == d,]
-d2 <- apply(cbind(risk_tesg$envir_risk, risk_tesg$social_risk, risk_tesg$gover_risk), 1, sum)
+d2 <- apply(cbind(risk_tesg$envir_risk, 
+                  risk_tesg$social_risk, 
+                  risk_tesg$gover_risk), 
+            1, sum)
 all(risk_tesg$tot_risk == d2)
 #head(risk_tesg)
 #nrow(risk_tesg)
@@ -740,7 +768,9 @@ rect.hclust(hc_w, k = 3)
 ```{r memb-w1, echo=TRUE, eval=FALSE}
 # The first cluster 
 memb_three_w <- cutree(hc_w, k = 3)
-memb_one <- dat[dat$Symbol %in% rownames(as.data.frame(memb_three_w) %>% filter(memb_three_w == 2)),]$Name
+memb_one <- dat[dat$Symbol %in% 
+                  rownames(as.data.frame(memb_three_w) %>% 
+                             filter(memb_three_w == 2)),]$Name
 
 memb_one %>% 
   kable(col.names = c("stock"), caption = "The stocks of the first cluster") %>%
@@ -750,18 +780,26 @@ memb_one %>%
 
 ```{r memb-two1, echo=TRUE, eval=FALSE}
 # The second cluster
-memb_two <- dat[dat$Symbol %in%  rownames(as.data.frame(memb_three_w) %>% filter(memb_three_w == 3)),]$Name
+memb_two <- dat[dat$Symbol %in%  
+                  rownames(as.data.frame(memb_three_w) %>% 
+                             filter(memb_three_w == 3)),]$Name
+
 memb_two %>%
-  kable(col.names = c("stock"), caption = "The stocks of the second cluster") %>%
+  kable(col.names = c("stock"), 
+        caption = "The stocks of the second cluster") %>%
   kable_styling(bootstrap_options = c("bordered", "hover", "striped")) 
 ```
 
 
 ```{r memb-three1, echo=TRUE, eval=FALSE}
 # The third cluster
-memb_three <- dat[dat$Symbol %in%  rownames(as.data.frame(memb_three_w) %>% filter(memb_three_w == 1)),]$Name
+memb_three <- dat[dat$Symbol %in% 
+                    rownames(as.data.frame(memb_three_w) %>% 
+                               filter(memb_three_w == 1)),]$Name
+
 memb_three %>%
-  kable(col.names = c("stock"), caption = "The stocks of the third cluster") %>%
+  kable(col.names = c("stock"), 
+        caption = "The stocks of the third cluster") %>%
   kable_styling(bootstrap_options = c("bordered", "hover", "striped")) 
 ```
 
@@ -814,7 +852,9 @@ cm <- adjustedRandIndex(memb_three_w, memb_three_cm)
 
 
 al_method <- rbind(c, al, cm) 
-rownames(al_method) <- c("complete linkage method", "average linkage method", "centroid method")
+rownames(al_method) <- c("complete linkage method", 
+                         "average linkage method", 
+                         "centroid method")
 al_method %>% 
   kable(col.names = c("adjusted rand index"), 
         caption = "The adjusted rand index of the three clustering methods") %>%

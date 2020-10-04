@@ -929,19 +929,32 @@ centroid method & 0.0919079\\
         \StringTok{"Market"}\NormalTok{, }\StringTok{"/"}\NormalTok{, }\StringTok{"Major financial indices"}\NormalTok{,}
         \StringTok{"Sector"}\NormalTok{, }\StringTok{"/"}\NormalTok{, }\StringTok{"The belonging section of a stock"}\NormalTok{,}
         \StringTok{"Industry"}\NormalTok{, }\StringTok{"/"}\NormalTok{, }\StringTok{"The belonging industry of a stock"}\NormalTok{,}
-        \StringTok{"Market capitalization"}\NormalTok{, }\StringTok{"intra_day"}\NormalTok{, }\StringTok{"How much a company is worth as determined by the stock market"}\NormalTok{, }
+        \StringTok{"Market capitalization"}\NormalTok{, }\StringTok{"intra_day"}\NormalTok{, }\StringTok{"How much a company is worth as }
+\StringTok{        determined by the stock market"}\NormalTok{, }
         \StringTok{"Enterprise value"}\NormalTok{, }\StringTok{"ent_value"}\NormalTok{, }\StringTok{"A measure of a company's total value"}\NormalTok{, }
-        \StringTok{"Trailing P/E"}\NormalTok{, }\StringTok{"trail_pe"}\NormalTok{,  }\StringTok{"Price to Earning Ratio based on the earnings per share over the previous 12 months"}\NormalTok{,}
-        \StringTok{"Forward P/E ratio"}\NormalTok{, }\StringTok{"for_pe"}\NormalTok{,  }\StringTok{"Estimate further earnings per share in the next 12 months"}\NormalTok{, }
-        \StringTok{"PEG ratio"}\NormalTok{, }\StringTok{"peg"}\NormalTok{, }\StringTok{"Enhances the P/E ratio by adding the expected earnings growth into calculation"}\NormalTok{, }
-        \StringTok{"P/S ratio"}\NormalTok{, }\StringTok{"ttm"}\NormalTok{, }\StringTok{"Price to Sales ratio, a valuation ratio by comparing a company’s stock price to its revenue"}\NormalTok{, }
-        \StringTok{"P/B ratio"}\NormalTok{,  }\StringTok{"mrq"}\NormalTok{, }\StringTok{"Price to Book ratio is a measurement of the market's valuation of a company relative to its book value"}\NormalTok{,}
-        \StringTok{"Enterprise value-to-revenue"}\NormalTok{,  }\StringTok{"rev"}\NormalTok{, }\StringTok{"Also refers as the EV/R, it measures the value of a stock that compares a company's enterprise value to its revenue"}\NormalTok{, }
-        \StringTok{"EV/EBITDA"}\NormalTok{, }\StringTok{"ebitda"}\NormalTok{, }\StringTok{"Enterprise value to earnings before interest, taxed, depreciation and amortization ratio compares the value of a company, debt included to the company's cash earnings less non-cash expenses"}\NormalTok{, }
-        \StringTok{"Total ESG risk score"}\NormalTok{, }\StringTok{"tot_risk"}\NormalTok{, }\StringTok{"The overall rating scores based on the Morningstar Sustainability Rating systems"}\NormalTok{, }
-        \StringTok{"Environmental Risk Score"}\NormalTok{, }\StringTok{"envir_risk"}\NormalTok{, }\StringTok{"Evaluation scores of the portfolios performance when they meet the environmental challenges"}\NormalTok{, }
-        \StringTok{"Social Risk Score"}\NormalTok{, }\StringTok{"social_risk"}\NormalTok{, }\StringTok{"Evaluation scores of the portfolios performance when they meet the social challenges"}\NormalTok{, }
-        \StringTok{"Governance Risk Score"}\NormalTok{, }\StringTok{"gover_risk"}\NormalTok{,}\StringTok{"Evaluation scores of the portfolios performance when they meet the governance challenges"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+        \StringTok{"Trailing P/E"}\NormalTok{, }\StringTok{"trail_pe"}\NormalTok{,  }\StringTok{"Price to Earning Ratio based on the earnings }
+\StringTok{        per share over the previous 12 months"}\NormalTok{,}
+        \StringTok{"Forward P/E ratio"}\NormalTok{, }\StringTok{"for_pe"}\NormalTok{,  }\StringTok{"Estimate further earnings per share in }
+\StringTok{        the next 12 months"}\NormalTok{, }
+        \StringTok{"PEG ratio"}\NormalTok{, }\StringTok{"peg"}\NormalTok{, }\StringTok{"Enhances the P/E ratio by adding the expected }
+\StringTok{        earnings growth into calculation"}\NormalTok{, }
+        \StringTok{"P/S ratio"}\NormalTok{, }\StringTok{"ttm"}\NormalTok{, }\StringTok{"Price to Sales ratio, a valuation ratio by comparing a }
+\StringTok{        company’s stock price to its revenue"}\NormalTok{, }
+        \StringTok{"P/B ratio"}\NormalTok{,  }\StringTok{"mrq"}\NormalTok{, }\StringTok{"Price to Book ratio is a measurement of the market's }
+\StringTok{        valuation of a company relative to its book value"}\NormalTok{,}
+        \StringTok{"Enterprise value-to-revenue"}\NormalTok{,  }\StringTok{"rev"}\NormalTok{, }\StringTok{"Also refers as the EV/R, it measures }
+\StringTok{        the value of a stock that compares a company's enterprise value to its revenue"}\NormalTok{, }
+        \StringTok{"EV/EBITDA"}\NormalTok{, }\StringTok{"ebitda"}\NormalTok{, }\StringTok{"Enterprise value to earnings before interest, taxed, }
+\StringTok{        depreciation and amortization ratio compares the value of a company, debt }
+\StringTok{        included to the company's cash earnings less non-cash expenses"}\NormalTok{, }
+        \StringTok{"Total ESG risk score"}\NormalTok{, }\StringTok{"tot_risk"}\NormalTok{, }\StringTok{"The overall rating scores based on }
+\StringTok{        the Morningstar Sustainability Rating systems"}\NormalTok{, }
+        \StringTok{"Environmental Risk Score"}\NormalTok{, }\StringTok{"envir_risk"}\NormalTok{, }\StringTok{"Evaluation scores of the }
+\StringTok{        portfolios performance when they meet the environmental challenges"}\NormalTok{, }
+        \StringTok{"Social Risk Score"}\NormalTok{, }\StringTok{"social_risk"}\NormalTok{, }\StringTok{"Evaluation scores of the portfolios }
+\StringTok{        performance when they meet the social challenges"}\NormalTok{, }
+        \StringTok{"Governance Risk Score"}\NormalTok{, }\StringTok{"gover_risk"}\NormalTok{,}\StringTok{"Evaluation scores of the portfolios }
+\StringTok{        performance when they meet the governance challenges"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
 \StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{caption =} \StringTok{"Information of variables of the original data"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
 \StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{bootstrap_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"bordered"}\NormalTok{, }\StringTok{"striped"}\NormalTok{, }\StringTok{"hover"}\NormalTok{)) }\OperatorTok{%>%}
 \StringTok{  }\KeywordTok{column_spec}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DataTypeTok{width =} \StringTok{"170px"}\NormalTok{) }
@@ -1022,7 +1035,9 @@ centroid method & 0.0919079\\
 \CommentTok{# filter out the outliers}
 \NormalTok{issuer<-stocks}\OperatorTok{%>%}
 \StringTok{  }\KeywordTok{select}\NormalTok{(Symbol,intra_day,ent_value,trail_pe,for_pe,peg,ttm,mrq,rev,ebitda)}
-\NormalTok{df <-}\StringTok{ }\NormalTok{issuer[}\OperatorTok{!}\NormalTok{(issuer}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"MSFT"}\NormalTok{, }\StringTok{"AAPL"}\NormalTok{, }\StringTok{"TSLA"}\NormalTok{, }\StringTok{"ILMN"}\NormalTok{, }\StringTok{"DIS"}\NormalTok{, }\StringTok{"VZ"}\NormalTok{, }\StringTok{"KO"}\NormalTok{, }\StringTok{"MMM"}\NormalTok{, }\StringTok{"CVX"}\NormalTok{, }\StringTok{"PCAR"}\NormalTok{, }\StringTok{"CAT"}\NormalTok{, }\StringTok{"XOM"}\NormalTok{, }\StringTok{"V"}\NormalTok{, }\StringTok{"INTU"}\NormalTok{, }\StringTok{"NKE"}\NormalTok{)),]}
+\NormalTok{df <-}\StringTok{ }\NormalTok{issuer[}\OperatorTok{!}\NormalTok{(issuer}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"MSFT"}\NormalTok{, }\StringTok{"AAPL"}\NormalTok{, }\StringTok{"TSLA"}\NormalTok{, }\StringTok{"ILMN"}\NormalTok{, }\StringTok{"DIS"}\NormalTok{, }\StringTok{"VZ"}\NormalTok{, }
+                                    \StringTok{"KO"}\NormalTok{, }\StringTok{"MMM"}\NormalTok{,}\StringTok{"CVX"}\NormalTok{, }\StringTok{"PCAR"}\NormalTok{, }\StringTok{"CAT"}\NormalTok{, }\StringTok{"XOM"}\NormalTok{, }
+                                    \StringTok{"V"}\NormalTok{, }\StringTok{"INTU"}\NormalTok{, }\StringTok{"NKE"}\NormalTok{)),]}
 \CommentTok{#view(df)}
 \end{Highlighting}
 \end{Shaded}
@@ -1075,24 +1090,37 @@ centroid method & 0.0919079\\
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# filter out the outliers}
-\NormalTok{risk <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(stocks[(stocks}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{ }\NormalTok{df}\OperatorTok{$}\NormalTok{Symbol),], }\DataTypeTok{select =} \KeywordTok{c}\NormalTok{(}\StringTok{"Symbol"}\NormalTok{, }\StringTok{"tot_risk"}\NormalTok{, }\StringTok{"envir_risk"}\NormalTok{, }\StringTok{"social_risk"}\NormalTok{, }\StringTok{"gover_risk"}\NormalTok{))}
+\NormalTok{risk <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(stocks[(stocks}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{ }\NormalTok{df}\OperatorTok{$}\NormalTok{Symbol),], }
+               \DataTypeTok{select =} \KeywordTok{c}\NormalTok{(}\StringTok{"Symbol"}\NormalTok{, }
+                          \StringTok{"tot_risk"}\NormalTok{, }
+                          \StringTok{"envir_risk"}\NormalTok{, }
+                          \StringTok{"social_risk"}\NormalTok{, }
+                          \StringTok{"gover_risk"}\NormalTok{))}
 \KeywordTok{view}\NormalTok{(risk)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# First check whether total esg risk score = environmental risk + social risk + governance risk}
-\NormalTok{d <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(risk}\OperatorTok{$}\NormalTok{envir_risk, risk}\OperatorTok{$}\NormalTok{social_risk, risk}\OperatorTok{$}\NormalTok{gover_risk), }\DecValTok{1}\NormalTok{, sum)}
+\CommentTok{# First check whether total esg risk score = }
+\CommentTok{# environmental risk + social risk + governance risk}
+\NormalTok{d <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(risk}\OperatorTok{$}\NormalTok{envir_risk, }
+\NormalTok{                 risk}\OperatorTok{$}\NormalTok{social_risk, }
+\NormalTok{                 risk}\OperatorTok{$}\NormalTok{gover_risk), }
+           \DecValTok{1}\NormalTok{, sum)}
 \KeywordTok{all}\NormalTok{(risk}\OperatorTok{$}\NormalTok{tot_risk }\OperatorTok{==}\StringTok{ }\NormalTok{d)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Second check whether total esg risk score = environmental risk + social risk + governance risk}
+\CommentTok{# Second check whether total esg risk score = }
+\CommentTok{# environmental risk + social risk + governance risk}
 \NormalTok{risk_tesg <-}\StringTok{ }\NormalTok{risk[risk}\OperatorTok{$}\NormalTok{tot_risk }\OperatorTok{==}\StringTok{ }\NormalTok{d,]}
-\NormalTok{d2 <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(risk_tesg}\OperatorTok{$}\NormalTok{envir_risk, risk_tesg}\OperatorTok{$}\NormalTok{social_risk, risk_tesg}\OperatorTok{$}\NormalTok{gover_risk), }\DecValTok{1}\NormalTok{, sum)}
+\NormalTok{d2 <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(risk_tesg}\OperatorTok{$}\NormalTok{envir_risk, }
+\NormalTok{                  risk_tesg}\OperatorTok{$}\NormalTok{social_risk, }
+\NormalTok{                  risk_tesg}\OperatorTok{$}\NormalTok{gover_risk), }
+            \DecValTok{1}\NormalTok{, sum)}
 \KeywordTok{all}\NormalTok{(risk_tesg}\OperatorTok{$}\NormalTok{tot_risk }\OperatorTok{==}\StringTok{ }\NormalTok{d2)}
 \CommentTok{#head(risk_tesg)}
 \CommentTok{#nrow(risk_tesg)}
@@ -1176,7 +1204,9 @@ centroid method & 0.0919079\\
 \begin{Highlighting}[]
 \CommentTok{# The first cluster }
 \NormalTok{memb_three_w <-}\StringTok{ }\KeywordTok{cutree}\NormalTok{(hc_w, }\DataTypeTok{k =} \DecValTok{3}\NormalTok{)}
-\NormalTok{memb_one <-}\StringTok{ }\NormalTok{dat[dat}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{ }\KeywordTok{rownames}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(memb_three_w) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(memb_three_w }\OperatorTok{==}\StringTok{ }\DecValTok{2}\NormalTok{)),]}\OperatorTok{$}\NormalTok{Name}
+\NormalTok{memb_one <-}\StringTok{ }\NormalTok{dat[dat}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{ }
+\StringTok{                  }\KeywordTok{rownames}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(memb_three_w) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{                             }\KeywordTok{filter}\NormalTok{(memb_three_w }\OperatorTok{==}\StringTok{ }\DecValTok{2}\NormalTok{)),]}\OperatorTok{$}\NormalTok{Name}
 
 \NormalTok{memb_one }\OperatorTok{%>%}\StringTok{ }
 \StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{col.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"stock"}\NormalTok{), }\DataTypeTok{caption =} \StringTok{"The stocks of the first cluster"}\NormalTok{) }\OperatorTok{%>%}
@@ -1187,9 +1217,13 @@ centroid method & 0.0919079\\
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# The second cluster}
-\NormalTok{memb_two <-}\StringTok{ }\NormalTok{dat[dat}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{  }\KeywordTok{rownames}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(memb_three_w) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(memb_three_w }\OperatorTok{==}\StringTok{ }\DecValTok{3}\NormalTok{)),]}\OperatorTok{$}\NormalTok{Name}
+\NormalTok{memb_two <-}\StringTok{ }\NormalTok{dat[dat}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{  }
+\StringTok{                  }\KeywordTok{rownames}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(memb_three_w) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{                             }\KeywordTok{filter}\NormalTok{(memb_three_w }\OperatorTok{==}\StringTok{ }\DecValTok{3}\NormalTok{)),]}\OperatorTok{$}\NormalTok{Name}
+
 \NormalTok{memb_two }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{col.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"stock"}\NormalTok{), }\DataTypeTok{caption =} \StringTok{"The stocks of the second cluster"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{col.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"stock"}\NormalTok{), }
+        \DataTypeTok{caption =} \StringTok{"The stocks of the second cluster"}\NormalTok{) }\OperatorTok{%>%}
 \StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{bootstrap_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"bordered"}\NormalTok{, }\StringTok{"hover"}\NormalTok{, }\StringTok{"striped"}\NormalTok{)) }
 \end{Highlighting}
 \end{Shaded}
@@ -1197,9 +1231,13 @@ centroid method & 0.0919079\\
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# The third cluster}
-\NormalTok{memb_three <-}\StringTok{ }\NormalTok{dat[dat}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{  }\KeywordTok{rownames}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(memb_three_w) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(memb_three_w }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)),]}\OperatorTok{$}\NormalTok{Name}
+\NormalTok{memb_three <-}\StringTok{ }\NormalTok{dat[dat}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{ }
+\StringTok{                    }\KeywordTok{rownames}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(memb_three_w) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{                               }\KeywordTok{filter}\NormalTok{(memb_three_w }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)),]}\OperatorTok{$}\NormalTok{Name}
+
 \NormalTok{memb_three }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{col.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"stock"}\NormalTok{), }\DataTypeTok{caption =} \StringTok{"The stocks of the third cluster"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{col.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"stock"}\NormalTok{), }
+        \DataTypeTok{caption =} \StringTok{"The stocks of the third cluster"}\NormalTok{) }\OperatorTok{%>%}
 \StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{bootstrap_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"bordered"}\NormalTok{, }\StringTok{"hover"}\NormalTok{, }\StringTok{"striped"}\NormalTok{)) }
 \end{Highlighting}
 \end{Shaded}
@@ -1267,7 +1305,9 @@ centroid method & 0.0919079\\
 
 
 \NormalTok{al_method <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(c, al, cm) }
-\KeywordTok{rownames}\NormalTok{(al_method) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"complete linkage method"}\NormalTok{, }\StringTok{"average linkage method"}\NormalTok{, }\StringTok{"centroid method"}\NormalTok{)}
+\KeywordTok{rownames}\NormalTok{(al_method) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"complete linkage method"}\NormalTok{, }
+                         \StringTok{"average linkage method"}\NormalTok{, }
+                         \StringTok{"centroid method"}\NormalTok{)}
 \NormalTok{al_method }\OperatorTok{%>%}\StringTok{ }
 \StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{col.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"adjusted rand index"}\NormalTok{), }
         \DataTypeTok{caption =} \StringTok{"The adjusted rand index of the three clustering methods"}\NormalTok{) }\OperatorTok{%>%}
