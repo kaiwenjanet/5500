@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.9.30)  3 OCT 2020 21:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.9.30)  4 OCT 2020 16:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -659,51 +659,82 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 cfg
 File: biblatex.cfg 
 ))
+(c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
+
+(c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color
+.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+(c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdfte
+x.def
+File: pdftex.def 2020/08/26 v1.2 Graphics/color driver for pdftex
+))
+(c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.
+sty
+Package: fancyvrb 2020/05/03 v3.6 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count412
+\FV@InFile=\read3
+\FV@TabBox=\box48
+\c@FancyVerbLine=\count413
+\FV@StepNumber=\count414
+\FV@OutFile=\write4
+) (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.st
+y
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip76
+\fb@frw=\dimen157
+\fb@frh=\dimen158
+\FrameRule=\dimen159
+\FrameSep=\dimen160
+)
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.st
 y
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip76
-\LTright=\skip77
-\LTpre=\skip78
-\LTpost=\skip79
-\LTchunksize=\count412
-\LTcapwidth=\dimen157
-\LT@head=\box48
-\LT@firsthead=\box49
-\LT@foot=\box50
-\LT@lastfoot=\box51
-\LT@cols=\count413
-\LT@rows=\count414
-\c@LT@tables=\count415
-\c@LT@chunks=\count416
+\LTleft=\skip77
+\LTright=\skip78
+\LTpre=\skip79
+\LTpost=\skip80
+\LTchunksize=\count415
+\LTcapwidth=\dimen161
+\LT@head=\box49
+\LT@firsthead=\box50
+\LT@foot=\box51
+\LT@lastfoot=\box52
+\LT@cols=\count416
+\LT@rows=\count417
+\c@LT@tables=\count418
+\c@LT@chunks=\count419
 \LT@p@ftn=\toks26
 )
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.
 sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen158
-\lightrulewidth=\dimen159
-\cmidrulewidth=\dimen160
-\belowrulesep=\dimen161
-\belowbottomsep=\dimen162
-\aboverulesep=\dimen163
-\abovetopsep=\dimen164
-\cmidrulesep=\dimen165
-\cmidrulekern=\dimen166
-\defaultaddspace=\dimen167
-\@cmidla=\count417
-\@cmidlb=\count418
-\@aboverulesep=\dimen168
-\@belowrulesep=\dimen169
-\@thisruleclass=\count419
-\@lastruleclass=\count420
-\@thisrulewidth=\dimen170
+\heavyrulewidth=\dimen162
+\lightrulewidth=\dimen163
+\cmidrulewidth=\dimen164
+\belowrulesep=\dimen165
+\belowbottomsep=\dimen166
+\aboverulesep=\dimen167
+\abovetopsep=\dimen168
+\cmidrulesep=\dimen169
+\cmidrulekern=\dimen170
+\defaultaddspace=\dimen171
+\@cmidla=\count420
+\@cmidlb=\count421
+\@aboverulesep=\dimen172
+\@belowrulesep=\dimen173
+\@thisruleclass=\count422
+\@lastruleclass=\count423
+\@thisrulewidth=\dimen174
 )
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.
 sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box52
-\fn@width=\dimen171
+\fn@notes=\box53
+\fn@width=\dimen175
 )
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.
 sty
@@ -720,13 +751,9 @@ ics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
-
-(c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdfte
-x.def
-File: pdftex.def 2020/08/26 v1.2 Graphics/color driver for pdftex
-))
-\Gin@req@height=\dimen172
-\Gin@req@width=\dimen173
+)
+\Gin@req@height=\dimen176
+\Gin@req@width=\dimen177
 )
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/grffile/grffile.st
 y
@@ -742,17 +769,17 @@ Package: caption 2020/09/12 v3.5b Customizing captions (AR)
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/caption/caption3.s
 ty
 Package: caption3 2020/09/17 v2.1b caption3 kernel (AR)
-\captionmargin=\dimen174
-\captionmargin@=\dimen175
-\captionwidth=\dimen176
-\caption@tempdima=\dimen177
-\caption@indent=\dimen178
-\caption@parindent=\dimen179
-\caption@hangindent=\dimen180
+\captionmargin=\dimen178
+\captionmargin@=\dimen179
+\captionwidth=\dimen180
+\caption@tempdima=\dimen181
+\caption@indent=\dimen182
+\caption@parindent=\dimen183
+\caption@hangindent=\dimen184
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count421
-\c@continuedfloat=\count422
+\c@caption@flags=\count424
+\c@continuedfloat=\count425
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
 
@@ -951,7 +978,7 @@ tex
 \XKV@toks=\toks27
 \XKV@tempa@toks=\toks28
 )
-\XKV@depth=\count423
+\XKV@depth=\count426
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 LaTeX Font Info:    Trying to load font information for T1+mdbch on input line 
@@ -980,7 +1007,7 @@ LaTeX Font Info:    Overwriting symbol font `mathdesignB' in version `bold'
 LaTeX Info: Redefining \bold on input line 510.
 LaTeX Font Info:    Redeclaring math accent \widetilde on input line 532.
 LaTeX Font Info:    Redeclaring math accent \widehat on input line 533.
-\rulethickness=\skip80
+\rulethickness=\skip81
 ) (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 ))
@@ -996,15 +1023,15 @@ esomesymbols-pdftex.tex))
 sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip81
-\f@nch@O@elh=\skip82
-\f@nch@O@erh=\skip83
-\f@nch@O@olh=\skip84
-\f@nch@O@orh=\skip85
-\f@nch@O@elf=\skip86
-\f@nch@O@erf=\skip87
-\f@nch@O@olf=\skip88
-\f@nch@O@orf=\skip89
+\f@nch@headwidth=\skip82
+\f@nch@O@elh=\skip83
+\f@nch@O@erh=\skip84
+\f@nch@O@olh=\skip85
+\f@nch@O@orh=\skip86
+\f@nch@O@elf=\skip87
+\f@nch@O@erf=\skip88
+\f@nch@O@olf=\skip89
+\f@nch@O@orf=\skip90
 ) (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup11
@@ -1017,15 +1044,15 @@ LaTeX Info: Redefining \bm on input line 209.
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/titlesec/titlesec.
 sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box53
-\beforetitleunit=\skip90
-\aftertitleunit=\skip91
-\ttl@plus=\dimen181
-\ttl@minus=\dimen182
+\ttl@box=\box54
+\beforetitleunit=\skip91
+\aftertitleunit=\skip92
+\ttl@plus=\dimen185
+\ttl@minus=\dimen186
 \ttl@toksa=\toks29
-\titlewidth=\dimen183
-\titlewidthlast=\dimen184
-\titlewidthfirst=\dimen185
+\titlewidth=\dimen187
+\titlewidthlast=\dimen188
+\titlewidthfirst=\dimen189
 ) (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.st
 y
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -1035,6 +1062,7 @@ Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -1045,27 +1073,27 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 160.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 160.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 160.
+Package hyperref Info: Option `breaklinks' set `true' on input line 200.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 200.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 200.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 160.
+Package hyperref Info: Option `colorlinks' set `true' on input line 200.
 
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathtools/mathtool
 s.sty
 Package: mathtools 2020/03/24 v1.24 mathematical typesetting tools
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count424
-\calc@Bcount=\count425
-\calc@Adimen=\dimen186
-\calc@Bdimen=\dimen187
-\calc@Askip=\skip92
-\calc@Bskip=\skip93
+\calc@Acount=\count427
+\calc@Bcount=\count428
+\calc@Adimen=\dimen190
+\calc@Bdimen=\dimen191
+\calc@Askip=\skip93
+\calc@Bskip=\skip94
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count426
-\calc@Cskip=\skip94
+\calc@Ccount=\count429
+\calc@Cskip=\skip95
 )
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathtools/mhsetup.
 sty
@@ -1075,25 +1103,25 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count427
-\l_MT_multwidth_dim=\dimen188
-\origjot=\skip95
-\l_MT_shortvdotswithinadjustabove_dim=\dimen189
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen190
-\l_MT_above_intertext_sep=\dimen191
-\l_MT_below_intertext_sep=\dimen192
-\l_MT_above_shortintertext_sep=\dimen193
-\l_MT_below_shortintertext_sep=\dimen194
-\xmathstrut@box=\box54
-\xmathstrut@dim=\dimen195
+\g_MT_multlinerow_int=\count430
+\l_MT_multwidth_dim=\dimen192
+\origjot=\skip96
+\l_MT_shortvdotswithinadjustabove_dim=\dimen193
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen194
+\l_MT_above_intertext_sep=\dimen195
+\l_MT_below_intertext_sep=\dimen196
+\l_MT_above_shortintertext_sep=\dimen197
+\l_MT_below_shortintertext_sep=\dimen198
+\xmathstrut@box=\box55
+\xmathstrut@dim=\dimen199
 )
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/eukdate/eukdate.st
 y
 Package: eukdate 2009/03/18 v1.04 UK format date (Hart's Rules) with weekday
-\c@euk@date=\count428
-\c@euk@month=\count429
-\c@euk@century=\count430
-\c@euk@year=\count431
+\c@euk@date=\count431
+\c@euk@month=\count432
+\c@euk@century=\count433
+\c@euk@year=\count434
 ) (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xpatch/xpatch.st
 y
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
@@ -1103,43 +1131,43 @@ sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 ) (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen196
-\ar@mcellbox=\box55
-\extrarowheight=\dimen197
+\col@sep=\dimen256
+\ar@mcellbox=\box56
+\extrarowheight=\dimen257
 \NC@list=\toks30
-\extratabsurround=\skip96
-\backup@length=\skip97
-\ar@cellbox=\box56
+\extratabsurround=\skip97
+\backup@length=\skip98
+\ar@cellbox=\box57
 )
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.
 sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
-\multirow@colwidth=\skip98
-\multirow@cntb=\count432
-\multirow@dima=\skip99
-\bigstrutjot=\dimen198
+\multirow@colwidth=\skip99
+\multirow@cntb=\count435
+\multirow@dima=\skip100
+\bigstrutjot=\dimen258
 )
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.st
 y
-\wrapoverhang=\dimen199
-\WF@size=\dimen256
-\c@WF@wrappedlines=\count433
-\WF@box=\box57
+\wrapoverhang=\dimen259
+\WF@size=\dimen260
+\c@WF@wrappedlines=\count436
+\WF@box=\box58
 \WF@everypar=\toks31
 Package: wrapfig 2003/01/31  v 3.6
 ) (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count434
+\c@float@type=\count437
 \float@exts=\toks32
-\float@box=\box58
+\float@box=\box59
 \@float@everytoks=\toks33
-\@floatcapt=\box59
+\@floatcapt=\box60
 )
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.
 sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 \everycr=\toks34
-\minrowclearance=\skip100
+\minrowclearance=\skip101
 )
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscap
 e.sty
@@ -1156,38 +1184,38 @@ Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.
 sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box60
-\sift@deathcycles=\count435
-\@vwid@loff=\dimen257
-\@vwid@roff=\dimen258
+\@vwid@box=\box61
+\sift@deathcycles=\count438
+\@vwid@loff=\dimen261
+\@vwid@roff=\dimen262
 )
-\c@taburow=\count436
-\tabu@nbcols=\count437
-\tabu@cnt=\count438
-\tabu@Xcol=\count439
-\tabu@alloc=\count440
-\tabu@nested=\count441
-\tabu@target=\dimen259
-\tabu@spreadtarget=\dimen260
-\tabu@naturalX=\dimen261
-\tabucolX=\dimen262
-\tabu@Xsum=\dimen263
-\extrarowdepth=\dimen264
-\abovetabulinesep=\dimen265
-\belowtabulinesep=\dimen266
-\tabustrutrule=\dimen267
+\c@taburow=\count439
+\tabu@nbcols=\count440
+\tabu@cnt=\count441
+\tabu@Xcol=\count442
+\tabu@alloc=\count443
+\tabu@nested=\count444
+\tabu@target=\dimen263
+\tabu@spreadtarget=\dimen264
+\tabu@naturalX=\dimen265
+\tabucolX=\dimen266
+\tabu@Xsum=\dimen267
+\extrarowdepth=\dimen268
+\abovetabulinesep=\dimen269
+\belowtabulinesep=\dimen270
+\tabustrutrule=\dimen271
 \tabu@thebody=\toks35
 \tabu@footnotes=\toks36
-\tabu@box=\box61
-\tabu@arstrutbox=\box62
-\tabu@hleads=\box63
-\tabu@vleads=\box64
-\tabu@cellskip=\skip101
+\tabu@box=\box62
+\tabu@arstrutbox=\box63
+\tabu@hleads=\box64
+\tabu@vleads=\box65
+\tabu@cellskip=\skip102
 )
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/thr
 eeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box65
+\@tempboxb=\box66
 )
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/th
 reeparttablex.sty
@@ -1201,75 +1229,75 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 ces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\TPTL@width=\skip102
+\TPTL@width=\skip103
 ) (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box66
-\UL@hyphenbox=\box67
-\UL@skip=\skip103
+\UL@box=\box67
+\UL@hyphenbox=\box68
+\UL@skip=\skip104
 \UL@hook=\toks37
-\UL@height=\dimen268
-\UL@pe=\count442
-\UL@pixel=\dimen269
-\ULC@box=\box68
+\UL@height=\dimen272
+\UL@pe=\count445
+\UL@pixel=\dimen273
+\ULC@box=\box69
 Package: ulem 2019/11/18
-\ULdepth=\dimen270
+\ULdepth=\dimen274
 )
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/makecell.
 sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen271
-\c@nlinenum=\count443
+\rotheadsize=\dimen275
+\c@nlinenum=\count446
 \TeXr@lab=\toks38
 )
-\@quotelevel=\count444
-\@quotereset=\count445
+\@quotelevel=\count447
+\@quotereset=\count448
 (./ass2.aux)
 \openout1 = `ass2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 304.
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 304.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 344.
+LaTeX Font Info:    ... okay on input line 344.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 344.
+LaTeX Font Info:    ... okay on input line 344.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 344.
+LaTeX Font Info:    ... okay on input line 344.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 344.
+LaTeX Font Info:    ... okay on input line 344.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 344.
+LaTeX Font Info:    ... okay on input line 344.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 344.
+LaTeX Font Info:    ... okay on input line 344.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 344.
+LaTeX Font Info:    ... okay on input line 344.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 344.
+LaTeX Font Info:    ... okay on input line 344.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 344.
+LaTeX Font Info:    ... okay on input line 344.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 344.
 LaTeX Font Info:    Trying to load font information for MDA+cmr on input line 3
-04.
+44.
 
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdacmr.
 fd
 File: mdacmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 304.
+LaTeX Font Info:    ... okay on input line 344.
+LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 344.
 LaTeX Font Info:    Trying to load font information for MDB+cmr on input line 3
-04.
+44.
 
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbcmr.
 fd
 File: mdbcmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 304.
-LaTeX Info: Redefining \microtypecontext on input line 304.
+LaTeX Font Info:    ... okay on input line 344.
+LaTeX Info: Redefining \microtypecontext on input line 344.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 304.
+LaTeX Info: Redefining \showhyphens on input line 344.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1279,8 +1307,8 @@ fg
 File: mt-bch.cfg 2007/03/03 v1.5 microtype config. file: Bitstream Charter (RS)
 
 )
-\AtBeginShipoutBox=\box69
-Package hyperref Info: Link coloring ON on input line 304.
+\AtBeginShipoutBox=\box70
+Package hyperref Info: Link coloring ON on input line 344.
 
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.s
 ty
@@ -1294,14 +1322,14 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count446
+\c@section@level=\count449
 )
-LaTeX Info: Redefining \ref on input line 304.
-LaTeX Info: Redefining \pageref on input line 304.
-LaTeX Info: Redefining \nameref on input line 304.
+LaTeX Info: Redefining \ref on input line 344.
+LaTeX Info: Redefining \pageref on input line 344.
+LaTeX Info: Redefining \nameref on input line 344.
 (./ass2.out) (./ass2.out)
-\@outlinefile=\write4
-\openout4 = `ass2.out'.
+\@outlinefile=\write5
+\openout5 = `ass2.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1379,8 +1407,8 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'ass2.bbl' found.
 (./ass2.bbl)
-Package biblatex Info: Reference section=0 on input line 304.
-Package biblatex Info: Reference segment=0 on input line 304.
+Package biblatex Info: Reference section=0 on input line 344.
+Package biblatex Info: Reference segment=0 on input line 344.
 
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epsto
 pdf-base.sty
@@ -1400,92 +1428,92 @@ Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 Package mathdesign/mdbch Warning: Package 'amssymb' shouldn't be used in conjon
-ction with package mdbch, on input line 304.
+ction with package mdbch, on input line 344.
 
 
 Package mathdesign/mdbch Warning: Package 'amsfonts' shouldn't be used in conjo
-nction with package mdbch, on input line 304.
+nction with package mdbch, on input line 344.
 
-<MBSportrait.pdf, id=56, 213.79875pt x 90.3375pt>
+<MBSportrait.pdf, id=64, 213.79875pt x 90.3375pt>
 File: MBSportrait.pdf Graphic file (type pdf)
 <use MBSportrait.pdf>
-Package pdftex.def Info: MBSportrait.pdf  used on input line 305.
+Package pdftex.def Info: MBSportrait.pdf  used on input line 345.
 (pdftex.def)             Requested size: 170.71625pt x 72.13362pt.
 LaTeX Font Info:    Font shape `T1/fvs/m/n' will be
-(Font)              scaled to size 9.24173pt on input line 305.
+(Font)              scaled to size 9.24173pt on input line 345.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvs' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/fvs/m/n' will be
-(Font)              scaled to size 10.12793pt on input line 305.
+(Font)              scaled to size 10.12793pt on input line 345.
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
-(Font)              scaled to size 10.12793pt on input line 305.
+(Font)              scaled to size 10.12793pt on input line 345.
 LaTeX Font Info:    Font shape `T1/fvs/m/n' will be
-(Font)              scaled to size 8.43994pt on input line 305.
+(Font)              scaled to size 8.43994pt on input line 345.
 LaTeX Font Info:    Trying to load font information for OT1+mdbch on input line
- 305.
+ 345.
 
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbch/o
 t1mdbch.fd
 File: ot1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OT1/mdbch.
 )
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 305.
+(Font)              scaled to size 9.60007pt on input line 345.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 305.
+(Font)              scaled to size 6.72005pt on input line 345.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 305.
+(Font)              scaled to size 4.80003pt on input line 345.
 LaTeX Font Info:    Trying to load font information for OML+mdbch on input line
- 305.
+ 345.
 
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbch/o
 mlmdbch.fd
 File: omlmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdbch.
 )
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 9.60007pt on input line 305.
+(Font)              scaled to size 9.60007pt on input line 345.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `OML/mdbch/m/it/10'. Switching off
-(microtype)                protrusion for this font on input line 305.
+(microtype)                protrusion for this font on input line 345.
 
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 6.72005pt on input line 305.
+(Font)              scaled to size 6.72005pt on input line 345.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 4.80003pt on input line 305.
+(Font)              scaled to size 4.80003pt on input line 345.
 LaTeX Font Info:    Trying to load font information for OMS+mdbch on input line
- 305.
+ 345.
 
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbch/o
 msmdbch.fd
 File: omsmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMS/mdbch.
 )
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 305.
+(Font)              scaled to size 9.60007pt on input line 345.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `OMS/mdbch/m/n/10'. Switching off
-(microtype)                protrusion for this font on input line 305.
+(microtype)                protrusion for this font on input line 345.
 
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 305.
+(Font)              scaled to size 6.72005pt on input line 345.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 305.
+(Font)              scaled to size 4.80003pt on input line 345.
 LaTeX Font Info:    Trying to load font information for OMX+mdbch on input line
- 305.
+ 345.
 
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbch/o
 mxmdbch.fd
 File: omxmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMX/mdbch.
 )
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 305.
+(Font)              scaled to size 9.60007pt on input line 345.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 305.
+(Font)              scaled to size 6.72005pt on input line 345.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 305.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 305
+(Font)              scaled to size 4.80003pt on input line 345.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 345
 .
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1494,7 +1522,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 fg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 305
+LaTeX Font Info:    Trying to load font information for U+msb on input line 345
 .
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1504,175 +1532,175 @@ fg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 305.
+(Font)              scaled to size 9.60007pt on input line 345.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `OML/mdbch/m/n/10'. Switching off
-(microtype)                protrusion for this font on input line 305.
+(microtype)                protrusion for this font on input line 345.
 
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 305.
+(Font)              scaled to size 6.72005pt on input line 345.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 305.
+(Font)              scaled to size 4.80003pt on input line 345.
 LaTeX Font Info:    Trying to load font information for MDA+mdbch on input line
- 305.
+ 345.
 
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbch/m
 damdbch.fd
 File: mdamdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDA/mdbch.
 )
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 305.
+(Font)              scaled to size 9.60007pt on input line 345.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 305.
+(Font)              scaled to size 6.72005pt on input line 345.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 305.
+(Font)              scaled to size 4.80003pt on input line 345.
 LaTeX Font Info:    Trying to load font information for MDB+mdbch on input line
- 305.
+ 345.
 
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbch/m
 dbmdbch.fd
 File: mdbmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDB/mdbch.
 )
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 305.
+(Font)              scaled to size 9.60007pt on input line 345.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 305.
+(Font)              scaled to size 6.72005pt on input line 345.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 305.
+(Font)              scaled to size 4.80003pt on input line 345.
 LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
-(Font)              scaled to size 9.60007pt on input line 305.
+(Font)              scaled to size 9.60007pt on input line 345.
 LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
-(Font)              scaled to size 6.72005pt on input line 305.
+(Font)              scaled to size 6.72005pt on input line 345.
 LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
-(Font)              scaled to size 4.80003pt on input line 305.
+(Font)              scaled to size 4.80003pt on input line 345.
 LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
-(Font)              scaled to size 9.60007pt on input line 305.
+(Font)              scaled to size 9.60007pt on input line 345.
 LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
-(Font)              scaled to size 6.72005pt on input line 305.
+(Font)              scaled to size 6.72005pt on input line 345.
 LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
-(Font)              scaled to size 4.80003pt on input line 305.
+(Font)              scaled to size 4.80003pt on input line 345.
 LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
-(Font)              scaled to size 9.60007pt on input line 305.
+(Font)              scaled to size 9.60007pt on input line 345.
 LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
-(Font)              scaled to size 6.72005pt on input line 305.
+(Font)              scaled to size 6.72005pt on input line 345.
 LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
-(Font)              scaled to size 4.80003pt on input line 305.
+(Font)              scaled to size 4.80003pt on input line 345.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 9.60007pt on input line 305.
+(Font)              scaled to size 9.60007pt on input line 345.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 6.72005pt on input line 305.
+(Font)              scaled to size 6.72005pt on input line 345.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 4.80003pt on input line 305.
+(Font)              scaled to size 4.80003pt on input line 345.
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on inp
-ut line 305.
+ut line 345.
 
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fontawesome/ufonta
 wesometwo.fd
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 )
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 10.51207pt on input line 305.
+(Font)              scaled to size 10.51207pt on input line 345.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 305.
+(Font)              scaled to size 7.68005pt on input line 345.
 LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 305.
+(Font)              scaled to size 5.76004pt on input line 345.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 10.51207pt on input line 305.
+(Font)              scaled to size 10.51207pt on input line 345.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `OML/mdbch/m/it/10.95'. Switching off
-(microtype)                protrusion for this font on input line 305.
+(microtype)                protrusion for this font on input line 345.
 
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 7.68005pt on input line 305.
+(Font)              scaled to size 7.68005pt on input line 345.
 LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 5.76004pt on input line 305.
+(Font)              scaled to size 5.76004pt on input line 345.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 10.51207pt on input line 305.
+(Font)              scaled to size 10.51207pt on input line 345.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `OMS/mdbch/m/n/10.95'. Switching off
-(microtype)                protrusion for this font on input line 305.
+(microtype)                protrusion for this font on input line 345.
 
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 305.
+(Font)              scaled to size 7.68005pt on input line 345.
 LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 305.
+(Font)              scaled to size 5.76004pt on input line 345.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 10.51207pt on input line 305.
+(Font)              scaled to size 10.51207pt on input line 345.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 305.
+(Font)              scaled to size 7.68005pt on input line 345.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 305.
+(Font)              scaled to size 5.76004pt on input line 345.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 10.51207pt on input line 305.
+(Font)              scaled to size 10.51207pt on input line 345.
 
 Package microtype Warning: I cannot find a protrusion list for font
 (microtype)                `OML/mdbch/m/n/10.95'. Switching off
-(microtype)                protrusion for this font on input line 305.
+(microtype)                protrusion for this font on input line 345.
 
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 305.
+(Font)              scaled to size 7.68005pt on input line 345.
 LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 305.
+(Font)              scaled to size 5.76004pt on input line 345.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 10.51207pt on input line 305.
+(Font)              scaled to size 10.51207pt on input line 345.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 305.
+(Font)              scaled to size 7.68005pt on input line 345.
 LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 305.
+(Font)              scaled to size 5.76004pt on input line 345.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 10.51207pt on input line 305.
+(Font)              scaled to size 10.51207pt on input line 345.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 305.
+(Font)              scaled to size 7.68005pt on input line 345.
 LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 305.
+(Font)              scaled to size 5.76004pt on input line 345.
 LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
-(Font)              scaled to size 10.51207pt on input line 305.
+(Font)              scaled to size 10.51207pt on input line 345.
 LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
-(Font)              scaled to size 7.68005pt on input line 305.
+(Font)              scaled to size 7.68005pt on input line 345.
 LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
-(Font)              scaled to size 5.76004pt on input line 305.
+(Font)              scaled to size 5.76004pt on input line 345.
 LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
-(Font)              scaled to size 10.51207pt on input line 305.
+(Font)              scaled to size 10.51207pt on input line 345.
 LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
-(Font)              scaled to size 7.68005pt on input line 305.
+(Font)              scaled to size 7.68005pt on input line 345.
 LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
-(Font)              scaled to size 5.76004pt on input line 305.
+(Font)              scaled to size 5.76004pt on input line 345.
 LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
-(Font)              scaled to size 10.51207pt on input line 305.
+(Font)              scaled to size 10.51207pt on input line 345.
 LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
-(Font)              scaled to size 7.68005pt on input line 305.
+(Font)              scaled to size 7.68005pt on input line 345.
 LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
-(Font)              scaled to size 5.76004pt on input line 305.
+(Font)              scaled to size 5.76004pt on input line 345.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 10.51207pt on input line 305.
+(Font)              scaled to size 10.51207pt on input line 345.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 7.68005pt on input line 305.
+(Font)              scaled to size 7.68005pt on input line 345.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 5.76004pt on input line 305.
+(Font)              scaled to size 5.76004pt on input line 345.
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 23.88496pt on input line 305.
+(Font)              scaled to size 23.88496pt on input line 345.
 LaTeX Font Info:    Font shape `T1/fvs/m/n' will be
-(Font)              scaled to size 20.99857pt on input line 305.
+(Font)              scaled to size 20.99857pt on input line 345.
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
-(Font)              scaled to size 20.99857pt on input line 305.
+(Font)              scaled to size 20.99857pt on input line 345.
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 11.52008pt on input line 305.
+(Font)              scaled to size 11.52008pt on input line 345.
 LaTeX Font Info:    Font shape `T1/fvs/m/n' will be
-(Font)              scaled to size 12.1535pt on input line 305.
+(Font)              scaled to size 12.1535pt on input line 345.
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
-(Font)              scaled to size 12.1535pt on input line 305.
+(Font)              scaled to size 12.1535pt on input line 345.
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 13.82408pt on input line 305.
+(Font)              scaled to size 13.82408pt on input line 345.
 
-Overfull \hbox (172.68228pt too wide) detected at line 305
+Overfull \hbox (172.68228pt too wide) detected at line 345
 [] 
  []
 
 
-Overfull \hbox (56.23262pt too wide) detected at line 305
+Overfull \hbox (56.23262pt too wide) detected at line 345
  [] |  [] []
  []
 
@@ -1683,96 +1711,96 @@ x.map} <./MBSportrait.pdf>] (./ass2.toc
 LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
 (Font)              scaled to size 10.51207pt on input line 3.
 )
-\tf@toc=\write5
-\openout5 = `ass2.toc'.
+\tf@toc=\write6
+\openout6 = `ass2.toc'.
 
 [2]
 LaTeX Font Info:    Font shape `T1/mdbch/m/it' will be
-(Font)              scaled to size 10.51207pt on input line 334.
+(Font)              scaled to size 10.51207pt on input line 374.
 LaTeX Font Info:    Trying to load font information for TS1+mdbch on input line
- 387.
+ 427.
 
 (c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbch/t
 s1mdbch.fd
 File: ts1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for TS1/mdbch.
 )
 LaTeX Font Info:    Font shape `TS1/mdbch/m/n' will be
-(Font)              scaled to size 10.51207pt on input line 387.
+(Font)              scaled to size 10.51207pt on input line 427.
 [3
 
 ] [4]
-<ass2_files/figure-latex/vis-data-1.pdf, id=106, 578.16pt x 361.35pt>
+<ass2_files/figure-latex/vis-data-1.pdf, id=116, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/vis-data-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/vis-data-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/vis-data-1.pdf  used on input 
-line 406.
+line 446.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
 LaTeX Font Info:    Font shape `T1/fvs/b/n' will be
-(Font)              scaled to size 9.24173pt on input line 486.
+(Font)              scaled to size 9.24173pt on input line 526.
 [5 <./ass2_files/figure-latex/vis-data-1.pdf>]
-<ass2_files/figure-latex/pca-cor-1.pdf, id=125, 578.16pt x 397.485pt>
+<ass2_files/figure-latex/pca-cor-1.pdf, id=135, 578.16pt x 397.485pt>
 File: ass2_files/figure-latex/pca-cor-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/pca-cor-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/pca-cor-1.pdf  used on input l
-ine 492.
+ine 532.
 (pdftex.def)             Requested size: 455.24165pt x 312.97864pt.
 [6]
-<ass2_files/figure-latex/bi-dis-1.pdf, id=134, 578.16pt x 397.485pt>
+<ass2_files/figure-latex/bi-dis-1.pdf, id=144, 578.16pt x 397.485pt>
 File: ass2_files/figure-latex/bi-dis-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/bi-dis-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/bi-dis-1.pdf  used on input li
-ne 502.
+ne 542.
 (pdftex.def)             Requested size: 455.24165pt x 312.97864pt.
 
-Overfull \hbox (29.8416pt too wide) in paragraph at lines 514--525
+Overfull \hbox (29.8416pt too wide) in paragraph at lines 554--565
  [][] 
  []
 
-<ass2_files/figure-latex/lim-2-1.pdf, id=136, 578.16pt x 361.35pt>
+<ass2_files/figure-latex/lim-2-1.pdf, id=146, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/lim-2-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/lim-2-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/lim-2-1.pdf  used on input lin
-e 529.
+e 569.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
 [7 <./ass2_files/figure-latex/pca-cor-1.pdf>] [8 <./ass2_files/figure-latex/bi-
 dis-1.pdf>]
-<ass2_files/figure-latex/pca-risk-screeplot-1.pdf, id=166, 578.16pt x 361.35pt>
+<ass2_files/figure-latex/pca-risk-screeplot-1.pdf, id=176, 578.16pt x 361.35pt>
 
 File: ass2_files/figure-latex/pca-risk-screeplot-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/pca-risk-screeplot-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/pca-risk-screeplot-1.pdf  used
- on input line 571.
+ on input line 611.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-<ass2_files/figure-latex/pca-risk-distance-1.pdf, id=168, 578.16pt x 397.485pt>
+<ass2_files/figure-latex/pca-risk-distance-1.pdf, id=178, 578.16pt x 397.485pt>
 
 File: ass2_files/figure-latex/pca-risk-distance-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/pca-risk-distance-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/pca-risk-distance-1.pdf  used 
-on input line 579.
+on input line 619.
 (pdftex.def)             Requested size: 455.24165pt x 312.97864pt.
 [9 <./ass2_files/figure-latex/lim-2-1.pdf>]
-<ass2_files/figure-latex/pca-risk-correlation-1.pdf, id=183, 578.16pt x 397.485
+<ass2_files/figure-latex/pca-risk-correlation-1.pdf, id=193, 578.16pt x 397.485
 pt>
 File: ass2_files/figure-latex/pca-risk-correlation-1.pdf Graphic file (type pdf
 )
 <use ass2_files/figure-latex/pca-risk-correlation-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/pca-risk-correlation-1.pdf  us
-ed on input line 589.
+ed on input line 629.
 (pdftex.def)             Requested size: 455.24165pt x 312.97864pt.
 [10 <./ass2_files/figure-latex/pca-risk-screeplot-1.pdf>] [11 <./ass2_files/fig
 ure-latex/pca-risk-distance-1.pdf> <./ass2_files/figure-latex/pca-risk-correlat
 ion-1.pdf>]
-<ass2_files/figure-latex/ward-1.pdf, id=212, 578.16pt x 361.35pt>
+<ass2_files/figure-latex/ward-1.pdf, id=222, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/ward-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/ward-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/ward-1.pdf  used on input line
- 600.
+ 640.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-<ass2_files/figure-latex/ward-3-1.pdf, id=213, 578.16pt x 361.35pt>
+<ass2_files/figure-latex/ward-3-1.pdf, id=223, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/ward-3-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/ward-3-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/ward-3-1.pdf  used on input li
-ne 606.
+ne 646.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
 [12 <./ass2_files/figure-latex/ward-1.pdf>] [13 <./ass2_files/figure-latex/ward
 -3-1.pdf>] [14] [15
@@ -1783,69 +1811,529 @@ ne 606.
 
 ]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.24173pt on input line 793.
-<ass2_files/figure-latex/complete-1.pdf, id=277, 578.16pt x 361.35pt>
+(Font)              scaled to size 9.24173pt on input line 833.
+<ass2_files/figure-latex/complete-1.pdf, id=287, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/complete-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/complete-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/complete-1.pdf  used on input 
-line 797.
+line 837.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-<ass2_files/figure-latex/average-1.pdf, id=278, 578.16pt x 361.35pt>
+<ass2_files/figure-latex/average-1.pdf, id=288, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/average-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/average-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/average-1.pdf  used on input l
-ine 803.
+ine 843.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-<ass2_files/figure-latex/centroid-1.pdf, id=279, 578.16pt x 361.35pt>
+<ass2_files/figure-latex/centroid-1.pdf, id=289, 578.16pt x 361.35pt>
 File: ass2_files/figure-latex/centroid-1.pdf Graphic file (type pdf)
 <use ass2_files/figure-latex/centroid-1.pdf>
 Package pdftex.def Info: ass2_files/figure-latex/centroid-1.pdf  used on input 
-line 809.
+line 849.
 (pdftex.def)             Requested size: 455.24165pt x 284.52603pt.
-
-LaTeX Warning: Empty bibliography on input line 830.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 832.
 [18
 
  <./ass2_files/figure-latex/complete-1.pdf>] [19 <./ass2_files/figure-latex/ave
 rage-1.pdf> <./ass2_files/figure-latex/centroid-1.pdf>] [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 832.
+
+Package xcolor Warning: Incompatible color definition on input line 878.
+
+LaTeX Font Info:    Font shape `T1/fvm/b/n' will be
+(Font)              scaled to size 9.24173pt on input line 880.
+LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <10.95> not available
+(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 881.
+LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
+(Font)              scaled to size 9.24173pt on input line 881.
+
+Package xcolor Warning: Incompatible color definition on input line 891.
+
+
+Package xcolor Warning: Incompatible color definition on input line 891.
+
+
+Package xcolor Warning: Incompatible color definition on input line 896.
+
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 904.
+LaTeX Font Info:    Font shape `T1/cmtt/m/n' will be
+(Font)              scaled to size 11.73846pt on input line 904.
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
+904.
+(c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 904.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 905.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 905.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 906.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 906.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 907.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 907.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 908.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 908.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 909.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 909.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 910.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 910.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 911.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 911.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 912.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 912.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 913.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 913.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 914.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 914.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 915.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 915.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 916.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 916.
+
+Package xcolor Warning: Incompatible color definition on input line 918.
+
+
+Package xcolor Warning: Incompatible color definition on input line 918.
+
+
+Package xcolor Warning: Incompatible color definition on input line 918.
+
+[21
+
+]
+
+Package xcolor Warning: Incompatible color definition on input line 918.
+
+
+Package xcolor Warning: Incompatible color definition on input line 918.
+
+
+Package xcolor Warning: Incompatible color definition on input line 923.
+
+LaTeX Font Info:    Trying to load font information for TS1+fvm on input line 9
+33.
+(c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bera/ts1fvm.fd
+File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
+)
+LaTeX Font Info:    Font shape `TS1/fvm/m/n' will be
+(Font)              scaled to size 9.85492pt on input line 933.
+
+Package xcolor Warning: Incompatible color definition on input line 949.
+
+
+Package xcolor Warning: Incompatible color definition on input line 949.
+
+
+Package xcolor Warning: Incompatible color definition on input line 954.
+
+
+Package xcolor Warning: Incompatible color definition on input line 959.
+
+
+Package xcolor Warning: Incompatible color definition on input line 959.
+
+
+Package xcolor Warning: Incompatible color definition on input line 961.
+
+[22]
+
+Package xcolor Warning: Incompatible color definition on input line 968.
+
+
+Package xcolor Warning: Incompatible color definition on input line 968.
+
+
+Package xcolor Warning: Incompatible color definition on input line 970.
+
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 973.
+Package textcomp Info: Symbol \textasciigrave not provided by
+(textcomp)             font family fvm in TS1 encoding.
+(textcomp)             Default family used instead on input line 973.
+
+Package xcolor Warning: Incompatible color definition on input line 990.
+
+
+Package xcolor Warning: Incompatible color definition on input line 990.
+
+
+Package xcolor Warning: Incompatible color definition on input line 992.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1008.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1008.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1008.
+
+[23]
+
+Package xcolor Warning: Incompatible color definition on input line 1008.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1008.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1010.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1015.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1015.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1020.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1028.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1028.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1030.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1038.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1038.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1040.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1045.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1045.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1047.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1052.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1052.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1054.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1063.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1063.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1065.
+
+[24]
+
+Package xcolor Warning: Incompatible color definition on input line 1070.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1070.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1075.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1081.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1081.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1083.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1089.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1089.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1091.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1100.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1107.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1109.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1117.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1117.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1119.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1124.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1124.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1126.
+
+[25]
+
+Package xcolor Warning: Incompatible color definition on input line 1132.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1132.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1134.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1139.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1139.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1144.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1150.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1150.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1152.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1165.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1165.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1167.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1173.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1173.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1175.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1185.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1185.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1185.
+
+[26]
+
+Package xcolor Warning: Incompatible color definition on input line 1185.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1185.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1187.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1195.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1195.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1197.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1205.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1205.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1210.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1218.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1218.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1220.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1225.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1225.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1227.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1235.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1235.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1237.
+
+[27]
+
+Package xcolor Warning: Incompatible color definition on input line 1242.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1242.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1244.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1252.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1252.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1254.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1259.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1259.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1261.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1276.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1276.
+
+
+LaTeX Warning: Empty bibliography on input line 1278.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1280.
+[28]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1280.
 (./ass2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 832.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 832.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1280.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1280.
+
 Package rerunfilecheck Info: File `ass2.out' has not changed.
-(rerunfilecheck)             Checksum: B39A1FE3E568E12757BCB0ADB28C9D2E;1801.
+(rerunfilecheck)             Checksum: 93FDE121B0CE03F6AC512FEC468D81E4;2164.
 Package logreq Info: Writing requests to 'ass2.run.xml'.
 \openout1 = `ass2.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 832.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1280.
  ) 
 Here is how much of TeX's memory you used:
- 27225 strings out of 482798
- 457968 string characters out of 5953330
- 1229403 words of memory out of 5000000
- 41893 multiletter control sequences out of 15000+600000
- 638357 words of font info for 250 fonts, out of 8000000 for 9000
+ 27781 strings out of 482798
+ 467160 string characters out of 5953330
+ 1239986 words of memory out of 5000000
+ 42396 multiletter control sequences out of 15000+600000
+ 640836 words of font info for 258 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  64i,14n,101p,1067b,4932s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.en
-c}{c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/ly1/texnan
-si.enc}{c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/fonta
-wesome/fontawesometwo.enc}<c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fo
-nts/type1/public/fontawesome/FontAwesome.pfb><c:/Users/Roger/AppData/Roaming/Ti
-nyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><c:/Users/Roger/AppDat
-a/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb><c:/Users/
-Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.p
-fb><c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/bera/f
-vmr8a.pfb><c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public
-/bera/fvsb8a.pfb><c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1
-/public/bera/fvsr8a.pfb><c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/font
-s/type1/public/mathdesign/mdbch/md-chr8t.pfb>
-Output written on ass2.pdf (20 pages, 188710 bytes).
+ <c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/e
+c/tctt1095.600pk>{c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/d
+vips/base/8r.enc}{c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/d
+vips/ly1/texnansi.enc}{c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/
+enc/dvips/fontawesome/fontawesometwo.enc}<c:/Users/Roger/AppData/Roaming/TinyTe
+X/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb><c:/Users/Roger/App
+Data/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><c:/Use
+rs/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchr8a
+.pfb><c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/ch
+arter/bchri8a.pfb><c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fonts/type
+1/public/bera/fvmb8a.pfb><c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-dist/fon
+ts/type1/public/bera/fvmr8a.pfb><c:/Users/Roger/AppData/Roaming/TinyTeX/texmf-d
+ist/fonts/type1/public/bera/fvmro8a.pfb><c:/Users/Roger/AppData/Roaming/TinyTeX
+/texmf-dist/fonts/type1/public/bera/fvsb8a.pfb><c:/Users/Roger/AppData/Roaming/
+TinyTeX/texmf-dist/fonts/type1/public/bera/fvsr8a.pfb><c:/Users/Roger/AppData/R
+oaming/TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr8t.pfb>
+Output written on ass2.pdf (28 pages, 221328 bytes).
 PDF statistics:
- 366 PDF objects out of 1000 (max. 8388607)
- 305 compressed objects within 4 object streams
- 72 named destinations out of 1000 (max. 500000)
- 30890 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 444 PDF objects out of 1000 (max. 8388607)
+ 372 compressed objects within 4 object streams
+ 98 named destinations out of 1000 (max. 500000)
+ 30906 words of extra memory for PDF output out of 35830 (max. 10000000)
 

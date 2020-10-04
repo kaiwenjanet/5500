@@ -340,7 +340,7 @@ plot(hc_w, cex = 0.5, xlab= "Stocks", ylab="Distance")
 rect.hclust(hc_w, k = 4)
 ```
 
-```{r ward-3, fig.cap="Dendogram using Ward methodology and taking Euclidian distances"}
+```{r ward-3, fig.cap="Dendrogram using Ward methodology and taking Euclidian distances"}
 plot(hc_w, cex = 0.5, xlab= "Stocks", ylab="Distance")
 rect.hclust(hc_w, k = 3)
 ```
@@ -435,7 +435,7 @@ Zhu, H. (2019). Kableextra: Construct complex table with ’kable’ and pipe sy
 
 \appendix
 
-# Appendix
+# Appendix.A
 
 ## Ends with Emphasis 
 
@@ -488,3 +488,335 @@ al_method %>%
   kable_styling(bootstrap_options = c("bordered", "hover", "striped")) 
 ```
 
+\clearpage
+
+
+# Appendix.B
+
+## The codes used in the analysis
+
+```{r setup1, echo=TRUE, eval=FALSE}
+knitr::opts_chunk$set(echo = FALSE, cache=FALSE, messages=FALSE, warning=FALSE)
+# Make sure you have the latest versions of rmarkdown and bookdown installed
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(mclust)
+library(visdat)
+library(gridExtra)
+library(kableExtra)
+library(tibble)
+```
+
+### Introduction
+
+```{r data1, echo=TRUE, eval=FALSE}
+# Read data
+
+stocks_ori <- read_csv("stocks.csv")
+#nrow(stocks)
+#head(stocks)
+stocks_ori <- stocks_ori%>%
+  rename(intra_day=`Market cap (intra-day)`,
+         ent_value=`Enterprise value`,
+         trail_pe=`Trailing P/E`,
+         for_pe=`Forward P/E`,
+         peg=`PEG ratio (5-yr expected)`,
+         ttm=`Price/sales (ttm)`,
+         mrq=`Price/book (mrq)`,
+         rev=`Enterprise value/revenue`,
+         ebitda=`Enterprise value/EBITDA`,
+         tot_risk = `Total ESG risk score`,
+         envir_risk = `Environmental Risk Score`,
+         social_risk = `Social Risk Score`,
+         gover_risk = `Governance Risk Score`)
+```
+
+### Data description
+
+```{r variables-table1, echo=TRUE, eval=FALSE}
+# Generate the table to explain the variables
+tribble(~Variable, ~Abbreviation, ~Description,
+        "Name", "/", "The full company name of each stock",
+        "Symbol", "/", "The abbreviation of each stock",
+        "Market", "/", "Major financial indices",
+        "Sector", "/", "The belonging section of a stock",
+        "Industry", "/", "The belonging industry of a stock",
+        "Market capitalization", "intra_day", "How much a company is worth as determined by the stock market", 
+        "Enterprise value", "ent_value", "A measure of a company's total value", 
+        "Trailing P/E", "trail_pe",  "Price to Earning Ratio based on the earnings per share over the previous 12 months",
+        "Forward P/E ratio", "for_pe",  "Estimate further earnings per share in the next 12 months", 
+        "PEG ratio", "peg", "Enhances the P/E ratio by adding the expected earnings growth into calculation", 
+        "P/S ratio", "ttm", "Price to Sales ratio, a valuation ratio by comparing a company’s stock price to its revenue", 
+        "P/B ratio",  "mrq", "Price to Book ratio is a measurement of the market's valuation of a company relative to its book value",
+        "Enterprise value-to-revenue",  "rev", "Also refers as the EV/R, it measures the value of a stock that compares a company's enterprise value to its revenue", 
+        "EV/EBITDA", "ebitda", "Enterprise value to earnings before interest, taxed, depreciation and amortization ratio compares the value of a company, debt included to the company's cash earnings less non-cash expenses", 
+        "Total ESG risk score", "tot_risk", "The overall rating scores based on the Morningstar Sustainability Rating systems", 
+        "Environmental Risk Score", "envir_risk", "Evaluation scores of the portfolios performance when they meet the environmental challenges", 
+        "Social Risk Score", "social_risk", "Evaluation scores of the portfolios performance when they meet the social challenges", 
+        "Governance Risk Score", "gover_risk","Evaluation scores of the portfolios performance when they meet the governance challenges") %>% 
+  kable(caption = "Information of variables of the original data") %>% 
+  kable_styling(bootstrap_options = c("bordered", "striped", "hover")) %>%
+  column_spec(3, width = "170px") 
+```
+
+### Preliminary Analysis
+
+```{r vis-data1, echo=TRUE, eval=FALSE, fig.cap="The data structure of original data"}
+# Visualise the data structure of the original data in Preliminary Analysis 
+vis_dat(stocks_ori)
+```
+
+```{r sum-tab1, echo=TRUE, eval=FALSE}
+# Summarise the data in Preliminary Analysis
+sum_tab<-stocks_ori%>%
+   select(-Name,-Symbol,-Market,-Sector,-Industry)%>%
+   summary(stocks_ori)
+```
+
+```{r summary-table1, echo=TRUE, eval=FALSE}
+# Summary table in Preliminary Analysis
+tribble(~Variable, ~Min, ~Median, ~Mean, ~Max, ~`NA`,
+        "intra_day","-2","63","95065","5110000","NA",
+        "ent_value" ,"-264","70","85683","5130000","NA",
+        "trail_pe" ,"0.48","20.11","43.62","1479.29", "18",
+        "for_pe","3.59","19.92","43.04","1044.81", "80",
+        "peg" ,"-62.380","2.405","15.223","713.670","81",
+        "ttm" ,"0.9","2.8","9.941","548.150","17",
+        "mrq" ,"0.1","5.4","174.16","11765.96","10",
+        "rev" ,"-27.720","2.875","9.827","5411.160","17",
+        "ebitda" ,"-465.460","13.765","19.461","1117.510","23",
+        "tot_risk","11","23","25.39","75","13",
+        "envir_risk","0","4","6.731","62", "13",
+        "social_risk","3","10","11.4","88","13",
+        "gover_risk","3","8" ,"9.343","80","13") %>%
+  kable(caption = "Summary table of original data") %>%
+  kable_styling(bootstrap_options = c("bordered", "striped", "hover"))
+```
+
+```{r outliers-table1, echo=TRUE, eval=FALSE}
+# Outliers table in Preliminary Analysis
+tribble(~variable, ~outlier,
+        "intra_day", "MSFT, AAPL",
+        "ent_value", "MSFT, AAPL",
+        "trail_pe", "TSLA",
+        "for_pe", "ILMN, TSLA",
+        "peg", "DIS, VZ, KO, MMM, CVX, PCAR, CAT, XOM",
+        "ttm", "ILMN, V",
+        "mrq", "TSLA",
+        "rev", "ILMN, V",
+        "ebitda", "INTU, ILMN, TSLA, NKE") %>%
+  kable(caption = "The summary table of outliers in each variables") %>%
+  kable_styling(bootstrap_options = c("bordered", "striped", "hover"))
+```
+
+```{r stocks1, echo=TRUE, eval=FALSE}
+# Filter out the missing values
+stocks <- na.omit(stocks_ori)
+```
+
+
+### Principal Component Analysis (Value Analysis)
+
+```{r value1, echo=TRUE, eval=FALSE}
+# filter out the outliers
+issuer<-stocks%>%
+  select(Symbol,intra_day,ent_value,trail_pe,for_pe,peg,ttm,mrq,rev,ebitda)
+df <- issuer[!(issuer$Symbol %in% c("MSFT", "AAPL", "TSLA", "ILMN", "DIS", "VZ", "KO", "MMM", "CVX", "PCAR", "CAT", "XOM", "V", "INTU", "NKE")),]
+#view(df)
+```
+
+```{r pca-value1, echo=TRUE, eval=FALSE}
+# Create the principal component for value analysis
+pca_value<-df%>%
+  select_if(is.numeric)%>%
+  prcomp(scale.=TRUE)
+rownames(pca_value$x)<-pull(df,Symbol)
+```
+
+```{r pca-cor1, echo=TRUE, eval=FALSE, fig.height=5.5,fig.cap="Correlation Biplot of PCA of stocks' value"}
+# Create the Correlation Biplot of the PCs for value analysis
+cor_va<-biplot(pca_value,scale=0,cex=0.6)
+```
+
+```{r bi-dis1, echo=TRUE, eval=FALSE, fig.height=5.5,fig.cap="Distance Biplot of PCA of stocks' value"}
+# Create the Distance Biplot of the PCs for value analysis
+dis_va<-biplot(pca_value,xlim=c(-0.6,0.3),cex=0.6)
+``` 
+
+```{r lim-11, echo=TRUE, eval=FALSE}
+# Create the summary table of principal components in value analysis
+summary(pca_value)$importance %>%  
+  round(4) %>% 
+  kable(caption = "Summary table of PCA for value analysis of stocks") %>%
+  kable_styling(bootstrap_options = c("bordered", "hover", "striped")) %>%
+  column_spec(1, width = "70px") 
+```
+
+```{r lim-21, echo=TRUE, eval=FALSE, fig.cap="Screeplot of PCs in PCA for value analysis of stocks"}
+# Create the Screeplot to select the PCs in value analysis
+screeplot(pca_value, type = "lines")
+```
+
+### Principal Component Analysis (Risk Analysis)
+
+```{r risk-df1, echo=TRUE, eval=FALSE}
+# filter out the outliers
+risk <- subset(stocks[(stocks$Symbol %in% df$Symbol),], select = c("Symbol", "tot_risk", "envir_risk", "social_risk", "gover_risk"))
+view(risk)
+```
+
+```{r first-check1, echo=TRUE, eval=FALSE}
+# First check whether total esg risk score = environmental risk + social risk + governance risk
+d <- apply(cbind(risk$envir_risk, risk$social_risk, risk$gover_risk), 1, sum)
+all(risk$tot_risk == d)
+```
+
+```{r risk-data1, echo=TRUE, eval=FALSE}
+# Second check whether total esg risk score = environmental risk + social risk + governance risk
+risk_tesg <- risk[risk$tot_risk == d,]
+d2 <- apply(cbind(risk_tesg$envir_risk, risk_tesg$social_risk, risk_tesg$gover_risk), 1, sum)
+all(risk_tesg$tot_risk == d2)
+#head(risk_tesg)
+#nrow(risk_tesg)
+```
+
+```{r principal-component-analysis1, echo=TRUE, eval=FALSE}
+# Execute the PCA for risk analysis
+pca_risk <- risk_tesg %>% select_if(is.numeric) %>% prcomp(scale. = TRUE)
+```
+
+```{r pca-risk-summary1, echo=TRUE, eval=FALSE}
+# Create the summary table of principal components in risk analysis
+summary(pca_risk)$importance %>%  
+  round(4) %>%
+  kable(caption = "Summary table of PCA for risks analysis of stocks") %>%
+  kable_styling(bootstrap_options = c("bordered", "hover", "striped"))
+```
+
+```{r pca-risk-screeplot1, echo=TRUE, eval=FALSE, fig.cap="Screeplot of PCs in PCA for risk analysis of stocks"}
+# Create the Screeplot to select the PCs in risk analysis
+screeplot(pca_risk, type = "lines")
+```
+
+```{r pca-risk-distance1, echo=TRUE, eval=FALSE, fig.height=5.5, fig.cap= "Distance biplot of PCA of stocks' risk"}
+# Create the Distance Biplot of the PCs for risk analysis
+rownames(pca_risk$x) <- pull(risk_tesg, Symbol)
+biplot(pca_risk, xlim=c(-0.5, 0.5), ylim = c(-0.6, 0.3),  cex = 0.6)
+```
+
+```{r pca-risk-correlation1, echo=TRUE, eval=FALSE, fig.height=5.5, fig.cap="Correlation Biplot of PCA of stocks' risk"}
+# Create the Correlation Biplot of the PCs for risk analysis
+biplot(pca_risk, scale = 0, xlim = c(-4, 4), cex = 0.6)
+```
+
+### Cluster Analysis
+
+```{r dat-cluster1, echo=TRUE, eval=FALSE}
+# Filter out the outliers, and generate the distance between each observation.
+dat <- stocks[(stocks$Symbol %in% df$Symbol),]
+d <- dat %>% select_if(is.numeric) %>% scale %>% dist 
+```
+
+```{r ward1, echo=TRUE, eval=FALSE, fig.cap="Choosing clusters"}
+# Create different cluster dendrogram
+hc_w <- hclust(d, method = "ward.D2")
+hc_w$labels <- dat$Symbol
+par(mfrow = c(1,3))
+plot(hc_w, cex = 0.5, xlab= "Stocks", ylab="Distance")
+rect.hclust(hc_w, k = 2)
+plot(hc_w, cex = 0.5, xlab= "Stocks", ylab="Distance")
+rect.hclust(hc_w, k = 3)
+plot(hc_w, cex = 0.5, xlab= "Stocks", ylab="Distance")
+rect.hclust(hc_w, k = 4)
+```
+
+```{r ward-31, echo=TRUE, eval=FALSE, fig.cap="Dendrogram using Ward methodology and taking Euclidian distances"}
+# The three-cluster dendrogram
+plot(hc_w, cex = 0.5, xlab= "Stocks", ylab="Distance")
+rect.hclust(hc_w, k = 3)
+```
+
+```{r memb-w1, echo=TRUE, eval=FALSE}
+# The first cluster 
+memb_three_w <- cutree(hc_w, k = 3)
+memb_one <- dat[dat$Symbol %in% rownames(as.data.frame(memb_three_w) %>% filter(memb_three_w == 2)),]$Name
+
+memb_one %>% 
+  kable(col.names = c("stock"), caption = "The stocks of the first cluster") %>%
+  kable_styling(bootstrap_options = c("bordered", "hover", "striped")) 
+  
+```
+
+```{r memb-two1, echo=TRUE, eval=FALSE}
+# The second cluster
+memb_two <- dat[dat$Symbol %in%  rownames(as.data.frame(memb_three_w) %>% filter(memb_three_w == 3)),]$Name
+memb_two %>%
+  kable(col.names = c("stock"), caption = "The stocks of the second cluster") %>%
+  kable_styling(bootstrap_options = c("bordered", "hover", "striped")) 
+```
+
+
+```{r memb-three1, echo=TRUE, eval=FALSE}
+# The third cluster
+memb_three <- dat[dat$Symbol %in%  rownames(as.data.frame(memb_three_w) %>% filter(memb_three_w == 1)),]$Name
+memb_three %>%
+  kable(col.names = c("stock"), caption = "The stocks of the third cluster") %>%
+  kable_styling(bootstrap_options = c("bordered", "hover", "striped")) 
+```
+
+### Appendix.A
+
+```{r complete1, echo=TRUE, eval=FALSE, fig.cap="Cluster dendrogram of complete linkage method"}
+# Cluster dendrogram of complete linkage method
+hc_c <- hclust(d, method = "complete")
+hc_c$labels <- dat$Symbol
+plot(hc_c, cex = 0.5)
+rect.hclust(hc_c, k = 3)
+```
+
+```{r memb-complete1, echo=TRUE, eval=FALSE}
+# Three-cluster solution of complete linkage method
+memb_three_c <- cutree(hc_c, k = 3) 
+```
+
+```{r average1, echo=TRUE, eval=FALSE, fig.cap="Cluster dendrogram of average linkage method"}
+# Cluster dendrogram of average linkage method
+hc_al <- hclust(d, method = "average")
+hc_al$labels <- dat$Symbol
+plot(hc_al, cex = 0.5)
+rect.hclust(hc_al, k = 3)
+```
+
+```{r memb_al1, echo=TRUE, eval=FALSE}
+# Three-cluster solution of average linkage method
+memb_three_al <- cutree(hc_al, k = 3)
+```
+
+```{r centroid1, echo=TRUE, eval=FALSE, fig.cap="Cluster dendrogram of centroid method"}
+# Cluster dendrogram of centroid method
+hc_cm <- hclust(d, method = "centroid")
+hc_cm$labels <- dat$Symbol
+plot(hc_cm, cex = 0.5)
+rect.hclust(hc_cm, k = 3)
+```
+
+```{r memb_cm1, echo=TRUE, eval=FALSE}
+# Three-cluster solution of centroid method
+memb_three_cm <- cutree(hc_cm, k = 3)
+```
+
+```{r adjusted-index1 , echo=TRUE, eval=FALSE}
+# Create the table for the adjusted rand index of that three clustering methods
+c <- adjustedRandIndex(memb_three_w, memb_three_c)
+al <- adjustedRandIndex(memb_three_w, memb_three_al)
+cm <- adjustedRandIndex(memb_three_w, memb_three_cm)
+
+
+al_method <- rbind(c, al, cm) 
+rownames(al_method) <- c("complete linkage method", "average linkage method", "centroid method")
+al_method %>% 
+  kable(col.names = c("adjusted rand index"), 
+        caption = "The adjusted rand index of the three clustering methods") %>%
+  kable_styling(bootstrap_options = c("bordered", "hover", "striped")) 
+```

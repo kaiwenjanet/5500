@@ -29,6 +29,46 @@
 \geometry{a4paper, centering, text={16cm,24cm}}
 \usepackage[style=apa,]{biblatex}
 \addbibresource{references.bib}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 % Fix footnotes in tables (requires footnote package)
 \IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
@@ -604,7 +644,7 @@ Using the hierarchical clustering analysis with the agglomerative method, it is 
 \begin{figure}
 \centering
 \includegraphics{ass2_files/figure-latex/ward-3-1.pdf}
-\caption{\label{fig:ward-3}Dendogram using Ward methodology and taking Euclidian distances}
+\caption{\label{fig:ward-3}Dendrogram using Ward methodology and taking Euclidian distances}
 \end{figure}
 
 From the dendrogram, there are three different clusters. These three clusters are shown in Table \ref{tab:memb-w}, Table \ref{tab:memb-two}, and Table \ref{tab:memb-three}, respectively.
@@ -784,8 +824,8 @@ Zhu, H. (2019). Kableextra: Construct complex table with 'kable' and pipe syntax
 
 \appendix
 
-\hypertarget{appendix}{%
-\section{Appendix}\label{appendix}}
+\hypertarget{appendix.a}{%
+\section{Appendix.A}\label{appendix.a}}
 
 \hypertarget{ends-with-emphasis}{%
 \subsection{Ends with Emphasis}\label{ends-with-emphasis}}
@@ -826,6 +866,414 @@ centroid method & 0.0919079\\
 \hline
 \end{tabular}
 \end{table}
+
+\clearpage
+
+\hypertarget{appendix.b}{%
+\section{Appendix.B}\label{appendix.b}}
+
+\hypertarget{the-codes-used-in-the-analysis}{%
+\subsection{The codes used in the analysis}\label{the-codes-used-in-the-analysis}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\OperatorTok{::}\NormalTok{opts_chunk}\OperatorTok{$}\KeywordTok{set}\NormalTok{(}\DataTypeTok{echo =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{cache=}\OtherTok{FALSE}\NormalTok{, }\DataTypeTok{messages=}\OtherTok{FALSE}\NormalTok{, }\DataTypeTok{warning=}\OtherTok{FALSE}\NormalTok{)}
+\CommentTok{# Make sure you have the latest versions of rmarkdown and bookdown installed}
+\KeywordTok{library}\NormalTok{(dplyr)}
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\KeywordTok{library}\NormalTok{(mclust)}
+\KeywordTok{library}\NormalTok{(visdat)}
+\KeywordTok{library}\NormalTok{(gridExtra)}
+\KeywordTok{library}\NormalTok{(kableExtra)}
+\KeywordTok{library}\NormalTok{(tibble)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{introduction-1}{%
+\subsubsection{Introduction}\label{introduction-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Read data}
+
+\NormalTok{stocks_ori <-}\StringTok{ }\KeywordTok{read_csv}\NormalTok{(}\StringTok{"stocks.csv"}\NormalTok{)}
+\CommentTok{#nrow(stocks)}
+\CommentTok{#head(stocks)}
+\NormalTok{stocks_ori <-}\StringTok{ }\NormalTok{stocks_ori}\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{rename}\NormalTok{(}\DataTypeTok{intra_day=}\StringTok{`}\DataTypeTok{Market cap (intra-day)}\StringTok{`}\NormalTok{,}
+         \DataTypeTok{ent_value=}\StringTok{`}\DataTypeTok{Enterprise value}\StringTok{`}\NormalTok{,}
+         \DataTypeTok{trail_pe=}\StringTok{`}\DataTypeTok{Trailing P/E}\StringTok{`}\NormalTok{,}
+         \DataTypeTok{for_pe=}\StringTok{`}\DataTypeTok{Forward P/E}\StringTok{`}\NormalTok{,}
+         \DataTypeTok{peg=}\StringTok{`}\DataTypeTok{PEG ratio (5-yr expected)}\StringTok{`}\NormalTok{,}
+         \DataTypeTok{ttm=}\StringTok{`}\DataTypeTok{Price/sales (ttm)}\StringTok{`}\NormalTok{,}
+         \DataTypeTok{mrq=}\StringTok{`}\DataTypeTok{Price/book (mrq)}\StringTok{`}\NormalTok{,}
+         \DataTypeTok{rev=}\StringTok{`}\DataTypeTok{Enterprise value/revenue}\StringTok{`}\NormalTok{,}
+         \DataTypeTok{ebitda=}\StringTok{`}\DataTypeTok{Enterprise value/EBITDA}\StringTok{`}\NormalTok{,}
+         \DataTypeTok{tot_risk =} \StringTok{`}\DataTypeTok{Total ESG risk score}\StringTok{`}\NormalTok{,}
+         \DataTypeTok{envir_risk =} \StringTok{`}\DataTypeTok{Environmental Risk Score}\StringTok{`}\NormalTok{,}
+         \DataTypeTok{social_risk =} \StringTok{`}\DataTypeTok{Social Risk Score}\StringTok{`}\NormalTok{,}
+         \DataTypeTok{gover_risk =} \StringTok{`}\DataTypeTok{Governance Risk Score}\StringTok{`}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{data-description-1}{%
+\subsubsection{Data description}\label{data-description-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Generate the table to explain the variables}
+\KeywordTok{tribble}\NormalTok{(}\OperatorTok{~}\NormalTok{Variable, }\OperatorTok{~}\NormalTok{Abbreviation, }\OperatorTok{~}\NormalTok{Description,}
+        \StringTok{"Name"}\NormalTok{, }\StringTok{"/"}\NormalTok{, }\StringTok{"The full company name of each stock"}\NormalTok{,}
+        \StringTok{"Symbol"}\NormalTok{, }\StringTok{"/"}\NormalTok{, }\StringTok{"The abbreviation of each stock"}\NormalTok{,}
+        \StringTok{"Market"}\NormalTok{, }\StringTok{"/"}\NormalTok{, }\StringTok{"Major financial indices"}\NormalTok{,}
+        \StringTok{"Sector"}\NormalTok{, }\StringTok{"/"}\NormalTok{, }\StringTok{"The belonging section of a stock"}\NormalTok{,}
+        \StringTok{"Industry"}\NormalTok{, }\StringTok{"/"}\NormalTok{, }\StringTok{"The belonging industry of a stock"}\NormalTok{,}
+        \StringTok{"Market capitalization"}\NormalTok{, }\StringTok{"intra_day"}\NormalTok{, }\StringTok{"How much a company is worth as determined by the stock market"}\NormalTok{, }
+        \StringTok{"Enterprise value"}\NormalTok{, }\StringTok{"ent_value"}\NormalTok{, }\StringTok{"A measure of a company's total value"}\NormalTok{, }
+        \StringTok{"Trailing P/E"}\NormalTok{, }\StringTok{"trail_pe"}\NormalTok{,  }\StringTok{"Price to Earning Ratio based on the earnings per share over the previous 12 months"}\NormalTok{,}
+        \StringTok{"Forward P/E ratio"}\NormalTok{, }\StringTok{"for_pe"}\NormalTok{,  }\StringTok{"Estimate further earnings per share in the next 12 months"}\NormalTok{, }
+        \StringTok{"PEG ratio"}\NormalTok{, }\StringTok{"peg"}\NormalTok{, }\StringTok{"Enhances the P/E ratio by adding the expected earnings growth into calculation"}\NormalTok{, }
+        \StringTok{"P/S ratio"}\NormalTok{, }\StringTok{"ttm"}\NormalTok{, }\StringTok{"Price to Sales ratio, a valuation ratio by comparing a company’s stock price to its revenue"}\NormalTok{, }
+        \StringTok{"P/B ratio"}\NormalTok{,  }\StringTok{"mrq"}\NormalTok{, }\StringTok{"Price to Book ratio is a measurement of the market's valuation of a company relative to its book value"}\NormalTok{,}
+        \StringTok{"Enterprise value-to-revenue"}\NormalTok{,  }\StringTok{"rev"}\NormalTok{, }\StringTok{"Also refers as the EV/R, it measures the value of a stock that compares a company's enterprise value to its revenue"}\NormalTok{, }
+        \StringTok{"EV/EBITDA"}\NormalTok{, }\StringTok{"ebitda"}\NormalTok{, }\StringTok{"Enterprise value to earnings before interest, taxed, depreciation and amortization ratio compares the value of a company, debt included to the company's cash earnings less non-cash expenses"}\NormalTok{, }
+        \StringTok{"Total ESG risk score"}\NormalTok{, }\StringTok{"tot_risk"}\NormalTok{, }\StringTok{"The overall rating scores based on the Morningstar Sustainability Rating systems"}\NormalTok{, }
+        \StringTok{"Environmental Risk Score"}\NormalTok{, }\StringTok{"envir_risk"}\NormalTok{, }\StringTok{"Evaluation scores of the portfolios performance when they meet the environmental challenges"}\NormalTok{, }
+        \StringTok{"Social Risk Score"}\NormalTok{, }\StringTok{"social_risk"}\NormalTok{, }\StringTok{"Evaluation scores of the portfolios performance when they meet the social challenges"}\NormalTok{, }
+        \StringTok{"Governance Risk Score"}\NormalTok{, }\StringTok{"gover_risk"}\NormalTok{,}\StringTok{"Evaluation scores of the portfolios performance when they meet the governance challenges"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{caption =} \StringTok{"Information of variables of the original data"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{bootstrap_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"bordered"}\NormalTok{, }\StringTok{"striped"}\NormalTok{, }\StringTok{"hover"}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{column_spec}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DataTypeTok{width =} \StringTok{"170px"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{preliminary-analysis-1}{%
+\subsubsection{Preliminary Analysis}\label{preliminary-analysis-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Visualise the data structure of the original data in Preliminary Analysis }
+\KeywordTok{vis_dat}\NormalTok{(stocks_ori)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Summarise the data in Preliminary Analysis}
+\NormalTok{sum_tab<-stocks_ori}\OperatorTok{%>%}
+\StringTok{   }\KeywordTok{select}\NormalTok{(}\OperatorTok{-}\NormalTok{Name,}\OperatorTok{-}\NormalTok{Symbol,}\OperatorTok{-}\NormalTok{Market,}\OperatorTok{-}\NormalTok{Sector,}\OperatorTok{-}\NormalTok{Industry)}\OperatorTok{%>%}
+\StringTok{   }\KeywordTok{summary}\NormalTok{(stocks_ori)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Summary table in Preliminary Analysis}
+\KeywordTok{tribble}\NormalTok{(}\OperatorTok{~}\NormalTok{Variable, }\OperatorTok{~}\NormalTok{Min, }\OperatorTok{~}\NormalTok{Median, }\OperatorTok{~}\NormalTok{Mean, }\OperatorTok{~}\NormalTok{Max, }\OperatorTok{~}\StringTok{`}\DataTypeTok{NA}\StringTok{`}\NormalTok{,}
+        \StringTok{"intra_day"}\NormalTok{,}\StringTok{"-2"}\NormalTok{,}\StringTok{"63"}\NormalTok{,}\StringTok{"95065"}\NormalTok{,}\StringTok{"5110000"}\NormalTok{,}\StringTok{"NA"}\NormalTok{,}
+        \StringTok{"ent_value"}\NormalTok{ ,}\StringTok{"-264"}\NormalTok{,}\StringTok{"70"}\NormalTok{,}\StringTok{"85683"}\NormalTok{,}\StringTok{"5130000"}\NormalTok{,}\StringTok{"NA"}\NormalTok{,}
+        \StringTok{"trail_pe"}\NormalTok{ ,}\StringTok{"0.48"}\NormalTok{,}\StringTok{"20.11"}\NormalTok{,}\StringTok{"43.62"}\NormalTok{,}\StringTok{"1479.29"}\NormalTok{, }\StringTok{"18"}\NormalTok{,}
+        \StringTok{"for_pe"}\NormalTok{,}\StringTok{"3.59"}\NormalTok{,}\StringTok{"19.92"}\NormalTok{,}\StringTok{"43.04"}\NormalTok{,}\StringTok{"1044.81"}\NormalTok{, }\StringTok{"80"}\NormalTok{,}
+        \StringTok{"peg"}\NormalTok{ ,}\StringTok{"-62.380"}\NormalTok{,}\StringTok{"2.405"}\NormalTok{,}\StringTok{"15.223"}\NormalTok{,}\StringTok{"713.670"}\NormalTok{,}\StringTok{"81"}\NormalTok{,}
+        \StringTok{"ttm"}\NormalTok{ ,}\StringTok{"0.9"}\NormalTok{,}\StringTok{"2.8"}\NormalTok{,}\StringTok{"9.941"}\NormalTok{,}\StringTok{"548.150"}\NormalTok{,}\StringTok{"17"}\NormalTok{,}
+        \StringTok{"mrq"}\NormalTok{ ,}\StringTok{"0.1"}\NormalTok{,}\StringTok{"5.4"}\NormalTok{,}\StringTok{"174.16"}\NormalTok{,}\StringTok{"11765.96"}\NormalTok{,}\StringTok{"10"}\NormalTok{,}
+        \StringTok{"rev"}\NormalTok{ ,}\StringTok{"-27.720"}\NormalTok{,}\StringTok{"2.875"}\NormalTok{,}\StringTok{"9.827"}\NormalTok{,}\StringTok{"5411.160"}\NormalTok{,}\StringTok{"17"}\NormalTok{,}
+        \StringTok{"ebitda"}\NormalTok{ ,}\StringTok{"-465.460"}\NormalTok{,}\StringTok{"13.765"}\NormalTok{,}\StringTok{"19.461"}\NormalTok{,}\StringTok{"1117.510"}\NormalTok{,}\StringTok{"23"}\NormalTok{,}
+        \StringTok{"tot_risk"}\NormalTok{,}\StringTok{"11"}\NormalTok{,}\StringTok{"23"}\NormalTok{,}\StringTok{"25.39"}\NormalTok{,}\StringTok{"75"}\NormalTok{,}\StringTok{"13"}\NormalTok{,}
+        \StringTok{"envir_risk"}\NormalTok{,}\StringTok{"0"}\NormalTok{,}\StringTok{"4"}\NormalTok{,}\StringTok{"6.731"}\NormalTok{,}\StringTok{"62"}\NormalTok{, }\StringTok{"13"}\NormalTok{,}
+        \StringTok{"social_risk"}\NormalTok{,}\StringTok{"3"}\NormalTok{,}\StringTok{"10"}\NormalTok{,}\StringTok{"11.4"}\NormalTok{,}\StringTok{"88"}\NormalTok{,}\StringTok{"13"}\NormalTok{,}
+        \StringTok{"gover_risk"}\NormalTok{,}\StringTok{"3"}\NormalTok{,}\StringTok{"8"}\NormalTok{ ,}\StringTok{"9.343"}\NormalTok{,}\StringTok{"80"}\NormalTok{,}\StringTok{"13"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{caption =} \StringTok{"Summary table of original data"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{bootstrap_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"bordered"}\NormalTok{, }\StringTok{"striped"}\NormalTok{, }\StringTok{"hover"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Outliers table in Preliminary Analysis}
+\KeywordTok{tribble}\NormalTok{(}\OperatorTok{~}\NormalTok{variable, }\OperatorTok{~}\NormalTok{outlier,}
+        \StringTok{"intra_day"}\NormalTok{, }\StringTok{"MSFT, AAPL"}\NormalTok{,}
+        \StringTok{"ent_value"}\NormalTok{, }\StringTok{"MSFT, AAPL"}\NormalTok{,}
+        \StringTok{"trail_pe"}\NormalTok{, }\StringTok{"TSLA"}\NormalTok{,}
+        \StringTok{"for_pe"}\NormalTok{, }\StringTok{"ILMN, TSLA"}\NormalTok{,}
+        \StringTok{"peg"}\NormalTok{, }\StringTok{"DIS, VZ, KO, MMM, CVX, PCAR, CAT, XOM"}\NormalTok{,}
+        \StringTok{"ttm"}\NormalTok{, }\StringTok{"ILMN, V"}\NormalTok{,}
+        \StringTok{"mrq"}\NormalTok{, }\StringTok{"TSLA"}\NormalTok{,}
+        \StringTok{"rev"}\NormalTok{, }\StringTok{"ILMN, V"}\NormalTok{,}
+        \StringTok{"ebitda"}\NormalTok{, }\StringTok{"INTU, ILMN, TSLA, NKE"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{caption =} \StringTok{"The summary table of outliers in each variables"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{bootstrap_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"bordered"}\NormalTok{, }\StringTok{"striped"}\NormalTok{, }\StringTok{"hover"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Filter out the missing values}
+\NormalTok{stocks <-}\StringTok{ }\KeywordTok{na.omit}\NormalTok{(stocks_ori)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{principal-component-analysis-value-analysis}{%
+\subsubsection{Principal Component Analysis (Value Analysis)}\label{principal-component-analysis-value-analysis}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# filter out the outliers}
+\NormalTok{issuer<-stocks}\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(Symbol,intra_day,ent_value,trail_pe,for_pe,peg,ttm,mrq,rev,ebitda)}
+\NormalTok{df <-}\StringTok{ }\NormalTok{issuer[}\OperatorTok{!}\NormalTok{(issuer}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"MSFT"}\NormalTok{, }\StringTok{"AAPL"}\NormalTok{, }\StringTok{"TSLA"}\NormalTok{, }\StringTok{"ILMN"}\NormalTok{, }\StringTok{"DIS"}\NormalTok{, }\StringTok{"VZ"}\NormalTok{, }\StringTok{"KO"}\NormalTok{, }\StringTok{"MMM"}\NormalTok{, }\StringTok{"CVX"}\NormalTok{, }\StringTok{"PCAR"}\NormalTok{, }\StringTok{"CAT"}\NormalTok{, }\StringTok{"XOM"}\NormalTok{, }\StringTok{"V"}\NormalTok{, }\StringTok{"INTU"}\NormalTok{, }\StringTok{"NKE"}\NormalTok{)),]}
+\CommentTok{#view(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Create the principal component for value analysis}
+\NormalTok{pca_value<-df}\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{select_if}\NormalTok{(is.numeric)}\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{prcomp}\NormalTok{(}\DataTypeTok{scale.=}\OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{rownames}\NormalTok{(pca_value}\OperatorTok{$}\NormalTok{x)<-}\KeywordTok{pull}\NormalTok{(df,Symbol)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Create the Correlation Biplot of the PCs for value analysis}
+\NormalTok{cor_va<-}\KeywordTok{biplot}\NormalTok{(pca_value,}\DataTypeTok{scale=}\DecValTok{0}\NormalTok{,}\DataTypeTok{cex=}\FloatTok{0.6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Create the Distance Biplot of the PCs for value analysis}
+\NormalTok{dis_va<-}\KeywordTok{biplot}\NormalTok{(pca_value,}\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{0.6}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}\DataTypeTok{cex=}\FloatTok{0.6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Create the summary table of principal components in value analysis}
+\KeywordTok{summary}\NormalTok{(pca_value)}\OperatorTok{$}\NormalTok{importance }\OperatorTok{%>%}\StringTok{  }
+\StringTok{  }\KeywordTok{round}\NormalTok{(}\DecValTok{4}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{caption =} \StringTok{"Summary table of PCA for value analysis of stocks"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{bootstrap_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"bordered"}\NormalTok{, }\StringTok{"hover"}\NormalTok{, }\StringTok{"striped"}\NormalTok{)) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{column_spec}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{width =} \StringTok{"70px"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Create the Screeplot to select the PCs in value analysis}
+\KeywordTok{screeplot}\NormalTok{(pca_value, }\DataTypeTok{type =} \StringTok{"lines"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{principal-component-analysis-risk-analysis}{%
+\subsubsection{Principal Component Analysis (Risk Analysis)}\label{principal-component-analysis-risk-analysis}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# filter out the outliers}
+\NormalTok{risk <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(stocks[(stocks}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{ }\NormalTok{df}\OperatorTok{$}\NormalTok{Symbol),], }\DataTypeTok{select =} \KeywordTok{c}\NormalTok{(}\StringTok{"Symbol"}\NormalTok{, }\StringTok{"tot_risk"}\NormalTok{, }\StringTok{"envir_risk"}\NormalTok{, }\StringTok{"social_risk"}\NormalTok{, }\StringTok{"gover_risk"}\NormalTok{))}
+\KeywordTok{view}\NormalTok{(risk)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# First check whether total esg risk score = environmental risk + social risk + governance risk}
+\NormalTok{d <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(risk}\OperatorTok{$}\NormalTok{envir_risk, risk}\OperatorTok{$}\NormalTok{social_risk, risk}\OperatorTok{$}\NormalTok{gover_risk), }\DecValTok{1}\NormalTok{, sum)}
+\KeywordTok{all}\NormalTok{(risk}\OperatorTok{$}\NormalTok{tot_risk }\OperatorTok{==}\StringTok{ }\NormalTok{d)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Second check whether total esg risk score = environmental risk + social risk + governance risk}
+\NormalTok{risk_tesg <-}\StringTok{ }\NormalTok{risk[risk}\OperatorTok{$}\NormalTok{tot_risk }\OperatorTok{==}\StringTok{ }\NormalTok{d,]}
+\NormalTok{d2 <-}\StringTok{ }\KeywordTok{apply}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(risk_tesg}\OperatorTok{$}\NormalTok{envir_risk, risk_tesg}\OperatorTok{$}\NormalTok{social_risk, risk_tesg}\OperatorTok{$}\NormalTok{gover_risk), }\DecValTok{1}\NormalTok{, sum)}
+\KeywordTok{all}\NormalTok{(risk_tesg}\OperatorTok{$}\NormalTok{tot_risk }\OperatorTok{==}\StringTok{ }\NormalTok{d2)}
+\CommentTok{#head(risk_tesg)}
+\CommentTok{#nrow(risk_tesg)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Execute the PCA for risk analysis}
+\NormalTok{pca_risk <-}\StringTok{ }\NormalTok{risk_tesg }\OperatorTok{%>%}\StringTok{ }\KeywordTok{select_if}\NormalTok{(is.numeric) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{prcomp}\NormalTok{(}\DataTypeTok{scale. =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Create the summary table of principal components in risk analysis}
+\KeywordTok{summary}\NormalTok{(pca_risk)}\OperatorTok{$}\NormalTok{importance }\OperatorTok{%>%}\StringTok{  }
+\StringTok{  }\KeywordTok{round}\NormalTok{(}\DecValTok{4}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{caption =} \StringTok{"Summary table of PCA for risks analysis of stocks"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{bootstrap_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"bordered"}\NormalTok{, }\StringTok{"hover"}\NormalTok{, }\StringTok{"striped"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Create the Screeplot to select the PCs in risk analysis}
+\KeywordTok{screeplot}\NormalTok{(pca_risk, }\DataTypeTok{type =} \StringTok{"lines"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Create the Distance Biplot of the PCs for risk analysis}
+\KeywordTok{rownames}\NormalTok{(pca_risk}\OperatorTok{$}\NormalTok{x) <-}\StringTok{ }\KeywordTok{pull}\NormalTok{(risk_tesg, Symbol)}
+\KeywordTok{biplot}\NormalTok{(pca_risk, }\DataTypeTok{xlim=}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{0.5}\NormalTok{, }\FloatTok{0.5}\NormalTok{), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{0.6}\NormalTok{, }\FloatTok{0.3}\NormalTok{),  }\DataTypeTok{cex =} \FloatTok{0.6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Create the Correlation Biplot of the PCs for risk analysis}
+\KeywordTok{biplot}\NormalTok{(pca_risk, }\DataTypeTok{scale =} \DecValTok{0}\NormalTok{, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{), }\DataTypeTok{cex =} \FloatTok{0.6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{cluster-analysis-1}{%
+\subsubsection{Cluster Analysis}\label{cluster-analysis-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Filter out the outliers, and generate the distance between each observation.}
+\NormalTok{dat <-}\StringTok{ }\NormalTok{stocks[(stocks}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{ }\NormalTok{df}\OperatorTok{$}\NormalTok{Symbol),]}
+\NormalTok{d <-}\StringTok{ }\NormalTok{dat }\OperatorTok{%>%}\StringTok{ }\KeywordTok{select_if}\NormalTok{(is.numeric) }\OperatorTok{%>%}\StringTok{ }\NormalTok{scale }\OperatorTok{%>%}\StringTok{ }\NormalTok{dist }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Create different cluster dendrogram}
+\NormalTok{hc_w <-}\StringTok{ }\KeywordTok{hclust}\NormalTok{(d, }\DataTypeTok{method =} \StringTok{"ward.D2"}\NormalTok{)}
+\NormalTok{hc_w}\OperatorTok{$}\NormalTok{labels <-}\StringTok{ }\NormalTok{dat}\OperatorTok{$}\NormalTok{Symbol}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mfrow =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(hc_w, }\DataTypeTok{cex =} \FloatTok{0.5}\NormalTok{, }\DataTypeTok{xlab=} \StringTok{"Stocks"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"Distance"}\NormalTok{)}
+\KeywordTok{rect.hclust}\NormalTok{(hc_w, }\DataTypeTok{k =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{plot}\NormalTok{(hc_w, }\DataTypeTok{cex =} \FloatTok{0.5}\NormalTok{, }\DataTypeTok{xlab=} \StringTok{"Stocks"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"Distance"}\NormalTok{)}
+\KeywordTok{rect.hclust}\NormalTok{(hc_w, }\DataTypeTok{k =} \DecValTok{3}\NormalTok{)}
+\KeywordTok{plot}\NormalTok{(hc_w, }\DataTypeTok{cex =} \FloatTok{0.5}\NormalTok{, }\DataTypeTok{xlab=} \StringTok{"Stocks"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"Distance"}\NormalTok{)}
+\KeywordTok{rect.hclust}\NormalTok{(hc_w, }\DataTypeTok{k =} \DecValTok{4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# The three-cluster dendrogram}
+\KeywordTok{plot}\NormalTok{(hc_w, }\DataTypeTok{cex =} \FloatTok{0.5}\NormalTok{, }\DataTypeTok{xlab=} \StringTok{"Stocks"}\NormalTok{, }\DataTypeTok{ylab=}\StringTok{"Distance"}\NormalTok{)}
+\KeywordTok{rect.hclust}\NormalTok{(hc_w, }\DataTypeTok{k =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# The first cluster }
+\NormalTok{memb_three_w <-}\StringTok{ }\KeywordTok{cutree}\NormalTok{(hc_w, }\DataTypeTok{k =} \DecValTok{3}\NormalTok{)}
+\NormalTok{memb_one <-}\StringTok{ }\NormalTok{dat[dat}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{ }\KeywordTok{rownames}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(memb_three_w) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(memb_three_w }\OperatorTok{==}\StringTok{ }\DecValTok{2}\NormalTok{)),]}\OperatorTok{$}\NormalTok{Name}
+
+\NormalTok{memb_one }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{col.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"stock"}\NormalTok{), }\DataTypeTok{caption =} \StringTok{"The stocks of the first cluster"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{bootstrap_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"bordered"}\NormalTok{, }\StringTok{"hover"}\NormalTok{, }\StringTok{"striped"}\NormalTok{)) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# The second cluster}
+\NormalTok{memb_two <-}\StringTok{ }\NormalTok{dat[dat}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{  }\KeywordTok{rownames}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(memb_three_w) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(memb_three_w }\OperatorTok{==}\StringTok{ }\DecValTok{3}\NormalTok{)),]}\OperatorTok{$}\NormalTok{Name}
+\NormalTok{memb_two }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{col.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"stock"}\NormalTok{), }\DataTypeTok{caption =} \StringTok{"The stocks of the second cluster"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{bootstrap_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"bordered"}\NormalTok{, }\StringTok{"hover"}\NormalTok{, }\StringTok{"striped"}\NormalTok{)) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# The third cluster}
+\NormalTok{memb_three <-}\StringTok{ }\NormalTok{dat[dat}\OperatorTok{$}\NormalTok{Symbol }\OperatorTok{%in%}\StringTok{  }\KeywordTok{rownames}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(memb_three_w) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(memb_three_w }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)),]}\OperatorTok{$}\NormalTok{Name}
+\NormalTok{memb_three }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{col.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"stock"}\NormalTok{), }\DataTypeTok{caption =} \StringTok{"The stocks of the third cluster"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{bootstrap_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"bordered"}\NormalTok{, }\StringTok{"hover"}\NormalTok{, }\StringTok{"striped"}\NormalTok{)) }
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{appendix.a-1}{%
+\subsubsection{Appendix.A}\label{appendix.a-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Cluster dendrogram of complete linkage method}
+\NormalTok{hc_c <-}\StringTok{ }\KeywordTok{hclust}\NormalTok{(d, }\DataTypeTok{method =} \StringTok{"complete"}\NormalTok{)}
+\NormalTok{hc_c}\OperatorTok{$}\NormalTok{labels <-}\StringTok{ }\NormalTok{dat}\OperatorTok{$}\NormalTok{Symbol}
+\KeywordTok{plot}\NormalTok{(hc_c, }\DataTypeTok{cex =} \FloatTok{0.5}\NormalTok{)}
+\KeywordTok{rect.hclust}\NormalTok{(hc_c, }\DataTypeTok{k =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Three-cluster solution of complete linkage method}
+\NormalTok{memb_three_c <-}\StringTok{ }\KeywordTok{cutree}\NormalTok{(hc_c, }\DataTypeTok{k =} \DecValTok{3}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Cluster dendrogram of average linkage method}
+\NormalTok{hc_al <-}\StringTok{ }\KeywordTok{hclust}\NormalTok{(d, }\DataTypeTok{method =} \StringTok{"average"}\NormalTok{)}
+\NormalTok{hc_al}\OperatorTok{$}\NormalTok{labels <-}\StringTok{ }\NormalTok{dat}\OperatorTok{$}\NormalTok{Symbol}
+\KeywordTok{plot}\NormalTok{(hc_al, }\DataTypeTok{cex =} \FloatTok{0.5}\NormalTok{)}
+\KeywordTok{rect.hclust}\NormalTok{(hc_al, }\DataTypeTok{k =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Three-cluster solution of average linkage method}
+\NormalTok{memb_three_al <-}\StringTok{ }\KeywordTok{cutree}\NormalTok{(hc_al, }\DataTypeTok{k =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Cluster dendrogram of centroid method}
+\NormalTok{hc_cm <-}\StringTok{ }\KeywordTok{hclust}\NormalTok{(d, }\DataTypeTok{method =} \StringTok{"centroid"}\NormalTok{)}
+\NormalTok{hc_cm}\OperatorTok{$}\NormalTok{labels <-}\StringTok{ }\NormalTok{dat}\OperatorTok{$}\NormalTok{Symbol}
+\KeywordTok{plot}\NormalTok{(hc_cm, }\DataTypeTok{cex =} \FloatTok{0.5}\NormalTok{)}
+\KeywordTok{rect.hclust}\NormalTok{(hc_cm, }\DataTypeTok{k =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Three-cluster solution of centroid method}
+\NormalTok{memb_three_cm <-}\StringTok{ }\KeywordTok{cutree}\NormalTok{(hc_cm, }\DataTypeTok{k =} \DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Create the table for the adjusted rand index of that three clustering methods}
+\NormalTok{c <-}\StringTok{ }\KeywordTok{adjustedRandIndex}\NormalTok{(memb_three_w, memb_three_c)}
+\NormalTok{al <-}\StringTok{ }\KeywordTok{adjustedRandIndex}\NormalTok{(memb_three_w, memb_three_al)}
+\NormalTok{cm <-}\StringTok{ }\KeywordTok{adjustedRandIndex}\NormalTok{(memb_three_w, memb_three_cm)}
+
+
+\NormalTok{al_method <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(c, al, cm) }
+\KeywordTok{rownames}\NormalTok{(al_method) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"complete linkage method"}\NormalTok{, }\StringTok{"average linkage method"}\NormalTok{, }\StringTok{"centroid method"}\NormalTok{)}
+\NormalTok{al_method }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{kable}\NormalTok{(}\DataTypeTok{col.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"adjusted rand index"}\NormalTok{), }
+        \DataTypeTok{caption =} \StringTok{"The adjusted rand index of the three clustering methods"}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{bootstrap_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"bordered"}\NormalTok{, }\StringTok{"hover"}\NormalTok{, }\StringTok{"striped"}\NormalTok{)) }
+\end{Highlighting}
+\end{Shaded}
 
 \printbibliography
 
